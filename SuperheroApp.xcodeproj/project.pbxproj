@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4912BD5A7E430F7B1D735D07 /* libPods-SuperheroAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */; };
 		4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB3D2018F96000D29ACD /* AppDelegate.m */; };
 		4BF3BB412018F96000D29ACD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB402018F96000D29ACD /* MasterViewController.m */; };
 		4BF3BB442018F96000D29ACD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* DetailViewController.m */; };
@@ -15,6 +16,7 @@
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
 		4BF3BB4F2018F96000D29ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4E2018F96000D29ACD /* main.m */; };
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
+		FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,12 @@
 		4BF3BB542018F96000D29ACD /* SuperheroAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperheroAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperheroAppTests.m; sourceTree = "<group>"; };
 		4BF3BB5A2018F96000D29ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A91779401C86451BD998981 /* Pods-SuperheroApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.release.xcconfig"; sourceTree = "<group>"; };
+		5DC2E903EF51E215D890CC8A /* Pods-SuperheroAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4912BD5A7E430F7B1D735D07 /* libPods-SuperheroAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +79,8 @@
 				4BF3BB3B2018F96000D29ACD /* SuperheroApp */,
 				4BF3BB572018F96000D29ACD /* SuperheroAppTests */,
 				4BF3BB3A2018F96000D29ACD /* Products */,
+				F1F37F5D72522DA8B20B2838 /* Pods */,
+				E2F349F481FF8C7B8CBDAEE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +120,26 @@
 			path = SuperheroAppTests;
 			sourceTree = "<group>";
 		};
+		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */,
+				794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1F37F5D72522DA8B20B2838 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */,
+				5A91779401C86451BD998981 /* Pods-SuperheroApp.release.xcconfig */,
+				5DC2E903EF51E215D890CC8A /* Pods-SuperheroAppTests.debug.xcconfig */,
+				DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BF3BB5D2018F96000D29ACD /* Build configuration list for PBXNativeTarget "SuperheroApp" */;
 			buildPhases = (
+				4AE95A941E32A172B72A9C65 /* [CP] Check Pods Manifest.lock */,
 				4BF3BB352018F96000D29ACD /* Sources */,
 				4BF3BB362018F96000D29ACD /* Frameworks */,
 				4BF3BB372018F96000D29ACD /* Resources */,
+				F8084480264CD2D629880B54 /* [CP] Embed Pods Frameworks */,
+				4615E28441B301EB2EAE5E68 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,9 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BF3BB602018F96000D29ACD /* Build configuration list for PBXNativeTarget "SuperheroAppTests" */;
 			buildPhases = (
+				53C59323BCED4D1599DDFF9A /* [CP] Check Pods Manifest.lock */,
 				4BF3BB502018F96000D29ACD /* Sources */,
 				4BF3BB512018F96000D29ACD /* Frameworks */,
 				4BF3BB522018F96000D29ACD /* Resources */,
+				20C0ECCBF89A81F285127066 /* [CP] Embed Pods Frameworks */,
+				3DC765973A650EA228C7E187 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +242,105 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		20C0ECCBF89A81F285127066 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DC765973A650EA228C7E187 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4615E28441B301EB2EAE5E68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AE95A941E32A172B72A9C65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperheroApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C59323BCED4D1599DDFF9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperheroAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8084480264CD2D629880B54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4BF3BB352018F96000D29ACD /* Sources */ = {
@@ -361,6 +498,7 @@
 		};
 		4BF3BB5E2018F96000D29ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +513,7 @@
 		};
 		4BF3BB5F2018F96000D29ACD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A91779401C86451BD998981 /* Pods-SuperheroApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +528,7 @@
 		};
 		4BF3BB612018F96000D29ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC2E903EF51E215D890CC8A /* Pods-SuperheroAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -404,6 +544,7 @@
 		};
 		4BF3BB622018F96000D29ACD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
