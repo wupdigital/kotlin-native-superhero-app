@@ -13,8 +13,8 @@
 
 @interface UseCase : NSObject
 
-@property(nonatomic, assign) id<UseCaseRequest> request;
-@property(nonatomic, retain) id<UseCaseDelegate> useCaseDelegate;
+@property(nonatomic, strong) id<UseCaseRequest> request;
+@property(nonatomic, strong) id<UseCaseDelegate> useCaseDelegate;
 
 - (void)run;
 

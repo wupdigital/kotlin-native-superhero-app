@@ -1,5 +1,5 @@
 //
-//  Character.h
+//  CharactersRemoteDataSource.h
 //  SuperheroApp
 //
 //  Created by Balazs Varga on 2018. 02. 04..
@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CharactersDataSource.h"
 
-@interface Character : NSObject
-
-@property(nonatomic, assign) NSString *characterId;
-@property(nonatomic, assign) NSString *name;
+@interface CharactersRemoteDataSource : NSObject<CharactersDataSource>
 
 @end

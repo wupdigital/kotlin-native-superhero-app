@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4912BD5A7E430F7B1D735D07 /* libPods-SuperheroAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */; };
 		4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB3D2018F96000D29ACD /* AppDelegate.m */; };
 		4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB402018F96000D29ACD /* CharactersViewController.m */; };
 		4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */; };
@@ -16,11 +15,20 @@
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
 		4BF3BB4F2018F96000D29ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4E2018F96000D29ACD /* main.m */; };
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
+		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
+		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
 		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
 		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
 		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
 		BF8B4EDA20278D2E00535D2A /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ED920278D2E00535D2A /* Character.m */; };
-		FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */; };
+		BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */; };
+		BF8B4EE82027933700535D2A /* CharactersRemoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EE72027933700535D2A /* CharactersRemoteDataSource.m */; };
+		BF8B4EEB2027937B00535D2A /* CharactersRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEA2027937B00535D2A /* CharactersRepository.m */; };
+		BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */; };
+		BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */; };
+		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
+		BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF52027A7EF00535D2A /* Foundation.framework */; };
+		BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF72027A81F00535D2A /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +59,9 @@
 		4BF3BB5A2018F96000D29ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A91779401C86451BD998981 /* Pods-SuperheroApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.release.xcconfig"; sourceTree = "<group>"; };
 		5DC2E903EF51E215D890CC8A /* Pods-SuperheroAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
 		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
 		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
@@ -69,6 +77,19 @@
 		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
 		BF8B4ED820278D2E00535D2A /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		BF8B4ED920278D2E00535D2A /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		BF8B4EDD20278EAE00535D2A /* CharactersDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersDataSource.h; sourceTree = "<group>"; };
+		BF8B4EE02027922D00535D2A /* CharactersLocalDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersLocalDataSource.h; sourceTree = "<group>"; };
+		BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersLocalDataSource.m; sourceTree = "<group>"; };
+		BF8B4EE62027933700535D2A /* CharactersRemoteDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersRemoteDataSource.h; sourceTree = "<group>"; };
+		BF8B4EE72027933700535D2A /* CharactersRemoteDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersRemoteDataSource.m; sourceTree = "<group>"; };
+		BF8B4EE92027937B00535D2A /* CharactersRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersRepository.h; sourceTree = "<group>"; };
+		BF8B4EEA2027937B00535D2A /* CharactersRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersRepository.m; sourceTree = "<group>"; };
+		BF8B4EED2027952D00535D2A /* CharactersUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersUseCase.h; sourceTree = "<group>"; };
+		BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersUseCase.m; sourceTree = "<group>"; };
+		BF8B4EF12027A10D00535D2A /* CharacterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharacterModel.xcdatamodel; sourceTree = "<group>"; };
+		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BF8B4EF52027A7EF00535D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF8B4EF72027A81F00535D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */,
+				BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */,
+				BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */,
+				BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */,
+				A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4912BD5A7E430F7B1D735D07 /* libPods-SuperheroAppTests.a in Frameworks */,
+				A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +139,7 @@
 		4BF3BB3B2018F96000D29ACD /* SuperheroApp */ = {
 			isa = PBXGroup;
 			children = (
+				BF8B4EDC20278E9A00535D2A /* DataSource */,
 				BF8B4ED4202788E600535D2A /* CharacterDetail */,
 				BF8B4ED32027889D00535D2A /* Characters */,
 				4BF3BB3C2018F96000D29ACD /* AppDelegate.h */,
@@ -173,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8B4EDB20278DB700535D2A /* Model */,
+				BF8B4EEC2027950E00535D2A /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -186,11 +212,54 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BF8B4EDC20278E9A00535D2A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4EDF20278EF900535D2A /* Remote */,
+				BF8B4EDE20278EF400535D2A /* Local */,
+				BF8B4EDD20278EAE00535D2A /* CharactersDataSource.h */,
+				BF8B4EE92027937B00535D2A /* CharactersRepository.h */,
+				BF8B4EEA2027937B00535D2A /* CharactersRepository.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		BF8B4EDE20278EF400535D2A /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4EE02027922D00535D2A /* CharactersLocalDataSource.h */,
+				BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */,
+				BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		BF8B4EDF20278EF900535D2A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4EE62027933700535D2A /* CharactersRemoteDataSource.h */,
+				BF8B4EE72027933700535D2A /* CharactersRemoteDataSource.m */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		BF8B4EEC2027950E00535D2A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4EED2027952D00535D2A /* CharactersUseCase.h */,
+				BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */,
-				794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */,
+				BF8B4EF72027A81F00535D2A /* UIKit.framework */,
+				BF8B4EF52027A7EF00535D2A /* Foundation.framework */,
+				BF8B4EF32027A7E300535D2A /* CoreData.framework */,
+				A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */,
+				BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -418,9 +487,14 @@
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
 				BF8B4EDA20278D2E00535D2A /* Character.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
+				BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
 				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
+				BF8B4EE82027933700535D2A /* CharactersRemoteDataSource.m in Sources */,
+				BF8B4EEB2027937B00535D2A /* CharactersRepository.m in Sources */,
+				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
+				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +539,7 @@
 		4BF3BB5B2018F96000D29ACD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -514,12 +589,14 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		4BF3BB5C2018F96000D29ACD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -562,6 +639,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -659,6 +737,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF8B4EF12027A10D00535D2A /* CharacterModel.xcdatamodel */,
+			);
+			currentVersion = BF8B4EF12027A10D00535D2A /* CharacterModel.xcdatamodel */;
+			path = CharacterModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4BF3BB312018F96000D29ACD /* Project object */;
 }
