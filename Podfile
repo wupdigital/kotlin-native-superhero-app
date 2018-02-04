@@ -6,6 +6,7 @@ target 'SuperheroApp' do
   use_frameworks!
 
   # Pods for SuperheroApp
+  pod 'AFNetworking', '~> 3.0'
 
   target 'SuperheroAppTests' do
     inherit! :search_paths
