@@ -1,18 +1,18 @@
 //
-//  DetailViewController.m
+//  CharacterDetailViewController.m
 //  SuperheroApp
 //
 //  Created by Balázs Varga on 2018. 01. 24..
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "CharacterDetailViewController.h"
 
-@interface DetailViewController ()
+@interface CharacterDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation CharacterDetailViewController
 
 - (void)configureView {
     // Update the user interface for the detail item.

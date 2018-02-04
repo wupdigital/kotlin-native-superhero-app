@@ -1,20 +1,21 @@
 //
-//  MasterViewController.m
+//  CharactersViewController.m
 //  SuperheroApp
 //
 //  Created by Balázs Varga on 2018. 01. 24..
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "CharactersViewController.h"
+#import "CharacterDetailViewController.h"
 
-@interface MasterViewController ()
+@interface CharactersViewController ()
 
 @property NSMutableArray *objects;
+
 @end
 
-@implementation MasterViewController
+@implementation CharactersViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,7 +24,7 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController = (CharacterDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 
@@ -55,7 +56,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        CharacterDetailViewController *controller = (CharacterDetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;

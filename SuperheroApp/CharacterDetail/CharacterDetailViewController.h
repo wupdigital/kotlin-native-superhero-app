@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  CharacterDetailViewController.h
 //  SuperheroApp
 //
 //  Created by Balázs Varga on 2018. 01. 24..
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MvpView.h"
 
-@interface DetailViewController : UIViewController
+@interface CharacterDetailViewController : UIViewController<MvpView>
 
 @property (strong, nonatomic) NSDate *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

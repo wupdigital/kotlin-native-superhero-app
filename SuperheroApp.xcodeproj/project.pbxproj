@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		4912BD5A7E430F7B1D735D07 /* libPods-SuperheroAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */; };
 		4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB3D2018F96000D29ACD /* AppDelegate.m */; };
-		4BF3BB412018F96000D29ACD /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB402018F96000D29ACD /* MasterViewController.m */; };
-		4BF3BB442018F96000D29ACD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* DetailViewController.m */; };
+		4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB402018F96000D29ACD /* CharactersViewController.m */; };
+		4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */; };
 		4BF3BB472018F96000D29ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB452018F96000D29ACD /* Main.storyboard */; };
 		4BF3BB492018F96000D29ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB482018F96000D29ACD /* Assets.xcassets */; };
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
@@ -36,10 +36,10 @@
 		4BF3BB392018F96000D29ACD /* SuperheroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF3BB3C2018F96000D29ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BF3BB3D2018F96000D29ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4BF3BB3F2018F96000D29ACD /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		4BF3BB402018F96000D29ACD /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		4BF3BB422018F96000D29ACD /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4BF3BB432018F96000D29ACD /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4BF3BB3F2018F96000D29ACD /* CharactersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersViewController.h; sourceTree = "<group>"; };
+		4BF3BB402018F96000D29ACD /* CharactersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersViewController.m; sourceTree = "<group>"; };
+		4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailViewController.h; sourceTree = "<group>"; };
+		4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailViewController.m; sourceTree = "<group>"; };
 		4BF3BB462018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BF3BB482018F96000D29ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BF3BB4B2018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,12 +111,10 @@
 		4BF3BB3B2018F96000D29ACD /* SuperheroApp */ = {
 			isa = PBXGroup;
 			children = (
+				BF8B4ED4202788E600535D2A /* CharacterDetail */,
+				BF8B4ED32027889D00535D2A /* Characters */,
 				4BF3BB3C2018F96000D29ACD /* AppDelegate.h */,
 				4BF3BB3D2018F96000D29ACD /* AppDelegate.m */,
-				4BF3BB3F2018F96000D29ACD /* MasterViewController.h */,
-				4BF3BB402018F96000D29ACD /* MasterViewController.m */,
-				4BF3BB422018F96000D29ACD /* DetailViewController.h */,
-				4BF3BB432018F96000D29ACD /* DetailViewController.m */,
 				BF8B4ED22027875B00535D2A /* MvpPresenter.h */,
 				BF8B4ED12027874700535D2A /* MvpView.h */,
 				BF8B4EC620276FB300535D2A /* UseCaseRequest.h */,
@@ -145,6 +143,24 @@
 				4BF3BB5A2018F96000D29ACD /* Info.plist */,
 			);
 			path = SuperheroAppTests;
+			sourceTree = "<group>";
+		};
+		BF8B4ED32027889D00535D2A /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3BB3F2018F96000D29ACD /* CharactersViewController.h */,
+				4BF3BB402018F96000D29ACD /* CharactersViewController.m */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		BF8B4ED4202788E600535D2A /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */,
+				4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */,
+			);
+			path = CharacterDetail;
 			sourceTree = "<group>";
 		};
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
@@ -374,10 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF3BB412018F96000D29ACD /* MasterViewController.m in Sources */,
+				4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */,
 				4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */,
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
-				4BF3BB442018F96000D29ACD /* DetailViewController.m in Sources */,
+				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
 				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
 				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
