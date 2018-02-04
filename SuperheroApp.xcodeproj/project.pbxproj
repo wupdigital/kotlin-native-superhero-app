@@ -16,6 +16,9 @@
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
 		4BF3BB4F2018F96000D29ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4E2018F96000D29ACD /* main.m */; };
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
+		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
+		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
+		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
 		FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,16 @@
 		794E77DE8B3ADB054BA84B49 /* libPods-SuperheroAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperheroApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
+		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
+		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
+		BF8B4EC720276FFB00535D2A /* UseCaseResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseResponse.h; sourceTree = "<group>"; };
+		BF8B4EC82027709B00535D2A /* UseCaseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseDelegate.h; sourceTree = "<group>"; };
+		BF8B4ECA202774D100535D2A /* UseCaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseHandler.h; sourceTree = "<group>"; };
+		BF8B4ECB202774D100535D2A /* UseCaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseCaseHandler.m; sourceTree = "<group>"; };
+		BF8B4ECD202774F200535D2A /* UseCaseScheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseScheduler.h; sourceTree = "<group>"; };
+		BF8B4ECE20277F3500535D2A /* UseCaseNSOperationSheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseNSOperationSheduler.h; sourceTree = "<group>"; };
+		BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseCaseNSOperationSheduler.m; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +115,16 @@
 				4BF3BB402018F96000D29ACD /* MasterViewController.m */,
 				4BF3BB422018F96000D29ACD /* DetailViewController.h */,
 				4BF3BB432018F96000D29ACD /* DetailViewController.m */,
+				BF8B4EC620276FB300535D2A /* UseCaseRequest.h */,
+				BF8B4EC720276FFB00535D2A /* UseCaseResponse.h */,
+				BF8B4EC82027709B00535D2A /* UseCaseDelegate.h */,
+				BF8B4EC120276D8900535D2A /* UseCase.h */,
+				BF8B4EC420276E5000535D2A /* UseCase.m */,
+				BF8B4ECA202774D100535D2A /* UseCaseHandler.h */,
+				BF8B4ECB202774D100535D2A /* UseCaseHandler.m */,
+				BF8B4ECD202774F200535D2A /* UseCaseScheduler.h */,
+				BF8B4ECE20277F3500535D2A /* UseCaseNSOperationSheduler.h */,
+				BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */,
 				4BF3BB452018F96000D29ACD /* Main.storyboard */,
 				4BF3BB482018F96000D29ACD /* Assets.xcassets */,
 				4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */,
@@ -351,6 +374,9 @@
 				4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */,
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
 				4BF3BB442018F96000D29ACD /* DetailViewController.m in Sources */,
+				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
+				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
+				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
