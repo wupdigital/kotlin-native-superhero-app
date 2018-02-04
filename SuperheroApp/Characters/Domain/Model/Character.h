@@ -1,5 +1,5 @@
 //
-//  MvpView.h
+//  Character.h
 //  SuperheroApp
 //
 //  Created by Balazs Varga on 2018. 02. 04..
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MvpView <NSObject>
+@interface Character : NSObject
 
 @end

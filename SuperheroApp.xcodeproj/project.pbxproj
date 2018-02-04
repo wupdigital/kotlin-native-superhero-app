@@ -19,6 +19,7 @@
 		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
 		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
 		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
+		BF8B4EDA20278D2E00535D2A /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ED920278D2E00535D2A /* Character.m */; };
 		FC4B0910E6DDE813891928C5 /* libPods-SuperheroApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBB08FFDFF9258099A85860 /* libPods-SuperheroApp.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,9 @@
 		BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseCaseNSOperationSheduler.m; sourceTree = "<group>"; };
 		BF8B4ED12027874700535D2A /* MvpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpView.h; sourceTree = "<group>"; };
 		BF8B4ED22027875B00535D2A /* MvpPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpPresenter.h; sourceTree = "<group>"; };
+		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
+		BF8B4ED820278D2E00535D2A /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		BF8B4ED920278D2E00535D2A /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,8 +152,10 @@
 		BF8B4ED32027889D00535D2A /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				BF8B4ED720278D1700535D2A /* Domain */,
 				4BF3BB3F2018F96000D29ACD /* CharactersViewController.h */,
 				4BF3BB402018F96000D29ACD /* CharactersViewController.m */,
+				BF8B4ED620278B7500535D2A /* CharactersContract.h */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -161,6 +167,23 @@
 				4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */,
 			);
 			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		BF8B4ED720278D1700535D2A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4EDB20278DB700535D2A /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BF8B4EDB20278DB700535D2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF8B4ED820278D2E00535D2A /* Character.h */,
+				BF8B4ED920278D2E00535D2A /* Character.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
@@ -393,6 +416,7 @@
 				4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */,
 				4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */,
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
+				BF8B4EDA20278D2E00535D2A /* Character.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
 				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
