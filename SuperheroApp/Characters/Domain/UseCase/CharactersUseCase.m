@@ -8,12 +8,13 @@
 
 #import "CharactersUseCase.h"
 #import "CharactersDataSource.h"
-#import "UseCaseDelegate.h"
 #import "CharactersRepository.h"
+#import "Page.h"
+#import "UseCaseDelegate.h"
 
 @interface CharactersUseCase()
 
-@property(nonatomic, retain) id<CharactersDataSource> charactersDataSource;
+@property(nonatomic, strong) id<CharactersDataSource> charactersDataSource;
 
 @end
 
@@ -38,7 +39,7 @@
     
     CharactersUseCaseRequest *charactersRequest = (CharactersUseCaseRequest *)request;
     
-    [self.charactersDataSource loadCharacters:charactersRequest.limit offset:charactersRequest.offset complete:^(NSArray<Character *> *characters) {
+    [self.charactersDataSource loadCharacters:charactersRequest.page complete:^(NSArray<Character *> *characters) {
         [self onCharactersLoaded:characters];
     } error:^{
         [self onCharactersNotLoaded];

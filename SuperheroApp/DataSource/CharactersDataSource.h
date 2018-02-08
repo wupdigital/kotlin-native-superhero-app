@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @class Character;
+@class Page;
 
 @protocol CharactersDataSource <NSObject>
 
-- (void)loadCharacters:(NSUInteger)limit offset:(NSUInteger)offset complete:(void(^)(NSArray<Character *> *))complete error:(void(^)(void))error;
+- (void)loadCharacters:(Page *)page complete:(void(^)(NSArray<Character *> *))complete error:(void(^)(void))error;
 
 - (void)loadCharacter:(NSString *)characterId complete:(void(^)(Character *))complete error:(void(^)(void))error;;
 

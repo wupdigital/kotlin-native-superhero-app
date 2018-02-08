@@ -12,6 +12,7 @@
 #import "UseCaseResponse.h"
 
 @class Character;
+@class Page;
 @protocol CharactersDataSource;
 
 @interface CharactersUseCase : UseCase
@@ -22,8 +23,7 @@
 
 @interface CharactersUseCaseRequest : NSObject<UseCaseRequest>
 
-@property(nonatomic, assign) NSUInteger limit;
-@property(nonatomic, assign) NSUInteger offset;
+@property(nonatomic, strong) Page *page;
 
 @end
 

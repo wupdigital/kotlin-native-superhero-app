@@ -9,6 +9,7 @@
 #import "CharactersRepository.h"
 #import "CharactersLocalDataSource.h"
 #import "CharactersRemoteDataSource.h"
+#import "Page.h"
 
 @interface CharactersRepository()
 
@@ -40,13 +41,13 @@
     }];
 }
 
-- (void)loadCharacters:(NSUInteger)limit offset:(NSUInteger)offset complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
-    [self.localDataSource loadCharacters:limit offset:offset complete:^(NSArray<Character *> *characters) {
+- (void)loadCharacters:(Page *)page complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
+    [self.localDataSource loadCharacters:page complete:^(NSArray<Character *> *characters) {
         if (complete) {
             complete(characters);
         }
     } error:^{
-        [self.remoteDataSource loadCharacters:limit offset:offset complete:^(NSArray<Character *> *characters) {
+        [self.remoteDataSource loadCharacters:page complete:^(NSArray<Character *> *characters) {
             [self.localDataSource saveCharacters:characters complete:nil error:nil];
             if (complete) {
                 complete(characters);

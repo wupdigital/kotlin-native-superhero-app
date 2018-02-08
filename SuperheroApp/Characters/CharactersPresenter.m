@@ -8,6 +8,7 @@
 
 #import "CharactersPresenter.h"
 #import "CharactersUseCase.h"
+#import "Page.h"
 #import "UseCaseHandler.h"
 #import "UseCaseDelegate.h"
 
@@ -36,22 +37,29 @@
 
 - (void)takeView:(id<MvpView>)view {
     self.view = (id<CharactersMvpView>)view;
-    [self loadCharactersForce:true withLimit:100 andOffset:0];
+    [self loadCharacters];
 }
 
 - (void)dropView {
     self.view = nil;
 }
 
-- (void)loadCharactersForce:(BOOL)force withLimit:(NSUInteger)limit andOffset:(NSUInteger)offset {
+- (void)refreshCharacters {
+    // TODO implement
+}
+
+- (void)loadCharacters {
     
     [self.view setLoadingIndicator:YES];
     
     CharactersUseCaseRequest *request = [CharactersUseCaseRequest new];
-    request.limit = limit;
-    request.offset = offset;
+    request.page = [[Page alloc] initWithLimit:100 andOffset:0];
     
     [self.useCaseHandler execute:[CharactersUseCase new] withRequest:request and:self];
+}
+
+- (void)loadMoreCharacters {
+    // TODO implement
 }
 
 - (void)onError {

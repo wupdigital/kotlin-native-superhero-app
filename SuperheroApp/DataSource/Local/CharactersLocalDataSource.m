@@ -7,9 +7,9 @@
 //
 
 #import "CharactersLocalDataSource.h"
-#import <CoreData/CoreData.h>
 #import "Character.h"
-#import <UIKit/UIKit.h>
+#import "Page.h"
+#import <CoreData/CoreData.h>
 
 @interface CharactersLocalDataSource()
 
@@ -86,7 +86,7 @@
     }
 }
 
-- (void)loadCharacters:(NSUInteger)limit offset:(NSUInteger)offset complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
+- (void)loadCharacters:(Page *)page complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CharacterEntity"];
     
     NSError *err = nil;

@@ -6,7 +6,6 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CharactersDataSource.h"
 
 @class NSManagedObjectContext;

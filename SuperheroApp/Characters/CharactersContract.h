@@ -28,6 +28,10 @@
 
 @protocol CharactersMvpPresenter <MvpPresenter>
 
-- (void)loadCharactersForce:(BOOL)force withLimit:(NSUInteger)limit andOffset:(NSUInteger)offset;
+- (void)refreshCharacters;
+
+- (void)loadCharacters;
+
+- (void)loadMoreCharacters;
 
 @end

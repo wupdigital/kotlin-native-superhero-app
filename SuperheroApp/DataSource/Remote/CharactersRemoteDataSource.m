@@ -9,6 +9,7 @@
 #import "CharactersRemoteDataSource.h"
 #import "Character.h"
 #import "NSString+MD5.h"
+#import "Page.h"
 #import <AFNetworking/AFNetworking.h>
 #import <CommonCrypto/CommonDigest.h>
 
@@ -65,14 +66,14 @@ static const NSString * PRIVATE_KEY = @"";
     }];
 }
 
-- (void)loadCharacters:(NSUInteger)limit offset:(NSUInteger)offset complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
+- (void)loadCharacters:(Page *)page complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
  
     NSUInteger timestamp = [[NSDate new] timeIntervalSince1970];
     NSString *hash = [NSString stringWithFormat:@"%lu%@%@", (unsigned long)timestamp, PRIVATE_KEY, API_KEY];
     
     NSDictionary *parameters = @{
-                                 @"limit": @(limit),
-                                 @"offset": @(offset),
+                                 @"limit": @(page.limit),
+                                 @"offset": @(page.offset),
                                  @"apikey": API_KEY,
                                  @"ts": @(timestamp),
                                  @"hash": [hash md5]
