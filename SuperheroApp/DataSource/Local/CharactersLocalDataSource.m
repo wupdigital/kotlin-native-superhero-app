@@ -19,7 +19,6 @@
 
 @implementation CharactersLocalDataSource
 
-
 - (instancetype)init {
     return [self initWithManagedObjectContext:[CharactersLocalDataSource managedObjectContext]];
 }
