@@ -8,10 +8,14 @@
 
 #import "CharactersViewController.h"
 #import "CharacterDetailViewController.h"
+#import "Character.h"
+#import "CharactersPresenter.h"
 
 @interface CharactersViewController ()
 
-@property NSMutableArray *objects;
+@property(atomic, strong) NSMutableArray<Character *> *objects;
+@property(nonatomic, strong) id<CharactersMvpPresenter> presenter;
+@property(nonatomic, strong) UIActivityIndicatorView *indicator;
 
 @end
 
@@ -19,12 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (CharacterDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.tableView.backgroundView = self.indicator;
+    
+    self.objects = [NSMutableArray array];
+    self.presenter = [CharactersPresenter new];
+    
+    [self.presenter takeView:self];
 }
 
 
@@ -33,29 +40,12 @@
     [super viewWillAppear:animated];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        Character *object = self.objects[indexPath.row];
         CharacterDetailViewController *controller = (CharacterDetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
@@ -79,26 +69,42 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Character *object = self.objects[indexPath.row];
+    cell.textLabel.text = object.name;
     return cell;
 }
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+- (void)setLoadingIndicator:(BOOL)active {
+    if (active) {
+        [self.indicator startAnimating];
+    } else {
+        [self.indicator stopAnimating];
     }
 }
 
+- (void)showCharacterDetails:(NSString *)characterId {
+    
+}
+
+- (void)showCharacters:(NSArray *)characters {
+    
+    [self.objects addObjectsFromArray:characters];
+
+    [self.tableView reloadData];
+}
+
+- (void)showNoCharacters {
+    
+}
+
+- (void)showLoadingCharactersError:(NSString *)message {
+    
+}
 
 @end

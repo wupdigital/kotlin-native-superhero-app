@@ -16,7 +16,7 @@
 
 @interface CharactersUseCase : UseCase
 
-- (instancetype)initWithDataSource:(id<CharactersDataSource>)charactersDataSource;
+- (instancetype)initWithDataSource:(id<CharactersDataSource>)charactersDataSource NS_DESIGNATED_INITIALIZER;
 
 @end
 

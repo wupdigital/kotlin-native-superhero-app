@@ -11,6 +11,6 @@
 
 @interface CharactersRepository : NSObject<CharactersDataSource>
 
-- (instancetype)initWithLocal:(id<CharactersDataSource>)localDataSource andRemote:(id<CharactersDataSource>)remoteDataSource;
+- (instancetype)initWithLocal:(id<CharactersDataSource>)localDataSource andRemote:(id<CharactersDataSource>)remoteDataSource NS_DESIGNATED_INITIALIZER;
 
 @end

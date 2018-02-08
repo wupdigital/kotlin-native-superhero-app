@@ -7,15 +7,21 @@
 //
 
 #import "CharactersRepository.h"
+#import "CharactersLocalDataSource.h"
+#import "CharactersRemoteDataSource.h"
 
 @interface CharactersRepository()
 
-@property(nonatomic, assign) id<CharactersDataSource> localDataSource;
-@property(nonatomic, assign) id<CharactersDataSource> remoteDataSource;
+@property(nonatomic, strong) id<CharactersDataSource> localDataSource;
+@property(nonatomic, strong) id<CharactersDataSource> remoteDataSource;
 
 @end
 
 @implementation CharactersRepository
+
+- (instancetype)init {
+    return [self initWithLocal:[CharactersLocalDataSource new] andRemote:[CharactersRemoteDataSource new]];
+}
 
 - (instancetype)initWithLocal:(id<CharactersDataSource>)localDataSource andRemote:(id<CharactersDataSource>)remoteDataSource {
     self = [super self];
@@ -36,12 +42,16 @@
 
 - (void)loadCharacters:(NSUInteger)limit offset:(NSUInteger)offset complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
     [self.localDataSource loadCharacters:limit offset:offset complete:^(NSArray<Character *> *characters) {
-        [self.localDataSource saveCharacters:characters complete:nil error:nil];
-        if (complete != nil) {
+        if (complete) {
             complete(characters);
         }
     } error:^{
-        [self.remoteDataSource loadCharacters:limit offset:offset complete:complete error:error];
+        [self.remoteDataSource loadCharacters:limit offset:offset complete:^(NSArray<Character *> *characters) {
+            [self.localDataSource saveCharacters:characters complete:nil error:nil];
+            if (complete) {
+                complete(characters);
+            }
+        } error:error];
     }];
 }
 

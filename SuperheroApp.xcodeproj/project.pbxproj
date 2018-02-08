@@ -29,6 +29,7 @@
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
 		BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF52027A7EF00535D2A /* Foundation.framework */; };
 		BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF72027A81F00535D2A /* UIKit.framework */; };
+		BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EFA2027BB3400535D2A /* CharactersPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BF8B4EF52027A7EF00535D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8B4EF72027A81F00535D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF8B4EF92027BB3400535D2A /* CharactersPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersPresenter.h; sourceTree = "<group>"; };
+		BF8B4EFA2027BB3400535D2A /* CharactersPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersPresenter.m; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +183,8 @@
 				BF8B4ED720278D1700535D2A /* Domain */,
 				4BF3BB3F2018F96000D29ACD /* CharactersViewController.h */,
 				4BF3BB402018F96000D29ACD /* CharactersViewController.m */,
+				BF8B4EF92027BB3400535D2A /* CharactersPresenter.h */,
+				BF8B4EFA2027BB3400535D2A /* CharactersPresenter.m */,
 				BF8B4ED620278B7500535D2A /* CharactersContract.h */,
 			);
 			path = Characters;
@@ -489,6 +494,7 @@
 				4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */,
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
 				BF8B4EDA20278D2E00535D2A /* Character.m in Sources */,
+				BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
 				BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,

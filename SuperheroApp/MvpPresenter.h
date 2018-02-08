@@ -12,7 +12,7 @@
 
 @protocol MvpPresenter<NSObject>
 
-- (void)takeView:(id<MvpView> view)
+- (void)takeView:(id<MvpView>) view;
 
 - (void)dropView;
 

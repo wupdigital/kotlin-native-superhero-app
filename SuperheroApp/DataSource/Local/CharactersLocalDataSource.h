@@ -13,5 +13,6 @@
 
 @interface CharactersLocalDataSource : NSObject<CharactersDataSource>
 
-- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext NS_DESIGNATED_INITIALIZER;
+
 @end

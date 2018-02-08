@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "CharactersDataSource.h"
 
+@class AFHTTPSessionManager;
+
 @interface CharactersRemoteDataSource : NSObject<CharactersDataSource>
+
+- (instancetype)initWithSessionManager:(AFHTTPSessionManager *)sessionManager NS_DESIGNATED_INITIALIZER;
 
 @end

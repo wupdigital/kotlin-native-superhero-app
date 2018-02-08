@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MvpView.h"
+#import "CharactersContract.h"
 
 @class CharacterDetailViewController;
 
-@interface CharactersViewController : UITableViewController <MvpView>
+@interface CharactersViewController : UITableViewController <CharactersMvpView>
 
 @property (strong, nonatomic) CharacterDetailViewController *detailViewController;
-
 
 @end
 

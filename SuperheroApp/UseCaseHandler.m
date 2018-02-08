@@ -11,10 +11,11 @@
 #import "UseCase.h"
 #import "UseCaseDelegate.h"
 #import "UseCaseScheduler.h"
+#import "UseCaseNSOperationSheduler.h"
 
 @interface UseCaseHandler()
 
-@property(nonatomic, assign) id<UseCaseScheduler> useCaseSheduler;
+@property(nonatomic, strong) id<UseCaseScheduler> useCaseSheduler;
 
 - (void)notifyResponse:(id<UseCaseDelegate>)useCaseDelegate of:(id<UseCaseResponse>)response;
 
@@ -24,8 +25,8 @@
 
 @interface UiDelegateWrapper : NSObject<UseCaseDelegate>
 
-@property(nonatomic, assign) id<UseCaseDelegate> useCaseDelegate;
-@property(nonatomic, retain) UseCaseHandler *useCaseHandler;
+@property(nonatomic, strong) id<UseCaseDelegate> useCaseDelegate;
+@property(nonatomic, strong) UseCaseHandler *useCaseHandler;
 
 - (instancetype)initWithDelegate:(id<UseCaseDelegate>)useCaseDelegate and:(UseCaseHandler *)useCaseHandler;
 
@@ -57,7 +58,7 @@
 @implementation UseCaseHandler
 
 - (instancetype)init {
-    return [self initWithScheduler:nil];
+    return [self initWithScheduler:[[UseCaseNSOperationSheduler alloc] init]];
 }
 
 - (instancetype)initWithScheduler:(id<UseCaseScheduler>)scheduler {
@@ -74,7 +75,7 @@
     useCase.request = request;
     useCase.useCaseDelegate = [[UiDelegateWrapper alloc] initWithDelegate:useCaseDelegate and:self];
     
-    [_useCaseSheduler execute:^{
+    [self.useCaseSheduler execute:^{
         [useCase run];
     }];
 }

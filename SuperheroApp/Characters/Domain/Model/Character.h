@@ -10,7 +10,7 @@
 
 @interface Character : NSObject
 
-@property(nonatomic, assign) NSString *characterId;
-@property(nonatomic, assign) NSString *name;
+@property(nonatomic, strong) NSNumber *characterId;
+@property(nonatomic, strong) NSString *name;
 
 @end

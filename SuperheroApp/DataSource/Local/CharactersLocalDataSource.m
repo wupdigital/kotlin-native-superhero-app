@@ -9,6 +9,7 @@
 #import "CharactersLocalDataSource.h"
 #import <CoreData/CoreData.h>
 #import "Character.h"
+#import <UIKit/UIKit.h>
 
 @interface CharactersLocalDataSource()
 
@@ -17,6 +18,40 @@
 @end
 
 @implementation CharactersLocalDataSource
+
+
+- (instancetype)init {
+    return [self initWithManagedObjectContext:[CharactersLocalDataSource managedObjectContext]];
+}
+
++ (NSManagedObjectContext *)managedObjectContext {
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    NSManagedObjectContext *managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    managedObjectContext.persistentStoreCoordinator = coordinator;
+    return managedObjectContext;
+}
+
++ (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CharactersEntity.sqlite"];
+    
+    NSError *error = nil;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return persistentStoreCoordinator;
+}
+
++ (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
++ (NSManagedObjectModel *)managedObjectModel {
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CharacterModel" withExtension:@"momd"];
+    return [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+}
 
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     self = [super init];
@@ -36,7 +71,9 @@
     NSArray<NSManagedObject *> *data = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
     
     if (err || data.count == 0) {
-        error();
+        if (error != nil) {
+            error();
+        }
     } else {
         NSManagedObject *entity = [data firstObject];
         
@@ -44,7 +81,9 @@
         character.characterId = [entity valueForKey:@"id"];
         character.name = [entity valueForKey:@"name"];
         
-        complete(character);
+        if (complete != nil) {
+            complete(character);
+        }
     }
 }
 
@@ -54,8 +93,10 @@
     NSError *err = nil;
     NSArray<NSManagedObject *> *data = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
     
-    if (err) {
-        error();
+    if (err || data.count == 0) {
+        if (error != nil) {
+            error();
+        }
     } else {
         NSMutableArray<Character *> *characters = [NSMutableArray new];
         
@@ -67,7 +108,9 @@
             [characters addObject:character];
         }
         
-        complete(characters);
+        if (complete != nil) {
+            complete(characters);
+        }
     }
 }
 
@@ -81,9 +124,13 @@
     }
     
     if ([self.managedObjectContext save:&err] == NO) {
-        error();
+        if (error != nil) {
+            error();
+        }
     } else {
-        complete();
+        if (complete != nil) {
+            complete();
+        }
     }
 }
 

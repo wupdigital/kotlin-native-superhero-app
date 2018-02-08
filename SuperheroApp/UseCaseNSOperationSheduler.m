@@ -23,7 +23,7 @@
     self = [super init];
     
     if (self) {
-        self.queue = [NSOperationQueue init];
+        self.queue = [[NSOperationQueue alloc] init];
         self.mainQueue = [NSOperationQueue mainQueue];
     }
     

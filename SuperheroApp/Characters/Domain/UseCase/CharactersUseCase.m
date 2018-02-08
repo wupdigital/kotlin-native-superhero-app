@@ -9,6 +9,7 @@
 #import "CharactersUseCase.h"
 #import "CharactersDataSource.h"
 #import "UseCaseDelegate.h"
+#import "CharactersRepository.h"
 
 @interface CharactersUseCase()
 
@@ -17,6 +18,10 @@
 @end
 
 @implementation CharactersUseCase
+
+- (instancetype)init {
+    return [self initWithDataSource:[CharactersRepository new]];
+}
 
 - (instancetype)initWithDataSource:(id<CharactersDataSource>)charactersDataSource {
     self = [super init];
