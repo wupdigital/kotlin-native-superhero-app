@@ -24,6 +24,7 @@
 @interface CharactersUseCaseRequest : NSObject<UseCaseRequest>
 
 @property(nonatomic, strong) Page *page;
+@property(nonatomic, assign) BOOL force;
 
 @end
 

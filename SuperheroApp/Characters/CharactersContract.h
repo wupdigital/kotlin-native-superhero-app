@@ -16,6 +16,8 @@
 
 - (void)setLoadingIndicator:(BOOL)active;
 
+- (void)setMoreLoadingIndicator:(BOOL)active;
+
 - (void)showCharacters:(NSArray<Character *> *)characters;
 
 - (void)showCharacterDetails:(NSString *)characterId;
@@ -27,8 +29,6 @@
 @end
 
 @protocol CharactersMvpPresenter <MvpPresenter>
-
-- (void)refreshCharacters;
 
 - (void)loadCharacters;
 

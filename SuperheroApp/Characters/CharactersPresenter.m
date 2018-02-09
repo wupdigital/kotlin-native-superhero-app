@@ -12,10 +12,13 @@
 #import "UseCaseHandler.h"
 #import "UseCaseDelegate.h"
 
+static const NSUInteger DEFAULT_LIMIT = 100;
+
 @interface CharactersPresenter() <UseCaseDelegate>
 
 @property(nonatomic, weak) id<CharactersMvpView> view;
 @property(nonatomic, strong) UseCaseHandler *useCaseHandler;
+@property(nonatomic, strong) Page *currentPage;
 
 @end
 
@@ -30,6 +33,7 @@
     
     if (self) {
         self.useCaseHandler = useCaseHandler;
+        self.currentPage = [[Page alloc] initWithLimit:DEFAULT_LIMIT andOffset:0];
     }
     
     return self;
@@ -44,22 +48,24 @@
     self.view = nil;
 }
 
-- (void)refreshCharacters {
-    // TODO implement
-}
-
 - (void)loadCharacters {
     
     [self.view setLoadingIndicator:YES];
-    
+    self.currentPage = [[Page alloc] initWithLimit:DEFAULT_LIMIT andOffset:0];
     CharactersUseCaseRequest *request = [CharactersUseCaseRequest new];
-    request.page = [[Page alloc] initWithLimit:100 andOffset:0];
+    request.page = self.currentPage;
     
     [self.useCaseHandler execute:[CharactersUseCase new] withRequest:request and:self];
 }
 
 - (void)loadMoreCharacters {
-    // TODO implement
+    
+    [self.view setMoreLoadingIndicator:YES];
+    self.currentPage.offset += DEFAULT_LIMIT;
+    CharactersUseCaseRequest *request = [CharactersUseCaseRequest new];
+    request.page = self.currentPage;
+    
+    [self.useCaseHandler execute:[CharactersUseCase new] withRequest:request and:self];
 }
 
 - (void)onError {
@@ -70,8 +76,14 @@
 - (void)onSuccess:(id<UseCaseResponse>)response {
     CharactersUseCaseResponse *charactersResponse = (CharactersUseCaseResponse *)response;
     
-    [self.view setLoadingIndicator:NO];
-    [self.view showCharacters:charactersResponse.characters];
+    if (self.currentPage.offset == 0) {
+        [self.view setLoadingIndicator:NO];
+    } else {
+        [self.view setMoreLoadingIndicator:NO];
+    }
+    if (charactersResponse.characters.count > 0) {
+        [self.view showCharacters:charactersResponse.characters];
+    }
 }
 
 @end

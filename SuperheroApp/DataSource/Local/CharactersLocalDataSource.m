@@ -88,6 +88,8 @@
 
 - (void)loadCharacters:(Page *)page complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CharacterEntity"];
+    fetchRequest.fetchLimit = page.limit;
+    fetchRequest.fetchOffset = page.offset;
     
     NSError *err = nil;
     NSArray<NSManagedObject *> *data = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];

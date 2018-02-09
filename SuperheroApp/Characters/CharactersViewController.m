@@ -16,6 +16,7 @@
 @property(atomic, strong) NSMutableArray<Character *> *objects;
 @property(nonatomic, strong) id<CharactersMvpPresenter> presenter;
 @property(nonatomic, strong) UIActivityIndicatorView *indicator;
+@property(nonatomic, strong) UIActivityIndicatorView *loadMoreIndicator;
 
 @end
 
@@ -26,7 +27,9 @@
 
     self.detailViewController = (CharacterDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.loadMoreIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     self.tableView.backgroundView = self.indicator;
+    self.tableView.tableFooterView = self.loadMoreIndicator;
     
     self.objects = [NSMutableArray array];
     self.presenter = [CharactersPresenter new];
@@ -76,8 +79,16 @@
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
+    // Return YES if you want the specified item to be editable.
     return NO;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    BOOL lastItemReached = indexPath.row == self.objects.count - 1;
+    
+    if (lastItemReached) {
+        [self.presenter loadMoreCharacters];
+    }
 }
 
 - (void)setLoadingIndicator:(BOOL)active {
@@ -85,6 +96,14 @@
         [self.indicator startAnimating];
     } else {
         [self.indicator stopAnimating];
+    }
+}
+
+- (void)setMoreLoadingIndicator:(BOOL)active {
+    if (active) {
+        [self.loadMoreIndicator startAnimating];
+    } else {
+        [self.loadMoreIndicator stopAnimating];
     }
 }
 
