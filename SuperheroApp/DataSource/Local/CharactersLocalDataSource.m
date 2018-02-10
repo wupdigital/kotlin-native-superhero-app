@@ -79,6 +79,7 @@
         Character *character = [Character new];
         character.characterId = [entity valueForKey:@"id"];
         character.name = [entity valueForKey:@"name"];
+        character.thumbnailUrl = [entity valueForKey:@"thumbnailUrl"];
         
         if (complete != nil) {
             complete(character);
@@ -90,6 +91,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CharacterEntity"];
     fetchRequest.fetchLimit = page.limit;
     fetchRequest.fetchOffset = page.offset;
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     
     NSError *err = nil;
     NSArray<NSManagedObject *> *data = [self.managedObjectContext executeFetchRequest:fetchRequest error:&err];
@@ -105,6 +107,7 @@
             Character *character = [Character new];
             character.characterId = [entity valueForKey:@"id"];
             character.name = [entity valueForKey:@"name"];
+            character.thumbnailUrl = [entity valueForKey:@"thumbnailUrl"];
             
             [characters addObject:character];
         }
@@ -122,6 +125,7 @@
         NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:@"CharacterEntity" inManagedObjectContext:self.managedObjectContext];
         [entity setValue:character.characterId forKey:@"id"];
         [entity setValue:character.name forKey:@"name"];
+        [entity setValue:character.thumbnailUrl forKey:@"thumbnailUrl"];
     }
     
     if ([self.managedObjectContext save:&err] == NO) {

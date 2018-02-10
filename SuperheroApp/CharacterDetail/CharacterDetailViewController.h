@@ -15,5 +15,6 @@
 
 @property (strong, nonatomic) NSString *characterId;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 
 @end

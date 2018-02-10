@@ -67,9 +67,7 @@ static const NSString * PRIVATE_KEY = @"";
         NSDictionary *item = [results firstObject];
         
         if (item != nil) {
-            character = [Character new];
-            character.name = [item valueForKey:@"name"];
-            character.characterId = [item valueForKey:@"id"];
+            character = [self extractCharacterFromJsonDisctionary:item];
         }
         
         if (complete) {
@@ -105,10 +103,9 @@ static const NSString * PRIVATE_KEY = @"";
         NSMutableArray<Character *> *characters = [NSMutableArray arrayWithCapacity:results.count];
         
         for (NSDictionary *item in results) {
-            Character *character = [Character new];
-            character.name = [item valueForKey:@"name"];
-            character.characterId = [item valueForKey:@"id"];
             
+            Character *character = [self extractCharacterFromJsonDisctionary:item];
+    
             [characters addObject:character];
         }
         
@@ -127,6 +124,18 @@ static const NSString * PRIVATE_KEY = @"";
 
 - (void)saveCharacters:(NSArray<Character *> *)characters complete:(void (^)(void))complete error:(void (^)(void))error {
     complete();
+}
+
+- (Character *)extractCharacterFromJsonDisctionary:(NSDictionary *)item {
+    Character *character = [Character new];
+    character.name = [item valueForKey:@"name"];
+    character.characterId = [item valueForKey:@"id"];
+    
+    NSDictionary *thumbnail = [item valueForKey:@"thumbnail"];
+    NSString *thumbnailUrl = [NSString stringWithFormat:@"%@.%@", [thumbnail valueForKey:@"path"], [thumbnail valueForKey:@"extension"]];
+    character.thumbnailUrl = [thumbnailUrl stringByReplacingOccurrencesOfString:@"http" withString:@"https"];
+    
+    return character;
 }
 
 @end

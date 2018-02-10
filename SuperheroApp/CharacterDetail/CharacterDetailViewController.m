@@ -10,6 +10,7 @@
 #import "Character.h"
 #import "CharacterDetailContract.h"
 #import "CharacterDetailPresenter.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface CharacterDetailViewController ()
 
@@ -35,6 +36,12 @@
 
 - (void)showCharacter:(Character *)character {
     self.detailDescriptionLabel.text = character.name;
+    [self.thumbnailImageView setImageWithURL:[NSURL URLWithString:character.thumbnailUrl]];
+}
+
+- (void)setCharacterId:(NSString *)characterId {
+    _characterId = characterId;
+    [self loadContent];
 }
 
 @end
