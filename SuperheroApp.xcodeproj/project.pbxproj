@@ -18,6 +18,8 @@
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
 		BF630D5C202CF8810079EDA2 /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = BF630D5B202CF8810079EDA2 /* Page.m */; };
+		BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */; };
+		BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */; };
 		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
 		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
 		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
@@ -67,6 +69,11 @@
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF630D5A202CF8810079EDA2 /* Page.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
 		BF630D5B202CF8810079EDA2 /* Page.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
+		BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailContract.h; sourceTree = "<group>"; };
+		BF65F9EB202E10D30096B42C /* CharacterDetailPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailPresenter.h; sourceTree = "<group>"; };
+		BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailPresenter.m; sourceTree = "<group>"; };
+		BF65F9EF202EF3490096B42C /* GetCharacterUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCharacterUseCase.h; sourceTree = "<group>"; };
+		BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCharacterUseCase.m; sourceTree = "<group>"; };
 		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
 		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
 		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
@@ -184,6 +191,15 @@
 			path = SuperheroAppTests;
 			sourceTree = "<group>";
 		};
+		BF65F9EE202EF3300096B42C /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				BF65F9EF202EF3490096B42C /* GetCharacterUseCase.h */,
+				BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		BF8B4ED32027889D00535D2A /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +216,12 @@
 		BF8B4ED4202788E600535D2A /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
+				BF65F9EE202EF3300096B42C /* UseCase */,
 				4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */,
 				4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */,
+				BF65F9EB202E10D30096B42C /* CharacterDetailPresenter.h */,
+				BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */,
+				BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -513,6 +533,7 @@
 				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
 				BF8B4EDA20278D2E00535D2A /* Character.m in Sources */,
 				BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */,
+				BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
 				BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
@@ -521,6 +542,7 @@
 				BF8B4EEB2027937B00535D2A /* CharactersRepository.m in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BFB07A5B202CF023008D7564 /* NSString+MD5.m in Sources */,
+				BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */,
 				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
 				BF630D5C202CF8810079EDA2 /* Page.m in Sources */,
 				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,

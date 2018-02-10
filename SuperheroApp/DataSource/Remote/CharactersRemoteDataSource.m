@@ -58,6 +58,23 @@ static const NSString * PRIVATE_KEY = @"";
     
     [self.sessionManager GET: url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         
+        NSLog(@"response %@", responseObject);
+        
+        NSDictionary *data = [responseObject valueForKey:@"data"];
+        NSArray *results = [data valueForKey:@"results"];
+        Character *character = nil;
+        
+        NSDictionary *item = [results firstObject];
+        
+        if (item != nil) {
+            character = [Character new];
+            character.name = [item valueForKey:@"name"];
+            character.characterId = [item valueForKey:@"id"];
+        }
+        
+        if (complete) {
+            complete(character);
+        }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull err) {
         if (error) {

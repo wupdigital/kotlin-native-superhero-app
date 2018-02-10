@@ -20,8 +20,6 @@
 
 - (void)showCharacters:(NSArray<Character *> *)characters;
 
-- (void)showCharacterDetails:(NSString *)characterId;
-
 - (void)showLoadingCharactersError:(NSString *)message;
 
 - (void)showNoCharacters;

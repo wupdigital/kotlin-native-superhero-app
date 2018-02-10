@@ -12,5 +12,6 @@
 
 @property(nonatomic, strong) NSNumber *characterId;
 @property(nonatomic, strong) NSString *name;
+@property(nonatomic, strong) NSString *thumbnailUrl;
 
 @end

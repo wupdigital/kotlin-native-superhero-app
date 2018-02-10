@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MvpView.h"
+#import "CharacterDetailContract.h"
 
-@interface CharacterDetailViewController : UIViewController<MvpView>
+@class Character;
 
-@property (strong, nonatomic) NSDate *detailItem;
+@interface CharacterDetailViewController : UIViewController<CharacterDetailMvpView>
+
+@property (strong, nonatomic) NSString *characterId;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
-

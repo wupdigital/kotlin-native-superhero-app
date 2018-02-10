@@ -50,7 +50,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Character *object = self.objects[indexPath.row];
         CharacterDetailViewController *controller = (CharacterDetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
+        controller.characterId = [NSString stringWithFormat:@"%@", object.characterId];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -105,10 +105,6 @@
     } else {
         [self.loadMoreIndicator stopAnimating];
     }
-}
-
-- (void)showCharacterDetails:(NSString *)characterId {
-    
 }
 
 - (void)showCharacters:(NSArray *)characters {

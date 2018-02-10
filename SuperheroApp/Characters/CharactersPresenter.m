@@ -44,10 +44,6 @@ static const NSUInteger DEFAULT_LIMIT = 100;
     [self loadCharacters];
 }
 
-- (void)dropView {
-    self.view = nil;
-}
-
 - (void)loadCharacters {
     
     [self.view setLoadingIndicator:YES];

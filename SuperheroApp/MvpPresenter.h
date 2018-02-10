@@ -14,6 +14,4 @@
 
 - (void)takeView:(id<MvpView>) view;
 
-- (void)dropView;
-
 @end
