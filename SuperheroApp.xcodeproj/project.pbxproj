@@ -67,6 +67,8 @@
 		A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BF256000202F6FEC00DB93DC /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		BF630D5A202CF8810079EDA2 /* Page.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
 		BF630D5B202CF8810079EDA2 /* Page.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
 		BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailContract.h; sourceTree = "<group>"; };
@@ -135,6 +137,8 @@
 		4BF3BB302018F96000D29ACD = {
 			isa = PBXGroup;
 			children = (
+				BF03D3B1202F7D8900F8A16D /* README.md */,
+				BF256000202F6FEC00DB93DC /* .travis.yml */,
 				4BF3BB3B2018F96000D29ACD /* SuperheroApp */,
 				4BF3BB572018F96000D29ACD /* SuperheroAppTests */,
 				4BF3BB3A2018F96000D29ACD /* Products */,
