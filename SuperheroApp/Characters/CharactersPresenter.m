@@ -65,20 +65,25 @@ static const NSUInteger DEFAULT_LIMIT = 100;
 }
 
 - (void)onError {
-    [self.view setLoadingIndicator:NO];
+    [self stopLoading];
     [self.view showLoadingCharactersError:@"Something wrong"];
 }
 
 - (void)onSuccess:(id<UseCaseResponse>)response {
     CharactersUseCaseResponse *charactersResponse = (CharactersUseCaseResponse *)response;
     
+    [self stopLoading];
+    
+    if (charactersResponse.characters.count > 0) {
+        [self.view showCharacters:charactersResponse.characters];
+    }
+}
+
+- (void)stopLoading {
     if (self.currentPage.offset == 0) {
         [self.view setLoadingIndicator:NO];
     } else {
         [self.view setMoreLoadingIndicator:NO];
-    }
-    if (charactersResponse.characters.count > 0) {
-        [self.view showCharacters:charactersResponse.characters];
     }
 }
 
