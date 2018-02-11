@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB3D2018F96000D29ACD /* AppDelegate.m */; };
 		4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB402018F96000D29ACD /* CharactersViewController.m */; };
 		4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */; };
 		4BF3BB472018F96000D29ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB452018F96000D29ACD /* Main.storyboard */; };
 		4BF3BB492018F96000D29ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB482018F96000D29ACD /* Assets.xcassets */; };
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
-		4BF3BB4F2018F96000D29ACD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4E2018F96000D29ACD /* main.m */; };
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
 		BF630D5C202CF8810079EDA2 /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = BF630D5B202CF8810079EDA2 /* Page.m */; };
 		BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */; };
 		BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */; };
+		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
 		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
 		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
@@ -48,8 +47,6 @@
 
 /* Begin PBXFileReference section */
 		4BF3BB392018F96000D29ACD /* SuperheroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BF3BB3C2018F96000D29ACD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4BF3BB3D2018F96000D29ACD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4BF3BB3F2018F96000D29ACD /* CharactersViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersViewController.h; sourceTree = "<group>"; };
 		4BF3BB402018F96000D29ACD /* CharactersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersViewController.m; sourceTree = "<group>"; };
 		4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailViewController.h; sourceTree = "<group>"; };
@@ -58,7 +55,6 @@
 		4BF3BB482018F96000D29ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BF3BB4B2018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BF3BB4D2018F96000D29ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BF3BB4E2018F96000D29ACD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BF3BB542018F96000D29ACD /* SuperheroAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperheroAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperheroAppTests.m; sourceTree = "<group>"; };
 		4BF3BB5A2018F96000D29ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +72,8 @@
 		BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailPresenter.m; sourceTree = "<group>"; };
 		BF65F9EF202EF3490096B42C /* GetCharacterUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCharacterUseCase.h; sourceTree = "<group>"; };
 		BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCharacterUseCase.m; sourceTree = "<group>"; };
+		BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperheroApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
 		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
 		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
@@ -163,8 +161,7 @@
 				BF8B4EDC20278E9A00535D2A /* DataSource */,
 				BF8B4ED4202788E600535D2A /* CharacterDetail */,
 				BF8B4ED32027889D00535D2A /* Characters */,
-				4BF3BB3C2018F96000D29ACD /* AppDelegate.h */,
-				4BF3BB3D2018F96000D29ACD /* AppDelegate.m */,
+				BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */,
 				BF8B4ED22027875B00535D2A /* MvpPresenter.h */,
 				BF8B4ED12027874700535D2A /* MvpView.h */,
 				BF8B4EC620276FB300535D2A /* UseCaseRequest.h */,
@@ -181,7 +178,7 @@
 				4BF3BB482018F96000D29ACD /* Assets.xcassets */,
 				4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */,
 				4BF3BB4D2018F96000D29ACD /* Info.plist */,
-				4BF3BB4E2018F96000D29ACD /* main.m */,
+				BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */,
 			);
 			path = SuperheroApp;
 			sourceTree = "<group>";
@@ -377,6 +374,7 @@
 				TargetAttributes = {
 					4BF3BB382018F96000D29ACD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					4BF3BB532018F96000D29ACD = {
@@ -533,8 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */,
-				4BF3BB3E2018F96000D29ACD /* AppDelegate.m in Sources */,
-				4BF3BB4F2018F96000D29ACD /* main.m in Sources */,
+				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF8B4EDA20278D2E00535D2A /* Character.m in Sources */,
 				BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */,
 				BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */,
@@ -708,12 +705,16 @@
 			baseConfigurationReference = B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.wup.SuperheroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperheroApp/SuperheroApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -723,12 +724,15 @@
 			baseConfigurationReference = 5A91779401C86451BD998981 /* Pods-SuperheroApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.wup.SuperheroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SuperheroApp/SuperheroApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -737,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DC2E903EF51E215D890CC8A /* Pods-SuperheroAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
@@ -753,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
