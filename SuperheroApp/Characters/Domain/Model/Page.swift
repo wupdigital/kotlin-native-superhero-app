@@ -8,11 +8,11 @@
 
 import Foundation
 
-@objc class Page: NSObject {
-    var limit: Int
-    var offset: Int
+@objc class Page : NSObject {
+    @objc var limit: Int
+    @objc var offset: Int
     
-    init(limit: Int, andOffset offset: Int) {
+    @objc init(limit: Int, andOffset offset: Int) {
         self.limit = limit
         self.offset = offset
     }

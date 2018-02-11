@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CharactersDataSource.h"
+#import "SuperheroApp-Swift.h"
 
 @interface CharactersRepository : NSObject<CharactersDataSource>
 

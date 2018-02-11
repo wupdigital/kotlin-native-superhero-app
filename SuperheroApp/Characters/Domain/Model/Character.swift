@@ -9,9 +9,9 @@
 import Foundation
 
 @objc class Character: NSObject {
-    var characterId: Int
-    var name: String
-    var thumbnailUrl: String
+    @objc var characterId: Int
+    @objc var name: String
+    @objc var thumbnailUrl: String
     
     override init() {
         self.characterId = 0
@@ -19,7 +19,7 @@ import Foundation
         self.thumbnailUrl = ""
     }
     
-    init(characterId: Int, name: String, thumbnailUrl: String) {
+    @objc init(characterId: Int, name: String, thumbnailUrl: String) {
         self.characterId = characterId
         self.name = name
         self.thumbnailUrl = thumbnailUrl

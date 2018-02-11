@@ -7,7 +7,7 @@
 //
 
 #import "GetCharacterUseCase.h"
-#import "CharactersDataSource.h"
+#import "SuperheroApp-Swift.h"
 #import "CharactersRepository.h"
 #import "UseCaseDelegate.h"
 

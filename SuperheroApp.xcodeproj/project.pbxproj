@@ -20,10 +20,11 @@
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E88092030C5A80056D276 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88082030C5A80056D276 /* Page.swift */; };
 		BF6E880B2030C73F0056D276 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880A2030C73F0056D276 /* Character.swift */; };
+		BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */; };
+		BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */; };
 		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
 		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
 		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
-		BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */; };
 		BF8B4EE82027933700535D2A /* CharactersRemoteDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EE72027933700535D2A /* CharactersRemoteDataSource.m */; };
 		BF8B4EEB2027937B00535D2A /* CharactersRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEA2027937B00535D2A /* CharactersRepository.m */; };
 		BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */; };
@@ -74,6 +75,8 @@
 		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6E88082030C5A80056D276 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		BF6E880A2030C73F0056D276 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersLocalDataSource.swift; sourceTree = "<group>"; };
+		BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataSource.swift; sourceTree = "<group>"; };
 		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
 		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
 		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
@@ -87,9 +90,6 @@
 		BF8B4ED12027874700535D2A /* MvpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpView.h; sourceTree = "<group>"; };
 		BF8B4ED22027875B00535D2A /* MvpPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpPresenter.h; sourceTree = "<group>"; };
 		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
-		BF8B4EDD20278EAE00535D2A /* CharactersDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersDataSource.h; sourceTree = "<group>"; };
-		BF8B4EE02027922D00535D2A /* CharactersLocalDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersLocalDataSource.h; sourceTree = "<group>"; };
-		BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersLocalDataSource.m; sourceTree = "<group>"; };
 		BF8B4EE62027933700535D2A /* CharactersRemoteDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersRemoteDataSource.h; sourceTree = "<group>"; };
 		BF8B4EE72027933700535D2A /* CharactersRemoteDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersRemoteDataSource.m; sourceTree = "<group>"; };
 		BF8B4EE92027937B00535D2A /* CharactersRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersRepository.h; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 			children = (
 				BF8B4EDF20278EF900535D2A /* Remote */,
 				BF8B4EDE20278EF400535D2A /* Local */,
-				BF8B4EDD20278EAE00535D2A /* CharactersDataSource.h */,
+				BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */,
 				BF8B4EE92027937B00535D2A /* CharactersRepository.h */,
 				BF8B4EEA2027937B00535D2A /* CharactersRepository.m */,
 			);
@@ -258,9 +258,8 @@
 		BF8B4EDE20278EF400535D2A /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				BF8B4EE02027922D00535D2A /* CharactersLocalDataSource.h */,
-				BF8B4EE12027922D00535D2A /* CharactersLocalDataSource.m */,
 				BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */,
+				BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -526,12 +525,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */,
 				4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */,
 				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */,
 				BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
-				BF8B4EE22027922D00535D2A /* CharactersLocalDataSource.m in Sources */,
 				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
 				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
 				BF6E880B2030C73F0056D276 /* Character.swift in Sources */,
@@ -540,6 +539,7 @@
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BFB07A5B202CF023008D7564 /* NSString+MD5.m in Sources */,
 				BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */,
+				BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */,
 				BF6E88092030C5A80056D276 /* Page.swift in Sources */,
 				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
 				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,
@@ -710,7 +710,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperheroApp/SuperheroApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -728,7 +728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = digital.wup.SuperheroApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SuperheroApp/SuperheroApp-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
