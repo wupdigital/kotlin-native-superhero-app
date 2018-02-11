@@ -13,8 +13,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import <CommonCrypto/CommonDigest.h>
 
-static const NSString * API_KEY = @"";
-static const NSString * PRIVATE_KEY = @"";
+#define PUBLIC_API_KEY      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"MarvelPublicApiKey"]
+#define PRIVATE_API_KEY     [[NSBundle mainBundle] objectForInfoDictionaryKey:@"MarvelPrivateApiKey"]
 
 @interface CharactersRemoteDataSource()
 
@@ -48,10 +48,10 @@ static const NSString * PRIVATE_KEY = @"";
     NSString *url = [NSString stringWithFormat:@"v1/public/characters/%@", characterId];
     
     NSUInteger timestamp = [[NSDate new] timeIntervalSince1970];
-    NSString *hash = [NSString stringWithFormat:@"%lu%@%@", (unsigned long)timestamp, PRIVATE_KEY, API_KEY];
+    NSString *hash = [NSString stringWithFormat:@"%lu%@%@", (unsigned long)timestamp, PRIVATE_API_KEY, PUBLIC_API_KEY];
     
     NSDictionary *parameters = @{
-                                 @"apikey": API_KEY,
+                                 @"apikey": PUBLIC_API_KEY,
                                  @"ts": @(timestamp),
                                  @"hash": [hash md5]
                                  };
@@ -84,12 +84,12 @@ static const NSString * PRIVATE_KEY = @"";
 - (void)loadCharacters:(Page *)page complete:(void (^)(NSArray<Character *> *))complete error:(void (^)(void))error {
  
     NSUInteger timestamp = [[NSDate new] timeIntervalSince1970];
-    NSString *hash = [NSString stringWithFormat:@"%lu%@%@", (unsigned long)timestamp, PRIVATE_KEY, API_KEY];
+    NSString *hash = [NSString stringWithFormat:@"%lu%@%@", (unsigned long)timestamp, PRIVATE_API_KEY, PUBLIC_API_KEY];
     
     NSDictionary *parameters = @{
                                  @"limit": @(page.limit),
                                  @"offset": @(page.offset),
-                                 @"apikey": API_KEY,
+                                 @"apikey": PUBLIC_API_KEY,
                                  @"ts": @(timestamp),
                                  @"hash": [hash md5]
                                  };
