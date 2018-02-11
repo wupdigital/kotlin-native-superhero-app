@@ -10,6 +10,8 @@ target 'SuperheroApp' do
 
   # Pods for SuperheroApp
   pod 'AFNetworking', '~> 3.0'
+  pod 'Alamofire', '~> 4.5'
+  pod 'CodableAlamofire', '~> 1.1.0'
 
   target 'SuperheroAppTests' do
     inherit! :search_paths

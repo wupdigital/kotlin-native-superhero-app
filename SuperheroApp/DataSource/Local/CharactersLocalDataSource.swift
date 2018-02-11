@@ -6,7 +6,6 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 class CharactersLocalDataSource : CharactersDataSource {
@@ -17,7 +16,7 @@ class CharactersLocalDataSource : CharactersDataSource {
         self.managedObjectContext = managedObjectContext
     }
     
-    func loadCharacters(page: Page, complete: ([Character]) -> Void, fail: () -> Void) {
+    func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.fetchLimit = page.limit
         fetchRequest.fetchOffset = page.offset
@@ -44,7 +43,7 @@ class CharactersLocalDataSource : CharactersDataSource {
         }
     }
     
-    func loadCharacter(characterId: String, complete: (Character) -> Void, fail: () -> Void) {
+    func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.predicate = NSPredicate(format: "id == %@", characterId)
@@ -66,7 +65,7 @@ class CharactersLocalDataSource : CharactersDataSource {
         }
     }
     
-    func saveCharacters(characters: Array<Character>, complete: () -> Void, fail: () -> Void) {
+    func saveCharacters(characters: Array<Character>, complete: @escaping () -> Void, fail: @escaping () -> Void) {
         
         for character in characters {
             let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity", into: self.managedObjectContext)

@@ -3,3 +3,4 @@
 //
 
 #import "CharacterDetailViewController.h"
+#import <CommonCrypto/CommonCrypto.h>

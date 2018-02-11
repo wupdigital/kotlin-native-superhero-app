@@ -8,21 +8,32 @@
 
 import Foundation
 
-@objc class Character: NSObject {
-    @objc var characterId: Int
-    @objc var name: String
-    @objc var thumbnailUrl: String
+struct Character {
+    var characterId: Int
+    var name: String
+    var thumbnailUrl: String
     
-    override init() {
-        self.characterId = 0
-        self.name = ""
-        self.thumbnailUrl = ""
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case thumbnail
     }
     
-    @objc init(characterId: Int, name: String, thumbnailUrl: String) {
-        self.characterId = characterId
-        self.name = name
-        self.thumbnailUrl = thumbnailUrl
+    private enum ThumbnailKeys: String, CodingKey {
+        case path
+        case ext = "extension"
     }
-    
+}
+
+extension Character: Decodable {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.characterId = try values.decode(Int.self, forKey: .id)
+        self.name = try values.decode(String.self, forKey: .name)
+        
+        let thumbnail = try values.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
+        let path = try thumbnail.decode(String.self, forKey: .path)
+        let ext = try thumbnail.decode(String.self, forKey: .ext)
+        self.thumbnailUrl = "\(path).\(ext)"
+    }
 }
