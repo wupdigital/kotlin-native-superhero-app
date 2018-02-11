@@ -8,7 +8,7 @@
 
 #import "CharactersViewController.h"
 #import "CharacterDetailViewController.h"
-#import "Character.h"
+#import "SuperheroApp-Swift.h"
 #import "CharactersPresenter.h"
 
 @interface CharactersViewController ()
@@ -50,7 +50,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Character *object = self.objects[indexPath.row];
         CharacterDetailViewController *controller = (CharacterDetailViewController *)[[segue destinationViewController] topViewController];
-        controller.characterId = [NSString stringWithFormat:@"%@", object.characterId];
+        controller.characterId = [NSString stringWithFormat:@"%ld", (long)object.characterId];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }

@@ -9,7 +9,7 @@
 #import "CharactersUseCase.h"
 #import "CharactersDataSource.h"
 #import "CharactersRepository.h"
-#import "Page.h"
+#import "SuperheroApp-Swift.h"
 #import "UseCaseDelegate.h"
 
 @interface CharactersUseCase()

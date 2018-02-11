@@ -7,9 +7,8 @@
 //
 
 #import "CharactersRemoteDataSource.h"
-#import "Character.h"
 #import "NSString+MD5.h"
-#import "Page.h"
+#import "SuperheroApp-Swift.h"
 #import <AFNetworking/AFNetworking.h>
 #import <CommonCrypto/CommonDigest.h>
 

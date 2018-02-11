@@ -8,9 +8,9 @@
 
 #import "CharactersPresenter.h"
 #import "CharactersUseCase.h"
-#import "Page.h"
 #import "UseCaseHandler.h"
 #import "UseCaseDelegate.h"
+#import "SuperheroApp-Swift.h"
 
 static const NSUInteger DEFAULT_LIMIT = 100;
 

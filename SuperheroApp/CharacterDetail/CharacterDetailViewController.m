@@ -7,7 +7,7 @@
 //
 
 #import "CharacterDetailViewController.h"
-#import "Character.h"
+#import "SuperheroApp-Swift.h"
 #import "CharacterDetailContract.h"
 #import "CharacterDetailPresenter.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>

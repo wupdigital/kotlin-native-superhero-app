@@ -9,7 +9,7 @@
 #import "CharactersRepository.h"
 #import "CharactersLocalDataSource.h"
 #import "CharactersRemoteDataSource.h"
-#import "Page.h"
+#import "SuperheroApp-Swift.h"
 
 @interface CharactersRepository()
 

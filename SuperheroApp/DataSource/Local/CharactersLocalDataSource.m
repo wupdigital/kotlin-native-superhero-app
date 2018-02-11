@@ -7,8 +7,7 @@
 //
 
 #import "CharactersLocalDataSource.h"
-#import "Character.h"
-#import "Page.h"
+#import "SuperheroApp-Swift.h"
 #import <CoreData/CoreData.h>
 
 @interface CharactersLocalDataSource()
@@ -123,7 +122,7 @@
     
     for (Character *character in characters) {
         NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:@"CharacterEntity" inManagedObjectContext:self.managedObjectContext];
-        [entity setValue:character.characterId forKey:@"id"];
+        [entity setValue:@(character.characterId) forKey:@"id"];
         [entity setValue:character.name forKey:@"name"];
         [entity setValue:character.thumbnailUrl forKey:@"thumbnailUrl"];
     }
