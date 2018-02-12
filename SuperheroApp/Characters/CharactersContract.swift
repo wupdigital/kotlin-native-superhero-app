@@ -6,35 +6,32 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-struct CharactersContract {
+protocol CharactersMvpPresenter: MvpPresenter {
     
-    protocol CharactersPresenter: MvpPresenter {
-        
-        typealias ViewType = CharactersView
-        
-        func characters() -> [Character]
-        
-        func charactersCount() -> Int
-        
-        func loadCharacters()
-        
-        func loadMoreCharacters()
-    }
+    func takeView(view: CharactersMvpView)
     
-    protocol CharactersView: MvpView {
+    func characters() -> [Character]
         
-        func showLoadingIndicator()
-        
-        func hideLoadingIndicator()
+    func charactersCount() -> Int
     
-        func showMoreLoadingIndicator()
-        
-        func hideMoreLoadingIndicator()
-        
-        func refreshCharacters()
-        
-        func showLoadingCharactersError(message: String)
-        
-        func showNoCharacters()
-    }
+    func loadCharacters()
+    
+    func loadMoreCharacters()
+}
+    
+protocol CharactersMvpView: MvpView {
+    
+    func showLoadingIndicator()
+    
+    func hideLoadingIndicator()
+
+    func showMoreLoadingIndicator()
+    
+    func hideMoreLoadingIndicator()
+    
+    func refreshCharacters()
+    
+    func showLoadingCharactersError(message: String)
+    
+    func showNoCharacters()
 }

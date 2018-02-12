@@ -7,7 +7,7 @@
 //
 
 struct GetCharacterRequest: UseCaseRequest {
-    var characterId: String
+    let characterId: String
     
     init(characterId: String) {
         self.characterId = characterId
@@ -15,7 +15,7 @@ struct GetCharacterRequest: UseCaseRequest {
 }
 
 struct GetCharacterResponse: UseCaseResponse {
-    var character: Character?
+    let character: Character?
     
     init(character: Character?) {
         self.character = character
@@ -30,14 +30,17 @@ class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {
         self.charactersDataSource = charactersDataSource
     }
     
-    override func execute(request: GetCharacterRequest) throws {
+    override func executeUseCase(request: GetCharacterRequest) throws {
         self.charactersDataSource.loadCharacter(characterId: request.characterId, complete: { (character) in
-            let response = GetCharactersResponse()
-            response.character = character
-            self.success(response)
             
+            if let success = self.success {
+                let response = GetCharacterResponse(character: character)
+                success(response)
+            }
         }, fail: {
-            self.error()
+            if let error = self.error {
+                error()
+            }
         })
     }
 }

@@ -10,33 +10,36 @@ import UIKit
 import AlamofireImage
 
 class CharacterDetailViewController: UIViewController {
-    var characterId: String {
+    var characterId: String? {
         didSet {
             self.loadContent()
         }
     }
-    @IBOutlet weak var characterNameLabel: UILabel
-    @IBOutlet weak var thumbnailImageView: UIImageView
+    @IBOutlet weak var characterNameLabel: UILabel?
+    @IBOutlet weak var thumbnailImageView: UIImageView?
     
-    var presenter: CharacterDetailContract.CharacterDetailPresenter
+    var presenter: CharacterDetailMvpPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.presenter.takeView(view: self)
+        self.presenter?.takeView(view: self)
     }
     
     private func loadContent() {
         if let characterId = self.characterId {
-            self.presenter.loadCharacter(characterId: characterId)
+            self.presenter?.loadCharacter(characterId: characterId)
         }
     }
 }
 
-extension CharacterDetailViewController: CharacterDetailContract.CharacterDetailView {
+extension CharacterDetailViewController: CharacterDetailMvpView {
     
     func showCharacter(character: Character) {
-        self.characterNameLabel.text = character.name
-        self.thumbnailImageView.af_setImage(withURL: URL(character.characterId))
+        self.characterNameLabel?.text = character.name
+        
+        if let url = URL(string: character.thumbnailUrl) {
+            self.thumbnailImageView?.af_setImage(withURL: url)
+        }
     }
 }

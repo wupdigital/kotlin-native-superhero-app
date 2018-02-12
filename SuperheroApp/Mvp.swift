@@ -11,7 +11,5 @@ protocol MvpView {
 }
 
 protocol MvpPresenter {
-    associatedtype ViewType where ViewType: MvpView
-    
-    func takeView(view: ViewType)
+
 }

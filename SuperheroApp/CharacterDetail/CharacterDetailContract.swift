@@ -6,16 +6,14 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-struct CharacterDetailContract {
+protocol CharacterDetailMvpView: MvpView {
     
-    protocol CharacterDetailPresenter: MvpPresenter {
-        typealias ViewType = CharacterDetailView
-        
-        func loadCharacter(characterId: String)
-    }
+    func showCharacter(character: Character)
+}
+
+protocol CharacterDetailMvpPresenter: MvpPresenter {
     
-    protocol CharacterDetailView: MvpView {
+    func takeView(view: CharacterDetailMvpView)
     
-        func showCharacter(character: Character)
-    }
+    func loadCharacter(characterId: String)
 }

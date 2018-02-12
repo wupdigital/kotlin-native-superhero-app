@@ -8,37 +8,37 @@
 
 fileprivate let defaultLimit = 100
 
-class CharactersPreseneter: CharactersContract.CharactersPresenter {
+class CharactersPreseneter: CharactersMvpPresenter {
     
     private let useCaseHandler: UseCaseHandler
-    private var getCharactersUseCase: GetCharacterUseCase
-    private weak var view: CharactersContract.CharactersView?
+    private var getCharactersUseCase: GetCharactersUseCase
+    private var view: CharactersMvpView?
     private var currentPage: Page = Page(limit: defaultLimit, offset: 0)
-    private var characters: Array<Characters> = Array()
-    
+    private var objects: Array<Character> = Array()
+
     init(useCaseHandler: UseCaseHandler, getCharactersUseCase: GetCharactersUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharactersUseCase = getCharactersUseCase
     }
     
-    func takeView(view: CharactersContract.CharactersView) {
+    func takeView(view: CharactersMvpView) {
         self.view = view
         self.loadCharacters()
     }
 
     func characters() -> [Character] {
-        return self.characters
+        return self.objects
     }
         
     func charactersCount() -> Int {
-        return self.characters.count
+        return self.objects.count
     }
         
     func loadCharacters() {
         
         self.view?.showLoadingIndicator()
         
-        let request = GetCharactersRequest(self.currentPage)
+        let request = GetCharactersRequest(page: self.currentPage)
         
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase, request: request, success: { (response: GetCharactersResponse) in
             self.view?.hideLoadingIndicator()
@@ -46,10 +46,10 @@ class CharactersPreseneter: CharactersContract.CharactersPresenter {
             if (response.characters.isEmpty) {
                 self.view?.showNoCharacters()
             } else {
-                self.characters = response.characters
+                self.objects.append(contentsOf: response.characters)
                 self.view?.refreshCharacters()
             }
-        }, fail: {
+        }, error: {
             self.view?.hideLoadingIndicator()
             // TODO hardcoded message
             self.view?.showLoadingCharactersError(message: "Something wrong!")
@@ -60,7 +60,7 @@ class CharactersPreseneter: CharactersContract.CharactersPresenter {
         self.view?.showMoreLoadingIndicator()
         
         self.currentPage.offset += defaultLimit
-        let request = GetCharactersRequest(self.currentPage)
+        let request = GetCharactersRequest(page: self.currentPage)
         
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase, request: request, success: { (response: GetCharactersResponse) in
             self.view?.hideMoreLoadingIndicator()
@@ -68,12 +68,11 @@ class CharactersPreseneter: CharactersContract.CharactersPresenter {
             if (response.characters.isEmpty) {
                 self.view?.showNoCharacters()
             } else {
-                // TODO append characters
-                self.characters = response.characters
+                self.objects.append(contentsOf: response.characters)
                 self.view?.refreshCharacters()
             }
-        }, fail: {
-            // TODO hardcoded message
+        }, error: {
+            // TODO remove hardcoded message
             self.view?.hideMoreLoadingIndicator()
             self.view?.showLoadingCharactersError(message: "Something wrong!")
         })

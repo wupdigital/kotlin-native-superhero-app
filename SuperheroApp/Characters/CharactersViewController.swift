@@ -10,21 +10,21 @@ import UIKit
 
 class CharactersViewController: UITableViewController {
     
-    var detailViewController: CharacterDetailViewController
+    var detailViewController: CharacterDetailViewController?
     // TODO inject presenter
-    var presenter: CharactersContract.CharactersPresenter
-    var loadIndicator: UIActivityIndicatorView
-    var loadMoreIndicator: UIActivityIndicatorView
+    var presenter: CharactersMvpPresenter?
+    var loadIndicator: UIActivityIndicatorView?
+    var loadMoreIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let split = splitViewController {
             let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? DetailViewController
+            detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? CharacterDetailViewController
         }
         
-        self.presenter.takeView(view: self)
+        self.presenter?.takeView(view: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,41 +39,42 @@ extension CharactersViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.charactersCount()
+        return (self.presenter?.charactersCount())!
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = self.presenter.characters()[indexPath.row]
+        let character = self.presenter?.characters()[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = character.name
+        cell.textLabel?.text = character?.name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastItemReached = indexPath.row == self.presenter.charactersCount() - 1
+        
+        let lastItemReached = indexPath.row == (self.presenter?.charactersCount())! - 1
         
         if (lastItemReached) {
-            self.presenter .loadMoreCharacters()
+            self.presenter?.loadMoreCharacters()
         }
     }
 }
 
-extension CharactersViewController: CharactersContract.CharactersView {
+extension CharactersViewController: CharactersMvpView {
     func showLoadingIndicator() {
-        self.loadIndicator.startAnimating()
+        self.loadIndicator?.startAnimating()
     }
     
     func hideLoadingIndicator() {
-        self.loadIndicator.stopAnimating()
+        self.loadIndicator?.stopAnimating()
     }
     
     func showMoreLoadingIndicator() {
-        self.loadMoreIndicator.startAnimating()
+        self.loadMoreIndicator?.startAnimating()
     }
     
     func hideMoreLoadingIndicator() {
-        self.loadMoreIndicator.stopAnimating()
+        self.loadMoreIndicator?.stopAnimating()
     }
     
     func refreshCharacters() {
