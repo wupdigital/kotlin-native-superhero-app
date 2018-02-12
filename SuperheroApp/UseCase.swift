@@ -19,7 +19,7 @@ protocol UseCaseResponse {
     
 }
 
-class UseCase<Rq, Rs> {
+class UseCase<Rq, Rs> where Rq: UseCaseRequest, Rs: UseCaseResponse {
     
     var request: Rq?
     var success: ((Rs) -> Void)?

@@ -16,7 +16,6 @@
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
 		BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */; };
-		BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E88092030C5A80056D276 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88082030C5A80056D276 /* Page.swift */; };
 		BF6E880B2030C73F0056D276 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880A2030C73F0056D276 /* Character.swift */; };
@@ -30,7 +29,8 @@
 		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
 		BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882520310B520056D276 /* UseCaseHandler.swift */; };
 		BF6E8828203111330056D276 /* Mvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8827203111330056D276 /* Mvp.swift */; };
-		BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */; };
+		BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */; };
+		BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */; };
 		BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */; };
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
 		BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF52027A7EF00535D2A /* Foundation.framework */; };
@@ -71,8 +71,6 @@
 		BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailContract.h; sourceTree = "<group>"; };
 		BF65F9EB202E10D30096B42C /* CharacterDetailPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailPresenter.h; sourceTree = "<group>"; };
 		BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailPresenter.m; sourceTree = "<group>"; };
-		BF65F9EF202EF3490096B42C /* GetCharacterUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetCharacterUseCase.h; sourceTree = "<group>"; };
-		BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetCharacterUseCase.m; sourceTree = "<group>"; };
 		BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperheroApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6E88082030C5A80056D276 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -87,9 +85,9 @@
 		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
 		BF6E882520310B520056D276 /* UseCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseHandler.swift; sourceTree = "<group>"; };
 		BF6E8827203111330056D276 /* Mvp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mvp.swift; sourceTree = "<group>"; };
+		BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCase.swift; sourceTree = "<group>"; };
+		BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterUseCase.swift; sourceTree = "<group>"; };
 		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
-		BF8B4EED2027952D00535D2A /* CharactersUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersUseCase.h; sourceTree = "<group>"; };
-		BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersUseCase.m; sourceTree = "<group>"; };
 		BF8B4EF12027A10D00535D2A /* CharacterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharacterModel.xcdatamodel; sourceTree = "<group>"; };
 		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BF8B4EF52027A7EF00535D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,8 +176,7 @@
 		BF65F9EE202EF3300096B42C /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				BF65F9EF202EF3490096B42C /* GetCharacterUseCase.h */,
-				BF65F9F0202EF3490096B42C /* GetCharacterUseCase.m */,
+				BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -259,8 +256,7 @@
 		BF8B4EEC2027950E00535D2A /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				BF8B4EED2027952D00535D2A /* CharactersUseCase.h */,
-				BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */,
+				BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -525,12 +521,12 @@
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
 				BF6E880B2030C73F0056D276 /* Character.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
-				BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */,
 				BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */,
 				BF6E88092030C5A80056D276 /* Page.swift in Sources */,
 				BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */,
-				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,
+				BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */,
 				BF6E8828203111330056D276 /* Mvp.swift in Sources */,
+				BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

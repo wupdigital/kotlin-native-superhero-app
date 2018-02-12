@@ -14,7 +14,7 @@ class UseCaseHandler {
         self.useCaseScheduler = useCaseScheduler
     }
     
-    func executeUseCase<Rq: UseCaseRequest, Rs: UseCaseResponse>(useCase: UseCase<Rq, Rs>, request: Rq, success: @escaping (Rs) -> Void, error: @escaping () -> Void) {
+    func executeUseCase<Rq, Rs>(useCase: UseCase<Rq, Rs>, request: Rq, success: @escaping (Rs) -> Void, error: @escaping () -> Void) {
         useCase.request = request
         useCase.success =  { (response: Rs) in
             self.notifyResponse(success: success, response: response)
