@@ -8,6 +8,10 @@
 
 struct GetCharactersRequest: UseCaseRequest {
     var page: Page
+    
+    init(page: Page) {
+        self.page = page
+    }
 }
 
 struct GetCharactersResponse: UseCaseResponse {
