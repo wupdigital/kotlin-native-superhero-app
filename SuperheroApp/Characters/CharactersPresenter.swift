@@ -10,8 +10,6 @@ fileprivate let defaultLimit = 100
 
 class CharactersPreseneter: CharactersContract.CharactersPresenter {
     
-    typealias ViewType = CharactersContract.CharactersView
-    
     private let useCaseHandler: UseCaseHandler
     private var getCharactersUseCase: GetCharacterUseCase
     private weak var view: CharactersContract.CharactersView?

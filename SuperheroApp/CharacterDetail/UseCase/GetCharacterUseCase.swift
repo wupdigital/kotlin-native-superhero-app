@@ -8,10 +8,18 @@
 
 struct GetCharacterRequest: UseCaseRequest {
     var characterId: String
+    
+    init(characterId: String) {
+        self.characterId = characterId
+    }
 }
 
-struct GetCharactersResponse: UseCaseResponse {
+struct GetCharacterResponse: UseCaseResponse {
     var character: Character?
+    
+    init(character: Character?) {
+        self.character = character
+    }
 }
 
 class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {

@@ -11,6 +11,7 @@ target 'SuperheroApp' do
   # Pods for SuperheroApp
   pod 'AFNetworking', '~> 3.0'
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage', '~> 3.3'
   pod 'CodableAlamofire', '~> 1.1.0'
 
   target 'SuperheroAppTests' do

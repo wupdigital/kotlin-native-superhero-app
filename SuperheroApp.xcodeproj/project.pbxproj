@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */; };
 		4BF3BB472018F96000D29ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB452018F96000D29ACD /* Main.storyboard */; };
 		4BF3BB492018F96000D29ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB482018F96000D29ACD /* Assets.xcassets */; };
 		4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */; };
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
-		BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E88092030C5A80056D276 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88082030C5A80056D276 /* Page.swift */; };
 		BF6E880B2030C73F0056D276 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880A2030C73F0056D276 /* Character.swift */; };
@@ -37,6 +35,9 @@
 		BFB7FE362032208900157F5A /* CharactersContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE352032208900157F5A /* CharactersContract.swift */; };
 		BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE37203221E000157F5A /* CharactersPresenter.swift */; };
 		BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE39203227B100157F5A /* CharactersViewController.swift */; };
+		BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */; };
+		BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */; };
+		BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +52,6 @@
 
 /* Begin PBXFileReference section */
 		4BF3BB392018F96000D29ACD /* SuperheroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailViewController.h; sourceTree = "<group>"; };
-		4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailViewController.m; sourceTree = "<group>"; };
 		4BF3BB462018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BF3BB482018F96000D29ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BF3BB4B2018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,9 +66,6 @@
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF256000202F6FEC00DB93DC /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailContract.h; sourceTree = "<group>"; };
-		BF65F9EB202E10D30096B42C /* CharacterDetailPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailPresenter.h; sourceTree = "<group>"; };
-		BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailPresenter.m; sourceTree = "<group>"; };
 		BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperheroApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6E88082030C5A80056D276 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -93,6 +89,9 @@
 		BFB7FE352032208900157F5A /* CharactersContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersContract.swift; sourceTree = "<group>"; };
 		BFB7FE37203221E000157F5A /* CharactersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenter.swift; sourceTree = "<group>"; };
 		BFB7FE39203227B100157F5A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
+		BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailContract.swift; sourceTree = "<group>"; };
+		BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,11 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				BF65F9EE202EF3300096B42C /* UseCase */,
-				4BF3BB422018F96000D29ACD /* CharacterDetailViewController.h */,
-				4BF3BB432018F96000D29ACD /* CharacterDetailViewController.m */,
-				BF65F9EB202E10D30096B42C /* CharacterDetailPresenter.h */,
-				BF65F9EC202E10D30096B42C /* CharacterDetailPresenter.m */,
-				BF65F9EA202E0E7E0096B42C /* CharacterDetailContract.h */,
+				BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */,
+				BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */,
+				BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */,
 			);
 			path = CharacterDetail;
 			sourceTree = "<group>";
@@ -484,12 +481,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CodableAlamofire/CodableAlamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableAlamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,13 +505,12 @@
 			files = (
 				BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */,
 				BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */,
+				BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */,
 				BFB7FE362032208900157F5A /* CharactersContract.swift in Sources */,
 				BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */,
 				BF6E881E2030FF8E0056D276 /* CharactersRepository.swift in Sources */,
 				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF6E88132030DF670056D276 /* String+md5.swift in Sources */,
-				BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */,
-				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
 				BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */,
 				BF6E8820203102E20056D276 /* UseCase.swift in Sources */,
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
@@ -524,6 +522,8 @@
 				BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */,
 				BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */,
 				BF6E8828203111330056D276 /* Mvp.swift in Sources */,
+				BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */,
+				BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */,
 				BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

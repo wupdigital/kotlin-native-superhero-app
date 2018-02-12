@@ -10,6 +10,8 @@ struct CharactersContract {
     
     protocol CharactersPresenter: MvpPresenter {
         
+        typealias ViewType = CharactersView
+        
         func characters() -> [Character]
         
         func charactersCount() -> Int
