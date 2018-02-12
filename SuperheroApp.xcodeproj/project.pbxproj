@@ -29,6 +29,7 @@
 		BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8821203108930056D276 /* UseCaseScheduler.swift */; };
 		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
 		BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882520310B520056D276 /* UseCaseHandler.swift */; };
+		BF6E8828203111330056D276 /* Mvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8827203111330056D276 /* Mvp.swift */; };
 		BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */; };
 		BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */; };
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
@@ -85,8 +86,7 @@
 		BF6E8821203108930056D276 /* UseCaseScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseScheduler.swift; sourceTree = "<group>"; };
 		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
 		BF6E882520310B520056D276 /* UseCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseHandler.swift; sourceTree = "<group>"; };
-		BF8B4ED12027874700535D2A /* MvpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpView.h; sourceTree = "<group>"; };
-		BF8B4ED22027875B00535D2A /* MvpPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpPresenter.h; sourceTree = "<group>"; };
+		BF6E8827203111330056D276 /* Mvp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mvp.swift; sourceTree = "<group>"; };
 		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
 		BF8B4EED2027952D00535D2A /* CharactersUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersUseCase.h; sourceTree = "<group>"; };
 		BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharactersUseCase.m; sourceTree = "<group>"; };
@@ -152,8 +152,7 @@
 				BF8B4ED4202788E600535D2A /* CharacterDetail */,
 				BF8B4ED32027889D00535D2A /* Characters */,
 				BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */,
-				BF8B4ED22027875B00535D2A /* MvpPresenter.h */,
-				BF8B4ED12027874700535D2A /* MvpView.h */,
+				BF6E8827203111330056D276 /* Mvp.swift */,
 				BF6E881F203102E20056D276 /* UseCase.swift */,
 				BF6E882520310B520056D276 /* UseCaseHandler.swift */,
 				BF6E8821203108930056D276 /* UseCaseScheduler.swift */,
@@ -531,6 +530,7 @@
 				BF6E88092030C5A80056D276 /* Page.swift in Sources */,
 				BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */,
 				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,
+				BF6E8828203111330056D276 /* Mvp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
