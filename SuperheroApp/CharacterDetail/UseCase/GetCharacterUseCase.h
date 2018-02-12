@@ -6,10 +6,6 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-#import "UseCase.h"
-#import "UseCaseRequest.h"
-#import "UseCaseResponse.h"
-
 @protocol CharactersDataSource;
 @class Character;
 

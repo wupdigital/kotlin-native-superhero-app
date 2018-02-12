@@ -25,9 +25,10 @@
 		BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */; };
 		BF6E88132030DF670056D276 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88122030DF670056D276 /* String+md5.swift */; };
 		BF6E881E2030FF8E0056D276 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E881D2030FF8E0056D276 /* CharactersRepository.swift */; };
-		BF8B4EC520276E5000535D2A /* UseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EC420276E5000535D2A /* UseCase.m */; };
-		BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECB202774D100535D2A /* UseCaseHandler.m */; };
-		BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */; };
+		BF6E8820203102E20056D276 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E881F203102E20056D276 /* UseCase.swift */; };
+		BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8821203108930056D276 /* UseCaseScheduler.swift */; };
+		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
+		BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882520310B520056D276 /* UseCaseHandler.swift */; };
 		BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EEE2027952D00535D2A /* CharactersUseCase.m */; };
 		BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */; };
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
@@ -80,16 +81,10 @@
 		BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRemoteDataSource.swift; sourceTree = "<group>"; };
 		BF6E88122030DF670056D276 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		BF6E881D2030FF8E0056D276 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
-		BF8B4EC120276D8900535D2A /* UseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCase.h; sourceTree = "<group>"; };
-		BF8B4EC420276E5000535D2A /* UseCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UseCase.m; sourceTree = "<group>"; };
-		BF8B4EC620276FB300535D2A /* UseCaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseRequest.h; sourceTree = "<group>"; };
-		BF8B4EC720276FFB00535D2A /* UseCaseResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseResponse.h; sourceTree = "<group>"; };
-		BF8B4EC82027709B00535D2A /* UseCaseDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseDelegate.h; sourceTree = "<group>"; };
-		BF8B4ECA202774D100535D2A /* UseCaseHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseHandler.h; sourceTree = "<group>"; };
-		BF8B4ECB202774D100535D2A /* UseCaseHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseCaseHandler.m; sourceTree = "<group>"; };
-		BF8B4ECD202774F200535D2A /* UseCaseScheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseScheduler.h; sourceTree = "<group>"; };
-		BF8B4ECE20277F3500535D2A /* UseCaseNSOperationSheduler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UseCaseNSOperationSheduler.h; sourceTree = "<group>"; };
-		BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UseCaseNSOperationSheduler.m; sourceTree = "<group>"; };
+		BF6E881F203102E20056D276 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		BF6E8821203108930056D276 /* UseCaseScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseScheduler.swift; sourceTree = "<group>"; };
+		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
+		BF6E882520310B520056D276 /* UseCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseHandler.swift; sourceTree = "<group>"; };
 		BF8B4ED12027874700535D2A /* MvpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpView.h; sourceTree = "<group>"; };
 		BF8B4ED22027875B00535D2A /* MvpPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MvpPresenter.h; sourceTree = "<group>"; };
 		BF8B4ED620278B7500535D2A /* CharactersContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharactersContract.h; sourceTree = "<group>"; };
@@ -159,16 +154,10 @@
 				BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */,
 				BF8B4ED22027875B00535D2A /* MvpPresenter.h */,
 				BF8B4ED12027874700535D2A /* MvpView.h */,
-				BF8B4EC620276FB300535D2A /* UseCaseRequest.h */,
-				BF8B4EC720276FFB00535D2A /* UseCaseResponse.h */,
-				BF8B4EC82027709B00535D2A /* UseCaseDelegate.h */,
-				BF8B4EC120276D8900535D2A /* UseCase.h */,
-				BF8B4EC420276E5000535D2A /* UseCase.m */,
-				BF8B4ECA202774D100535D2A /* UseCaseHandler.h */,
-				BF8B4ECB202774D100535D2A /* UseCaseHandler.m */,
-				BF8B4ECD202774F200535D2A /* UseCaseScheduler.h */,
-				BF8B4ECE20277F3500535D2A /* UseCaseNSOperationSheduler.h */,
-				BF8B4ECF20277F3500535D2A /* UseCaseNSOperationSheduler.m */,
+				BF6E881F203102E20056D276 /* UseCase.swift */,
+				BF6E882520310B520056D276 /* UseCaseHandler.swift */,
+				BF6E8821203108930056D276 /* UseCaseScheduler.swift */,
+				BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */,
 				4BF3BB452018F96000D29ACD /* Main.storyboard */,
 				4BF3BB482018F96000D29ACD /* Assets.xcassets */,
 				4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */,
@@ -523,6 +512,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */,
+				BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */,
 				BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */,
 				BF6E881E2030FF8E0056D276 /* CharactersRepository.swift in Sources */,
 				4BF3BB412018F96000D29ACD /* CharactersViewController.m in Sources */,
@@ -531,15 +522,14 @@
 				BF8B4EFB2027BB3400535D2A /* CharactersPresenter.m in Sources */,
 				BF65F9ED202E10D30096B42C /* CharacterDetailPresenter.m in Sources */,
 				4BF3BB442018F96000D29ACD /* CharacterDetailViewController.m in Sources */,
+				BF6E8820203102E20056D276 /* UseCase.swift in Sources */,
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
-				BF8B4ED020277F3500535D2A /* UseCaseNSOperationSheduler.m in Sources */,
-				BF8B4ECC202774D100535D2A /* UseCaseHandler.m in Sources */,
 				BF6E880B2030C73F0056D276 /* Character.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BF65F9F1202EF3490096B42C /* GetCharacterUseCase.m in Sources */,
 				BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */,
 				BF6E88092030C5A80056D276 /* Page.swift in Sources */,
-				BF8B4EC520276E5000535D2A /* UseCase.m in Sources */,
+				BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */,
 				BF8B4EEF2027952D00535D2A /* CharactersUseCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
