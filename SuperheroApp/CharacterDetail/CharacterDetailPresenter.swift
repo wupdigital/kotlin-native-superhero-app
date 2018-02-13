@@ -10,7 +10,7 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
     
     private let useCaseHandler: UseCaseHandler
     private let getCharacterUseCase: GetCharacterUseCase
-    private var view: CharacterDetailMvpView?
+    private weak var view: CharacterDetailMvpView?
     
     init(useCaseHandler: UseCaseHandler, getCharacterUseCase: GetCharacterUseCase) {
         self.useCaseHandler = useCaseHandler

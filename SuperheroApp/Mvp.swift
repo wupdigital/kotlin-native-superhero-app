@@ -6,7 +6,7 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-protocol MvpView {
+protocol MvpView: class {
     
 }
 

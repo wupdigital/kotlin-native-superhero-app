@@ -27,7 +27,7 @@ class UseCaseNSOperationQueueScheduler: UseCaseScheduler {
         }
     }
     
-    func notifyResponse(callback: @escaping (UseCaseResponse) -> Void, response: UseCaseResponse) {
+    func notifyResponse<Rs: UseCaseResponse>(callback: @escaping (Rs) -> Void, response: Rs) {
         self.mainQueue.addOperation {
             callback(response)
         }

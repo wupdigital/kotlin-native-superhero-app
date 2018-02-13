@@ -10,10 +10,10 @@ import CoreData
 
 class CharactersLocalDataSource : CharactersDataSource {
     
-    private let managedObjectContext: NSManagedObjectContext
+    private let persistentContainer: NSPersistentContainer
     
-    init(managedObjectContext: NSManagedObjectContext) {
-        self.managedObjectContext = managedObjectContext
+    init(persistentContainer: NSPersistentContainer) {
+        self.persistentContainer = persistentContainer
     }
     
     func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
@@ -23,7 +23,7 @@ class CharactersLocalDataSource : CharactersDataSource {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         
         do {
-            let result = try managedObjectContext.fetch(fetchRequest)
+            let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
             
             var characters = Array<Character>()
             
@@ -49,7 +49,7 @@ class CharactersLocalDataSource : CharactersDataSource {
         fetchRequest.predicate = NSPredicate(format: "id == %@", characterId)
         
         do {
-            let result = try managedObjectContext.fetch(fetchRequest)
+            let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
             
             let entity = result.first
             
@@ -68,13 +68,13 @@ class CharactersLocalDataSource : CharactersDataSource {
     func saveCharacters(characters: Array<Character>, complete: @escaping () -> Void, fail: @escaping () -> Void) {
         
         for character in characters {
-            let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity", into: self.managedObjectContext)
+            let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity", into: self.persistentContainer.viewContext)
             entity.setValue(character.characterId, forKey: "id")
             entity.setValue(character.name, forKey: "name")
             entity.setValue(character.thumbnailUrl, forKey: "thumbnailUrl")
         }
         do {
-            try self.managedObjectContext.save()
+            try self.persistentContainer.viewContext.save()
             complete()
         } catch {
             fail()

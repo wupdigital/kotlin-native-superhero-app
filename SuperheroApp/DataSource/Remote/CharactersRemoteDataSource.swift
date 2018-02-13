@@ -8,6 +8,7 @@
 
 import Alamofire
 import CodableAlamofire
+import AlamofireActivityLogger
 
 class CharactersRemoteDataSource : CharactersDataSource {
 
@@ -23,8 +24,8 @@ class CharactersRemoteDataSource : CharactersDataSource {
     
     func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
         
-        let timestamp = Date().timeIntervalSince1970
-        let hash = "\(timestamp)\(publicApiKey)\(privateApiKey)"
+        let timestamp = Int(Date().timeIntervalSince1970)
+        let hash = "\(timestamp)\(privateApiKey)\(publicApiKey)"
         
         let parameters = [ "limit": page.limit,
                            "offset": page.offset,
@@ -33,8 +34,11 @@ class CharactersRemoteDataSource : CharactersDataSource {
                            "hash": hash.md5() ] as [String : Any]
         
     
-        self.manager.request("v1/public/characters", parameters: parameters, encoding: URLEncoding.default)
+        self.manager.request("https://gateway.marvel.com/v1/public/characters", parameters: parameters, encoding: URLEncoding.default)
+            .validate()
+            .log()
             .responseDecodableObject(keyPath: "data.results", decoder: JSONDecoder(), completionHandler: { (response: DataResponse<[Character]>) in
+                
                 if (response.error != nil) {
                     fail()
                 } else {
@@ -44,15 +48,17 @@ class CharactersRemoteDataSource : CharactersDataSource {
     }
     
     func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
-        let timestamp = Date().timeIntervalSince1970
-        let hash = "\(timestamp)\(publicApiKey)\(privateApiKey)"
+        let timestamp = Int(Date().timeIntervalSince1970)
+        let hash = "\(timestamp)\(privateApiKey)\(publicApiKey)"
         
         let parameters = [ "apikey": self.publicApiKey,
                            "ts": timestamp,
                            "hash": hash.md5() ] as [String : Any]
         
         
-        self.manager.request("v1/public/characters/\(characterId)", parameters: parameters, encoding: URLEncoding.default)
+        self.manager.request("https://gateway.marvel.com/v1/public/characters/\(characterId)", parameters: parameters, encoding: URLEncoding.default)
+            .validate()
+            .log()
             .responseDecodableObject(keyPath: "data.results", decoder: JSONDecoder(), completionHandler: { (response: DataResponse<[Character]>) in
                 if (response.error != nil) {
                     fail()

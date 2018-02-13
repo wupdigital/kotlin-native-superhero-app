@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Dip_UI
 
 class CharactersViewController: UITableViewController {
     
     var detailViewController: CharacterDetailViewController?
-    // TODO inject presenter
     var presenter: CharactersMvpPresenter?
     var loadIndicator: UIActivityIndicatorView?
     var loadMoreIndicator: UIActivityIndicatorView?
@@ -23,6 +23,12 @@ class CharactersViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? CharacterDetailViewController
         }
+        
+        self.loadIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.loadMoreIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        
+        self.tableView.backgroundView = self.loadIndicator
+        self.tableView.tableFooterView = self.loadMoreIndicator
         
         self.presenter?.takeView(view: self)
     }
@@ -39,7 +45,10 @@ extension CharactersViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.presenter?.charactersCount())!
+        guard self.presenter != nil else {
+            return 0
+        }
+        return self.presenter!.charactersCount()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,3 +98,5 @@ extension CharactersViewController: CharactersMvpView {
         // TODO show no characters ui
     }
 }
+
+extension CharactersViewController: StoryboardInstantiatable {}

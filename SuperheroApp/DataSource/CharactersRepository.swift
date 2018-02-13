@@ -19,12 +19,18 @@ class CharactersRepository: CharactersDataSource {
     func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
         self.localDataSource.loadCharacters(page: page, complete: { (characters: [Character]) in
             if (characters.isEmpty) {
-                self.remoteDataSource.loadCharacters(page: page, complete: complete, fail: fail)
+                self.remoteDataSource.loadCharacters(page: page, complete: { (characters) in
+                    self.localDataSource.saveCharacters(characters: characters, complete: {}, fail: {})
+                    complete(characters)
+                }, fail: fail)
             } else {
                 complete(characters)
             }
         }, fail: {
-            self.remoteDataSource.loadCharacters(page: page, complete: complete, fail: fail)
+            self.remoteDataSource.loadCharacters(page: page, complete: { (characters) in
+                self.localDataSource.saveCharacters(characters: characters, complete: {}, fail: {})
+                complete(characters)
+            }, fail: fail)
         })
     }
     

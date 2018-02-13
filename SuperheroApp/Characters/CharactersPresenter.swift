@@ -12,7 +12,7 @@ class CharactersPreseneter: CharactersMvpPresenter {
     
     private let useCaseHandler: UseCaseHandler
     private var getCharactersUseCase: GetCharactersUseCase
-    private var view: CharactersMvpView?
+    private weak var view: CharactersMvpView?
     private var currentPage: Page = Page(limit: defaultLimit, offset: 0)
     private var objects: Array<Character> = Array()
 

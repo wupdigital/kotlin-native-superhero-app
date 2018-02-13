@@ -10,7 +10,7 @@ protocol UseCaseScheduler {
     
     func execute(runnable: @escaping () -> Void)
     
-    func notifyResponse(callback: @escaping (UseCaseResponse) -> Void, response: UseCaseResponse) -> Void
+    func notifyResponse<Rs: UseCaseResponse>(callback: @escaping (Rs) -> Void, response: Rs) -> Void
     
     func notifyError(callback: @escaping () -> Void)
 }

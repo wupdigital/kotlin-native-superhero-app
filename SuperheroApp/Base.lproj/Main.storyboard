@@ -30,7 +30,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="CharacterDetailViewController" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="CharacterDetailViewController" customModule="SuperheroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,7 @@
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="H5C-cQ-cQB"/>
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="OS3-Te-Lhz"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="4GQ-Bk-R40" secondAttribute="trailing" constant="-355" id="c8D-sI-3vp"/>
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="cgC-6X-JTa"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="4GQ-Bk-R40" secondAttribute="bottom" constant="8" id="guP-bs-5Xa"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
@@ -62,8 +63,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dipTag" value="characterDetail"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="characterNameLabel" destination="0XM-y9-sOw" id="JnW-2r-Sub"/>
                         <outlet property="thumbnailImageView" destination="4GQ-Bk-R40" id="xey-YP-5jZ"/>
                     </connections>
                 </viewController>
@@ -88,7 +92,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="CharactersViewController" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="CharactersViewController" customModule="SuperheroApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +127,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Superheroes" id="Zdf-7t-Un8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="dipTag" value="characters"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

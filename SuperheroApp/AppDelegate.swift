@@ -6,12 +6,67 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Alamofire
+import CoreData
+import Dip
+import Dip_UI
+import Foundation
 import UIKit
 
 @UIApplicationMain
 class AppDelegate : UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     var window: UIWindow?
+    
+    enum DataSourceTag: String, DependencyTagConvertible {
+        case local
+        case remote
+    }
+    
+    let container = DependencyContainer { container in
+        
+        container.register(tag: "characters") { CharactersViewController() }
+            .resolvingProperties { (container, vc) in
+                
+            vc.presenter = try container.resolve() as CharactersMvpPresenter
+        }
+        
+        container.register { CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CharacterDetailMvpPresenter }
+        
+        container.register { GetCharacterUseCase(charactersDataSource: try container.resolve() as CharactersRepository) }
+        
+        container.register {
+            CharactersPreseneter(useCaseHandler: $0, getCharactersUseCase: $1) as CharactersMvpPresenter
+        }
+        container.register {
+            GetCharactersUseCase(charactersDataSource: try container.resolve() as CharactersRepository)
+        }
+        container.register(.singleton) {
+            UseCaseHandler(useCaseScheduler: $0) as UseCaseHandler
+        }
+        container.register(.singleton) {
+            UseCaseNSOperationQueueScheduler(workerQueue: OperationQueue(), mainQueue: OperationQueue.main) as UseCaseScheduler
+        }
+        container.register() {
+            CharactersRepository(localDataSource: try container.resolve(tag: DataSourceTag.local) as CharactersDataSource, remoteDataSource: try container.resolve(tag: DataSourceTag.remote) as CharactersDataSource)
+        }
+        container.register(tag: DataSourceTag.remote) {
+            CharactersRemoteDataSource(manager: $0, publicApiKey: "", privateApiKey: "") as CharactersDataSource
+        }
+        container.register(tag: DataSourceTag.local) { CharactersLocalDataSource(persistentContainer: $0) as CharactersDataSource }
+        container.register { SessionManager() }
+        container.register { NSPersistentContainer(name: "CharacterModel") }
+            .resolvingProperties({ (container, persistentContainer) in
+                persistentContainer.loadPersistentStores(completionHandler: { (storeDescription, error) in
+                    if let error = error as NSError? {
+                        fatalError("Unresolved error \(error)")
+                    }
+                })
+            })
+        
+        
+        DependencyContainer.uiContainers = [container]
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

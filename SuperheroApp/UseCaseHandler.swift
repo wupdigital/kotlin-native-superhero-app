@@ -33,9 +33,7 @@ class UseCaseHandler {
     }
     
     private func notifyResponse<Rs: UseCaseResponse>(success: @escaping (Rs) -> Void, response: Rs) {
-        self.useCaseScheduler.execute {
-            success(response)
-        }
+        self.useCaseScheduler.notifyResponse(callback: success, response: response)
     }
     
     private func notifyError(error: @escaping () -> Void) {
