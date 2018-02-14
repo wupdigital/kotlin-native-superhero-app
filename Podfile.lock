@@ -9,6 +9,7 @@ PODS:
   - Dip (6.0)
   - Dip-UI (2.0):
     - Dip (~> 6.0)
+  - Sourcery (0.10.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - CodableAlamofire (~> 1.1.0)
   - Dip (~> 6.0)
   - Dip-UI (~> 2.0)
+  - Sourcery
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -25,7 +27,8 @@ SPEC CHECKSUMS:
   CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
   Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
   Dip-UI: 80616044fdf76a86f6504d33d5f0b20c82df71e3
+  Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
 
-PODFILE CHECKSUM: 450411de42604c1630058c871544f257020d5366
+PODFILE CHECKSUM: f65263fa99d5cbdf3ddbb1a8fca0a65ae5dc68be
 
 COCOAPODS: 1.4.0

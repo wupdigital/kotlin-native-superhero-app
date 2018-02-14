@@ -13,6 +13,7 @@
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
+		BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E88092030C5A80056D276 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88082030C5A80056D276 /* Page.swift */; };
 		BF6E880B2030C73F0056D276 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880A2030C73F0056D276 /* Character.swift */; };
@@ -66,6 +67,9 @@
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BF256000202F6FEC00DB93DC /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		BF6BC8152034B89B007D6C15 /* Environment.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Environment.stencil; sourceTree = "<group>"; };
+		BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.generated.swift; sourceTree = "<group>"; };
+		BF6BC81B2034BCCA007D6C15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperheroApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6E88082030C5A80056D276 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		4BF3BB302018F96000D29ACD = {
 			isa = PBXGroup;
 			children = (
+				BF6BC81B2034BCCA007D6C15 /* .gitignore */,
 				BF03D3B1202F7D8900F8A16D /* README.md */,
 				BF256000202F6FEC00DB93DC /* .travis.yml */,
 				4BF3BB3B2018F96000D29ACD /* SuperheroApp */,
@@ -153,6 +158,8 @@
 				BF6E882520310B520056D276 /* UseCaseHandler.swift */,
 				BF6E8821203108930056D276 /* UseCaseScheduler.swift */,
 				BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */,
+				BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */,
+				BF6BC8152034B89B007D6C15 /* Environment.stencil */,
 				4BF3BB452018F96000D29ACD /* Main.storyboard */,
 				4BF3BB482018F96000D29ACD /* Assets.xcassets */,
 				4BF3BB4A2018F96000D29ACD /* LaunchScreen.storyboard */,
@@ -294,6 +301,7 @@
 			buildConfigurationList = 4BF3BB5D2018F96000D29ACD /* Build configuration list for PBXNativeTarget "SuperheroApp" */;
 			buildPhases = (
 				4AE95A941E32A172B72A9C65 /* [CP] Check Pods Manifest.lock */,
+				BF6BC8142034B73C007D6C15 /* Prepare Environment */,
 				4BF3BB352018F96000D29ACD /* Sources */,
 				4BF3BB362018F96000D29ACD /* Frameworks */,
 				4BF3BB372018F96000D29ACD /* Resources */,
@@ -472,6 +480,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BF6BC8142034B73C007D6C15 /* Prepare Environment */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Environment";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#check if env-vars.sh exists\necho \"${SRCROOT}/env-vars.sh\"\n\nif [ -f ${SRCROOT}/env-vars.sh ]\nthen\necho \"I am here\"\nsource ${SRCROOT}/env-vars.sh\nfi\n\n#no `else` case needed if the CI works as expected\n${SRCROOT}/Pods/Sourcery/bin/sourcery --templates ${SRCROOT}/SuperheroApp --sources ${SRCROOT} --output ${SRCROOT}/SuperheroApp --args publicApiKey=$MARVEL_PUBLIC_API_KEY,privateApiKey=$MARVEL_PRIVATE_API_KEY";
+			showEnvVarsInLog = 0;
+		};
 		F8084480264CD2D629880B54 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -518,6 +541,7 @@
 				BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */,
 				BF6E8820203102E20056D276 /* UseCase.swift in Sources */,
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
+				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF6E880B2030C73F0056D276 /* Character.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */,
@@ -619,8 +643,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREFIX_HEADER = marvel.pch;
-				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -672,8 +696,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_PREFIX_HEADER = marvel.pch;
-				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

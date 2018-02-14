@@ -38,4 +38,5 @@ Pods/
 *.xcworkspace
 
 ## Build environment
-marvel.pch
+*.generated.swift
+env-vars.sh

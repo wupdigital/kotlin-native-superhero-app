@@ -55,7 +55,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UISplitViewControllerDel
             CharactersRepository(localDataSource: try container.resolve(tag: DataSourceTag.local) as CharactersDataSource, remoteDataSource: try container.resolve(tag: DataSourceTag.remote) as CharactersDataSource)
         }
         container.register(tag: DataSourceTag.remote) {
-            CharactersRemoteDataSource(manager: $0, publicApiKey: "", privateApiKey: "") as CharactersDataSource
+            CharactersRemoteDataSource(manager: $0, publicApiKey: credentials.publicApiKey as String, privateApiKey: credentials.privateApiKey) as CharactersDataSource
         }
         container.register(tag: DataSourceTag.local) { CharactersLocalDataSource(persistentContainer: $0) as CharactersDataSource }
         container.register { SessionManager() }
@@ -75,7 +75,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UISplitViewControllerDel
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let splitViewController = self.window!.rootViewController as! UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        let navigationController = splitViewController.viewControllers.last as! UINavigationController
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         

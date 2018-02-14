@@ -10,11 +10,12 @@ target 'SuperheroApp' do
 
   # Pods for SuperheroApp
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireActivityLogger'
   pod 'AlamofireImage', '~> 3.3'
   pod 'CodableAlamofire', '~> 1.1.0'
   pod 'Dip', '~> 6.0'
   pod 'Dip-UI', '~> 2.0'
-  pod 'AlamofireActivityLogger'
+  pod 'Sourcery'
 
   target 'SuperheroAppTests' do
     inherit! :search_paths
