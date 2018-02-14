@@ -34,8 +34,8 @@ class CharactersRepository: CharactersDataSource {
         })
     }
     
-    func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
-        self.loadCharacter(characterId: characterId, complete: { (character) in
+    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+        self.localDataSource.loadCharacter(characterId: characterId, complete: { (character) in
             if let character = character {
                 complete(character)
             } else {

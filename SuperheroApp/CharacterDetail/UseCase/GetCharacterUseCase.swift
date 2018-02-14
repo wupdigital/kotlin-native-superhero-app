@@ -7,9 +7,9 @@
 //
 
 struct GetCharacterRequest: UseCaseRequest {
-    let characterId: String
+    let characterId: Int
     
-    init(characterId: String) {
+    init(characterId: Int) {
         self.characterId = characterId
     }
 }

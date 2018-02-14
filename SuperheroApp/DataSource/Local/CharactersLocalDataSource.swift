@@ -43,10 +43,10 @@ class CharactersLocalDataSource : CharactersDataSource {
         }
     }
     
-    func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", characterId)
+        fetchRequest.predicate = NSPredicate(format: "id = \(characterId)")
         
         do {
             let result = try self.persistentContainer.viewContext.fetch(fetchRequest)

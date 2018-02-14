@@ -8,9 +8,10 @@
 
 import UIKit
 import AlamofireImage
+import Dip_UI
 
 class CharacterDetailViewController: UIViewController {
-    var characterId: String? {
+    var characterId: Int? {
         didSet {
             self.loadContent()
         }
@@ -24,6 +25,7 @@ class CharacterDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.presenter?.takeView(view: self)
+        self.loadContent()
     }
     
     private func loadContent() {
@@ -43,3 +45,5 @@ extension CharacterDetailViewController: CharacterDetailMvpView {
         }
     }
 }
+
+extension CharacterDetailViewController: StoryboardInstantiatable { }

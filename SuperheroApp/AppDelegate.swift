@@ -25,9 +25,13 @@ class AppDelegate : UIResponder, UIApplicationDelegate, UISplitViewControllerDel
     
     let container = DependencyContainer { container in
         
-        container.register(tag: "characters") { CharactersViewController() }
+        container.register(storyboardType: CharacterDetailViewController.self, tag: "characterDetail")
             .resolvingProperties { (container, vc) in
-                
+                vc.presenter = try container.resolve() as CharacterDetailMvpPresenter
+            }
+        
+        container.register(storyboardType: CharactersViewController.self, tag: "characters")
+            .resolvingProperties { (container, vc) in
             vc.presenter = try container.resolve() as CharactersMvpPresenter
         }
         

@@ -11,18 +11,12 @@ import Dip_UI
 
 class CharactersViewController: UITableViewController {
     
-    var detailViewController: CharacterDetailViewController?
     var presenter: CharactersMvpPresenter?
     var loadIndicator: UIActivityIndicatorView?
     var loadMoreIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count - 1] as! UINavigationController).topViewController as? CharacterDetailViewController
-        }
         
         self.loadIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         self.loadMoreIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
@@ -34,7 +28,26 @@ class CharactersViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if let splitViewController = self.splitViewController {
+            self.clearsSelectionOnViewWillAppear = splitViewController.isCollapsed
+        }
         super.viewWillAppear(animated)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showDetail") {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let character = self.presenter!.characters()[(indexPath?.row)!] as Character
+        
+            let navigationController = segue.destination as! UINavigationController
+            
+            if let controller = navigationController.topViewController as? CharacterDetailViewController {
+                controller.characterId = character.characterId
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
 }
 

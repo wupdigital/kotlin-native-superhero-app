@@ -47,7 +47,7 @@ class CharactersRemoteDataSource : CharactersDataSource {
             })
     }
     
-    func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
         let timestamp = Int(Date().timeIntervalSince1970)
         let hash = "\(timestamp)\(privateApiKey)\(publicApiKey)"
         

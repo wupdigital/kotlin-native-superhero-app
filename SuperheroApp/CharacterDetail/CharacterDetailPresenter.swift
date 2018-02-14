@@ -21,7 +21,7 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
         self.view = view
     }
     
-    func loadCharacter(characterId: String) {
+    func loadCharacter(characterId: Int) {
         let request = GetCharacterRequest(characterId: characterId)
         
         self.useCaseHandler.executeUseCase(useCase: self.getCharacterUseCase, request: request, success: { (response: GetCharacterResponse) in

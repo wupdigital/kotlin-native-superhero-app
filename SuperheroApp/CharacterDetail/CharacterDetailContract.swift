@@ -15,5 +15,5 @@ protocol CharacterDetailMvpPresenter: MvpPresenter {
     
     func takeView(view: CharacterDetailMvpView)
     
-    func loadCharacter(characterId: String)
+    func loadCharacter(characterId: Int)
 }

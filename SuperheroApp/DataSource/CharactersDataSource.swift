@@ -10,7 +10,7 @@ protocol CharactersDataSource {
     
     func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void)
     
-    func loadCharacter(characterId: String, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void)
+    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void)
 
     func saveCharacters(characters: Array<Character>, complete: @escaping () -> Void, fail: @escaping () -> Void)
 }

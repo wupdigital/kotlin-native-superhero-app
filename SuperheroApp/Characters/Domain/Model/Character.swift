@@ -32,7 +32,7 @@ extension Character: Decodable {
         self.name = try values.decode(String.self, forKey: .name)
         
         let thumbnail = try values.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
-        let path = try thumbnail.decode(String.self, forKey: .path)
+        let path = try thumbnail.decode(String.self, forKey: .path).replacingOccurrences(of: "http", with: "https")
         let ext = try thumbnail.decode(String.self, forKey: .ext)
         self.thumbnailUrl = "\(path).\(ext)"
     }
