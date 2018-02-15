@@ -12,6 +12,7 @@ import Dip
 import Dip_UI
 import Foundation
 import UIKit
+import Common
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         case remote
     }
 
+    let test: CommonTest = CommonTest()
+    
     let container = DependencyContainer { container in
 
         container.register(storyboardType: CharacterDetailViewController.self, tag: "characterDetail")

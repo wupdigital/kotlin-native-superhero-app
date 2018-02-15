@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.5.0)
+  - AlamofireActivityLogger (2.4.0):
+    - Alamofire (~> 4.5)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - CodableAlamofire (1.1.0):
+    - Alamofire (~> 4.0)
+  - Dip (6.0)
+  - Dip-UI (2.0):
+    - Dip (~> 6.0)
+  - Sourcery (0.10.1)
+  - SwiftLint (0.24.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireActivityLogger
+  - AlamofireImage (~> 3.3)
+  - CodableAlamofire (~> 1.1.0)
+  - Dip (~> 6.0)
+  - Dip-UI (~> 2.0)
+  - Sourcery
+  - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireActivityLogger: bff49b2cde8886e1ccb929c699f915472867fdda
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  CodableAlamofire: e2d2edcec7cf413f7862c30c8fa98eded27a83f9
+  Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
+  Dip-UI: 80616044fdf76a86f6504d33d5f0b20c82df71e3
+  Sourcery: ac71ac4d490f62fd381a9f3b558f3093d91bddd5
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+
+PODFILE CHECKSUM: 1609af3f619eff30cba48ba5a993b1c156920d8d
+
+COCOAPODS: 1.4.0

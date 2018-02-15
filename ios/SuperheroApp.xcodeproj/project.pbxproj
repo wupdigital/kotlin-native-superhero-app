@@ -13,6 +13,9 @@
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
+		BF0BE4A12036255F00F2FBDD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; };
+		BF0BE4A2203625B100F2FBDD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; };
+		BF0BE4A3203625B100F2FBDD /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E88092030C5A80056D276 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88082030C5A80056D276 /* Page.swift */; };
@@ -51,6 +54,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BF0BE4A4203625B100F2FBDD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF0BE4A3203625B100F2FBDD /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4BF3BB392018F96000D29ACD /* SuperheroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperheroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF3BB462018F96000D29ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,8 +82,9 @@
 		A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BF256000202F6FEC00DB93DC /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BF0BE4A02036255F00F2FBDD /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = Build/konan/bin/iphone_sim/Common.framework; sourceTree = "<group>"; };
+		BF0BE4A5203627DB00F2FBDD /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		BF6BC8152034B89B007D6C15 /* Environment.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Environment.stencil; sourceTree = "<group>"; };
 		BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.generated.swift; sourceTree = "<group>"; };
 		BF6BC81B2034BCCA007D6C15 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -107,6 +125,8 @@
 			files = (
 				BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */,
 				BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */,
+				BF0BE4A12036255F00F2FBDD /* Common.framework in Frameworks */,
+				BF0BE4A2203625B100F2FBDD /* Common.framework in Frameworks */,
 				BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */,
 				A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */,
 			);
@@ -129,7 +149,7 @@
 				BF6BC81F2034C096007D6C15 /* .swiftlint.yml */,
 				BF6BC81B2034BCCA007D6C15 /* .gitignore */,
 				BF03D3B1202F7D8900F8A16D /* README.md */,
-				BF256000202F6FEC00DB93DC /* .travis.yml */,
+				BF0BE4A5203627DB00F2FBDD /* .travis.yml */,
 				4BF3BB3B2018F96000D29ACD /* SuperheroApp */,
 				4BF3BB572018F96000D29ACD /* SuperheroAppTests */,
 				4BF3BB3A2018F96000D29ACD /* Products */,
@@ -275,6 +295,7 @@
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF0BE4A02036255F00F2FBDD /* Common.framework */,
 				BF8B4EF72027A81F00535D2A /* UIKit.framework */,
 				BF8B4EF52027A7EF00535D2A /* Foundation.framework */,
 				BF8B4EF32027A7E300535D2A /* CoreData.framework */,
@@ -304,12 +325,14 @@
 			buildPhases = (
 				4AE95A941E32A172B72A9C65 /* [CP] Check Pods Manifest.lock */,
 				BF6BC81C2034BE4B007D6C15 /* Swift Lint */,
+				BF0BE49F20361DE200F2FBDD /* Compile Kotlin Framework */,
 				BF6BC8142034B73C007D6C15 /* Prepare Environment */,
 				4BF3BB352018F96000D29ACD /* Sources */,
 				4BF3BB362018F96000D29ACD /* Frameworks */,
 				4BF3BB372018F96000D29ACD /* Resources */,
 				F8084480264CD2D629880B54 /* [CP] Embed Pods Frameworks */,
 				4615E28441B301EB2EAE5E68 /* [CP] Copy Pods Resources */,
+				BF0BE4A4203625B100F2FBDD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -481,6 +504,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0BE49F20361DE200F2FBDD /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "case \"$PLATFORM_NAME\" in\n    iphoneos)\n        TARGET=iphone\n        TASK=compileKonanCommonIphone\n        ;;\n    iphonesimulator)\n        TARGET=iphone_sim\n        TASK=compileKonanCommonIphone_sim\n        ;;\n    *)\n        echo \"Unknown platform: $PLATFORM_NAME\"\n        exit 1\n        ;;\nesac\n\nrm -rf \"$SRCROOT/Build/konan/\"\nmkdir -p \"$SRCROOT/Build/konan/bin/\"\nln -s \"$TARGET\" \"$SRCROOT/Build/konan/bin/xcode\"\n\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\n    ENABLE_DEBUG=true\nelse\n    ENABLE_DEBUG=false\nfi\n\n\"$SRCROOT/../gradlew\" -p \"$SRCROOT\" \"$TASK\" -PenableDebug=$ENABLE_DEBUG";
 			showEnvVarsInLog = 0;
 		};
 		BF6BC8142034B73C007D6C15 /* Prepare Environment */ = {
@@ -731,6 +769,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/konan/bin/iphone_sim",
+				);
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.wup.SuperheroApp;
@@ -750,6 +792,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Build/konan/bin/iphone_sim",
+				);
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = digital.wup.SuperheroApp;
