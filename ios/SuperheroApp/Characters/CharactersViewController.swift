@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Common
 import Dip_UI
 
 class CharactersViewController: UITableViewController {
@@ -38,7 +39,7 @@ class CharactersViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow
-            let character = self.presenter!.characters()[(indexPath?.row)!] as Character
+            let character = self.presenter!.characters()[(indexPath?.row)!] as CommonCharacter
 
             if let navigationController = segue.destination as? UINavigationController,
                 let controller = navigationController.topViewController as? CharacterDetailViewController {

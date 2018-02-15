@@ -6,16 +6,14 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-struct GetCharactersRequest: UseCaseRequest {
-    var page: Page
+import Common
 
-    init(page: Page) {
-        self.page = page
-    }
+struct GetCharactersRequest: UseCaseRequest {
+    var page: CommonPage
 }
 
 struct GetCharactersResponse: UseCaseResponse {
-    var characters: [Character]
+    var characters: [CommonCharacter]
 }
 
 class GetCharactersUseCase: UseCase<GetCharactersRequest, GetCharactersResponse> {
@@ -27,7 +25,7 @@ class GetCharactersUseCase: UseCase<GetCharactersRequest, GetCharactersResponse>
     }
 
     override func executeUseCase(request: GetCharactersRequest) throws {
-        self.charactersDataSource.loadCharacters(page: request.page, complete: { (characters: [Character]) in
+        self.charactersDataSource.loadCharacters(page: request.page, complete: { (characters: [CommonCharacter]) in
             let response = GetCharactersResponse(characters: characters)
             if let success = self.success {
                 success(response)

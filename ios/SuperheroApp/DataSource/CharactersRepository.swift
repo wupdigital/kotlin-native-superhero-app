@@ -6,6 +6,8 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Common
+
 class CharactersRepository: CharactersDataSource {
 
     private let localDataSource: CharactersDataSource
@@ -16,8 +18,8 @@ class CharactersRepository: CharactersDataSource {
         self.remoteDataSource = remoteDataSource
     }
 
-    func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
-        self.localDataSource.loadCharacters(page: page, complete: { (characters: [Character]) in
+    func loadCharacters(page: CommonPage, complete: @escaping ([CommonCharacter]) -> Void, fail: @escaping () -> Void) {
+        self.localDataSource.loadCharacters(page: page, complete: { (characters: [CommonCharacter]) in
             if characters.isEmpty {
                 self.remoteDataSource.loadCharacters(page: page, complete: { (characters) in
                     self.localDataSource.saveCharacters(characters: characters, complete: {}, fail: {})
@@ -34,7 +36,7 @@ class CharactersRepository: CharactersDataSource {
         })
     }
 
-    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+    func loadCharacter(characterId: Int32, complete: @escaping (CommonCharacter?) -> Void, fail: @escaping () -> Void) {
         self.localDataSource.loadCharacter(characterId: characterId, complete: { (character) in
             if let character = character {
                 complete(character)
@@ -46,7 +48,7 @@ class CharactersRepository: CharactersDataSource {
         })
     }
 
-    func saveCharacters(characters: [Character], complete: @escaping () -> Void, fail: @escaping () -> Void) {
+    func saveCharacters(characters: [CommonCharacter], complete: @escaping () -> Void, fail: @escaping () -> Void) {
         self.localDataSource.saveCharacters(characters: characters, complete: {
             self.remoteDataSource.saveCharacters(characters: characters, complete: {}, fail: {})
         }, fail: {

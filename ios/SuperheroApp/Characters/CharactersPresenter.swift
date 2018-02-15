@@ -6,15 +6,17 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-private let defaultLimit = 100
+import Common
+
+private let defaultLimit = Int32(100)
 
 class CharactersPreseneter: CharactersMvpPresenter {
 
     private let useCaseHandler: UseCaseHandler
     private var getCharactersUseCase: GetCharactersUseCase
     private weak var view: CharactersMvpView?
-    private var currentPage: Page = Page(limit: defaultLimit, offset: 0)
-    private var objects: [Character] = [Character]()
+    private var currentPage: CommonPage = CommonPage(limit: defaultLimit, offset: 0)
+    private var objects: [CommonCharacter] = [CommonCharacter]()
 
     init(useCaseHandler: UseCaseHandler, getCharactersUseCase: GetCharactersUseCase) {
         self.useCaseHandler = useCaseHandler
@@ -26,7 +28,7 @@ class CharactersPreseneter: CharactersMvpPresenter {
         self.loadCharacters()
     }
 
-    func characters() -> [Character] {
+    func characters() -> [CommonCharacter] {
         return self.objects
     }
 

@@ -6,14 +6,16 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Common
+
 protocol CharacterDetailMvpView: MvpView {
 
-    func showCharacter(character: Character)
+    func showCharacter(character: CommonCharacter)
 }
 
 protocol CharacterDetailMvpPresenter: MvpPresenter {
 
     func takeView(view: CharacterDetailMvpView)
 
-    func loadCharacter(characterId: Int)
+    func loadCharacter(characterId: Int32)
 }

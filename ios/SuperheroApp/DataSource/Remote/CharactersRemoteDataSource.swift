@@ -7,8 +7,9 @@
 //
 
 import Alamofire
-import CodableAlamofire
 import AlamofireActivityLogger
+import CodableAlamofire
+import Common
 
 class CharactersRemoteDataSource: CharactersDataSource {
 
@@ -22,7 +23,7 @@ class CharactersRemoteDataSource: CharactersDataSource {
         self.privateApiKey = privateApiKey
     }
 
-    func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
+    func loadCharacters(page: CommonPage, complete: @escaping ([CommonCharacter]) -> Void, fail: @escaping () -> Void) {
 
         let timestamp = Int(Date().timeIntervalSince1970)
         let hash = "\(timestamp)\(privateApiKey)\(publicApiKey)"
@@ -38,17 +39,17 @@ class CharactersRemoteDataSource: CharactersDataSource {
             .validate()
             .log()
             .responseDecodableObject(keyPath: "data.results", decoder: JSONDecoder(),
-                                     completionHandler: { (response: DataResponse<[Character]>) in
+                                     completionHandler: { (response: DataResponse<[CharacterResponse]>) in
 
                 if response.error != nil {
                     fail()
                 } else {
-                    complete(response.value!)
+                    complete(response.value!.map({ $0.toCharacter() }))
                 }
             })
     }
 
-    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+    func loadCharacter(characterId: Int32, complete: @escaping (CommonCharacter?) -> Void, fail: @escaping () -> Void) {
         let timestamp = Int(Date().timeIntervalSince1970)
         let hash = "\(timestamp)\(privateApiKey)\(publicApiKey)"
 
@@ -61,16 +62,16 @@ class CharactersRemoteDataSource: CharactersDataSource {
             .validate()
             .log()
             .responseDecodableObject(keyPath: "data.results", decoder: JSONDecoder(),
-                                     completionHandler: { (response: DataResponse<[Character]>) in
+                                     completionHandler: { (response: DataResponse<[CharacterResponse]>) in
                 if response.error != nil {
                     fail()
                 } else {
-                    complete(response.value?.first)
+                    complete(response.value?.first?.toCharacter())
                 }
             })
     }
 
-    func saveCharacters(characters: [Character], complete: @escaping () -> Void, fail: @escaping () -> Void) {
+    func saveCharacters(characters: [CommonCharacter], complete: @escaping () -> Void, fail: @escaping () -> Void) {
         complete()
     }
 }

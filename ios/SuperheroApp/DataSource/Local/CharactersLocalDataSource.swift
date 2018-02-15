@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Common
 
 class CharactersLocalDataSource: CharactersDataSource {
 
@@ -16,23 +17,23 @@ class CharactersLocalDataSource: CharactersDataSource {
         self.persistentContainer = persistentContainer
     }
 
-    func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
+    func loadCharacters(page: CommonPage, complete: @escaping ([CommonCharacter]) -> Void, fail: @escaping () -> Void) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
-        fetchRequest.fetchLimit = page.limit
-        fetchRequest.fetchOffset = page.offset
+        fetchRequest.fetchLimit = Int(page.limit)
+        fetchRequest.fetchOffset = Int(page.offset)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
 
         do {
             let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
 
-            var characters = [Character]()
+            var characters = [CommonCharacter]()
 
             for entity in result {
 
-                if let characterId = entity.value(forKey: "id") as? Int,
+                if let characterId = entity.value(forKey: "id") as? Int32,
                     let name = entity.value(forKey: "name") as? String,
                     let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
-                    let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+                    let character = CommonCharacter(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
                     characters.append(character)
                 }
             }
@@ -44,7 +45,7 @@ class CharactersLocalDataSource: CharactersDataSource {
         }
     }
 
-    func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
+    func loadCharacter(characterId: Int32, complete: @escaping (CommonCharacter?) -> Void, fail: @escaping () -> Void) {
 
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.predicate = NSPredicate(format: "id = \(characterId)")
@@ -53,10 +54,10 @@ class CharactersLocalDataSource: CharactersDataSource {
             let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
 
             if let entity = result.first,
-                let characterId = entity.value(forKey: "id") as? Int,
+                let characterId = entity.value(forKey: "id") as? Int32,
                 let name = entity.value(forKey: "name") as? String,
                 let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
-                let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+                let character = CommonCharacter(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
                 complete(character)
             }
 
@@ -65,7 +66,7 @@ class CharactersLocalDataSource: CharactersDataSource {
         }
     }
 
-    func saveCharacters(characters: [Character], complete: @escaping () -> Void, fail: @escaping () -> Void) {
+    func saveCharacters(characters: [CommonCharacter], complete: @escaping () -> Void, fail: @escaping () -> Void) {
 
         for character in characters {
             let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity",

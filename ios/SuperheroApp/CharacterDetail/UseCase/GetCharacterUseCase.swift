@@ -6,18 +6,20 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-struct GetCharacterRequest: UseCaseRequest {
-    let characterId: Int
+import Common
 
-    init(characterId: Int) {
+struct GetCharacterRequest: UseCaseRequest {
+    let characterId: Int32
+
+    init(characterId: Int32) {
         self.characterId = characterId
     }
 }
 
 struct GetCharacterResponse: UseCaseResponse {
-    let character: Character?
+    let character: CommonCharacter?
 
-    init(character: Character?) {
+    init(character: CommonCharacter?) {
         self.character = character
     }
 }

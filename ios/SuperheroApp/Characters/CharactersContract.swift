@@ -6,11 +6,13 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Common
+
 protocol CharactersMvpPresenter: MvpPresenter {
 
     func takeView(view: CharactersMvpView)
 
-    func characters() -> [Character]
+    func characters() -> [CommonCharacter]
 
     func charactersCount() -> Int
 

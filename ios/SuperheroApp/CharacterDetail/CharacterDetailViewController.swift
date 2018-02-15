@@ -6,12 +6,13 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
-import UIKit
 import AlamofireImage
+import Common
 import Dip_UI
+import UIKit
 
 class CharacterDetailViewController: UIViewController {
-    var characterId: Int? {
+    var characterId: Int32? {
         didSet {
             self.loadContent()
         }
@@ -37,7 +38,7 @@ class CharacterDetailViewController: UIViewController {
 
 extension CharacterDetailViewController: CharacterDetailMvpView {
 
-    func showCharacter(character: Character) {
+    func showCharacter(character: CommonCharacter) {
         self.characterNameLabel?.text = character.name
 
         if let url = URL(string: character.thumbnailUrl) {
