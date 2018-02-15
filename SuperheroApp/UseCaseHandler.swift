@@ -7,22 +7,25 @@
 //
 
 class UseCaseHandler {
-    
+
     private let useCaseScheduler: UseCaseScheduler
-    
+
     init(useCaseScheduler: UseCaseScheduler) {
         self.useCaseScheduler = useCaseScheduler
     }
-    
-    func executeUseCase<Rq, Rs>(useCase: UseCase<Rq, Rs>, request: Rq, success: @escaping (Rs) -> Void, error: @escaping () -> Void) {
+
+    func executeUseCase<Rq, Rs>(useCase: UseCase<Rq, Rs>,
+                                request: Rq,
+                                success: @escaping (Rs) -> Void,
+                                error: @escaping () -> Void) {
         useCase.request = request
-        useCase.success =  { (response: Rs) in
+        useCase.success = { (response: Rs) in
             self.notifyResponse(success: success, response: response)
         }
         useCase.error = {
             self.notifyError(error: error)
         }
-        
+
         self.useCaseScheduler.execute {
             do {
                 try useCase.run()
@@ -31,15 +34,15 @@ class UseCaseHandler {
             }
         }
     }
-    
+
     private func notifyResponse<Rs: UseCaseResponse>(success: @escaping (Rs) -> Void, response: Rs) {
         self.useCaseScheduler.notifyResponse(callback: success, response: response)
     }
-    
+
     private func notifyError(error: @escaping () -> Void) {
         self.useCaseScheduler.notifyError {
             error()
         }
     }
-    
+
 }

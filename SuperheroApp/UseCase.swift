@@ -12,26 +12,26 @@ enum UseCaseError: String, Error {
 }
 
 protocol UseCaseRequest {
-    
+
 }
 
 protocol UseCaseResponse {
-    
+
 }
 
 class UseCase<Rq, Rs> where Rq: UseCaseRequest, Rs: UseCaseResponse {
-    
+
     var request: Rq?
     var success: ((Rs) -> Void)?
     var error: (() -> Void)?
-    
+
     final func run() throws {
         guard let request = self.request else {
             throw UseCaseError.missingRequest
         }
         try self.executeUseCase(request: request)
     }
-    
+
     func executeUseCase(request: Rq) throws {
         throw UseCaseError.executeUseCaseIsNotImplemented
     }

@@ -7,7 +7,7 @@
 //
 
 protocol MvpView: class {
-    
+
 }
 
 protocol MvpPresenter {

@@ -8,67 +8,68 @@
 
 import CoreData
 
-class CharactersLocalDataSource : CharactersDataSource {
-    
+class CharactersLocalDataSource: CharactersDataSource {
+
     private let persistentContainer: NSPersistentContainer
-    
+
     init(persistentContainer: NSPersistentContainer) {
         self.persistentContainer = persistentContainer
     }
-    
+
     func loadCharacters(page: Page, complete: @escaping ([Character]) -> Void, fail: @escaping () -> Void) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.fetchLimit = page.limit
         fetchRequest.fetchOffset = page.offset
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
+
         do {
             let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
-            
-            var characters = Array<Character>()
-            
+
+            var characters = [Character]()
+
             for entity in result {
-                let characterId = entity.value(forKey: "id") as! Int
-                let name = entity.value(forKey: "name") as! String
-                let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as! String
-                
-                let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
-                characters.append(character)
+
+                if let characterId = entity.value(forKey: "id") as? Int,
+                    let name = entity.value(forKey: "name") as? String,
+                    let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
+                    let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+                    characters.append(character)
+                }
             }
-            
+
             complete(characters)
-            
+
         } catch {
             fail()
         }
     }
-    
+
     func loadCharacter(characterId: Int, complete: @escaping (Character?) -> Void, fail: @escaping () -> Void) {
-        
+
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.predicate = NSPredicate(format: "id = \(characterId)")
-        
+
         do {
             let result = try self.persistentContainer.viewContext.fetch(fetchRequest)
-            
-            let entity = result.first
-            
-            let characterId = entity!.value(forKey: "id") as! Int
-            let name = entity!.value(forKey: "name") as! String
-            let thumbnailUrl = entity!.value(forKey: "thumbnailUrl") as! String
-            
-            let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
-            complete(character)
-            
+
+            if let entity = result.first,
+                let characterId = entity.value(forKey: "id") as? Int,
+                let name = entity.value(forKey: "name") as? String,
+                let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
+                let character = Character(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+                complete(character)
+            }
+
         } catch {
             fail()
         }
     }
-    
-    func saveCharacters(characters: Array<Character>, complete: @escaping () -> Void, fail: @escaping () -> Void) {
-        
+
+    func saveCharacters(characters: [Character], complete: @escaping () -> Void, fail: @escaping () -> Void) {
+
         for character in characters {
-            let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity", into: self.persistentContainer.viewContext)
+            let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity",
+                                                              into: self.persistentContainer.viewContext)
             entity.setValue(character.characterId, forKey: "id")
             entity.setValue(character.name, forKey: "name")
             entity.setValue(character.thumbnailUrl, forKey: "thumbnailUrl")

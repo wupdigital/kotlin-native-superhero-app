@@ -1,2 +1,4 @@
+line_length: 130
+
 excluded:
   - Pods

@@ -7,11 +7,11 @@
 //
 
 class CharacterDetailPresenter: CharacterDetailMvpPresenter {
-    
+
     private let useCaseHandler: UseCaseHandler
     private let getCharacterUseCase: GetCharacterUseCase
     private weak var view: CharacterDetailMvpView?
-    
+
     init(useCaseHandler: UseCaseHandler, getCharacterUseCase: GetCharacterUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharacterUseCase = getCharacterUseCase
@@ -20,16 +20,18 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
     func takeView(view: CharacterDetailMvpView) {
         self.view = view
     }
-    
+
     func loadCharacter(characterId: Int) {
         let request = GetCharacterRequest(characterId: characterId)
-        
-        self.useCaseHandler.executeUseCase(useCase: self.getCharacterUseCase, request: request, success: { (response: GetCharacterResponse) in
-            
+
+        self.useCaseHandler.executeUseCase(useCase: self.getCharacterUseCase,
+                                           request: request,
+                                           success: { (response: GetCharacterResponse) in
+
             if let character = response.character {
-                
+
                 self.view?.showCharacter(character: character)
-                
+
             } else {
                 // TODO character not found
             }

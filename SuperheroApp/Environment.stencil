@@ -3,4 +3,5 @@ public struct Credentials {
     let privateApiKey: String
 }
 
-public let credentials = Credentials(publicApiKey: "{{ argument.publicApiKey }}", privateApiKey: "{{ argument.privateApiKey }}")
+public let credentials = Credentials(publicApiKey: "{{ argument.publicApiKey }}",
+                                     privateApiKey: "{{ argument.privateApiKey }}")

@@ -8,7 +8,7 @@
 
 struct GetCharactersRequest: UseCaseRequest {
     var page: Page
-    
+
     init(page: Page) {
         self.page = page
     }
@@ -19,13 +19,13 @@ struct GetCharactersResponse: UseCaseResponse {
 }
 
 class GetCharactersUseCase: UseCase<GetCharactersRequest, GetCharactersResponse> {
-    
+
     private let charactersDataSource: CharactersDataSource
-    
+
     init(charactersDataSource: CharactersDataSource) {
         self.charactersDataSource = charactersDataSource
     }
-    
+
     override func executeUseCase(request: GetCharactersRequest) throws {
         self.charactersDataSource.loadCharacters(page: request.page, complete: { (characters: [Character]) in
             let response = GetCharactersResponse(characters: characters)

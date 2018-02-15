@@ -18,16 +18,16 @@ class CharacterDetailViewController: UIViewController {
     }
     @IBOutlet weak var characterNameLabel: UILabel?
     @IBOutlet weak var thumbnailImageView: UIImageView?
-    
+
     var presenter: CharacterDetailMvpPresenter?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.presenter?.takeView(view: self)
         self.loadContent()
     }
-    
+
     private func loadContent() {
         if let characterId = self.characterId {
             self.presenter?.loadCharacter(characterId: characterId)
@@ -36,10 +36,10 @@ class CharacterDetailViewController: UIViewController {
 }
 
 extension CharacterDetailViewController: CharacterDetailMvpView {
-    
+
     func showCharacter(character: Character) {
         self.characterNameLabel?.text = character.name
-        
+
         if let url = URL(string: character.thumbnailUrl) {
             self.thumbnailImageView?.af_setImage(withURL: url)
         }

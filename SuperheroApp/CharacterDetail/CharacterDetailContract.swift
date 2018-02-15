@@ -7,13 +7,13 @@
 //
 
 protocol CharacterDetailMvpView: MvpView {
-    
+
     func showCharacter(character: Character)
 }
 
 protocol CharacterDetailMvpPresenter: MvpPresenter {
-    
+
     func takeView(view: CharacterDetailMvpView)
-    
+
     func loadCharacter(characterId: Int)
 }
