@@ -1,14 +1,15 @@
-# Marvel Superhero App for iOS
+# Marvel Superhero App for Android and iOS
 
-[![Build Status](https://travis-ci.org/wupdigital/ios-swift-superhero-app.svg?branch=master)](https://travis-ci.org/wupdigital/ios-swift-superhero-app)
+[![Build Status](https://travis-ci.org/wupdigital/kotlin-native-superhero-app.svg?branch=master)](https://travis-ci.org/wupdigital/kotlin-native-superhero-app)
 
 ## Description
 
-The application is made using [Marvel API](https://developer.marvel.com), for explain the use of Clean Architecture and MVP in Swift.
+The Android and iOS applications are made using [Marvel API](https://developer.marvel.com), for explain the use of Clean Architecture and MVP in Swift/Kotlin/Kotlin Native
 
 ## Run Requirements
 
 * Xcode 9.2
+* Android SDK
 
 ## Build and run the application
 
