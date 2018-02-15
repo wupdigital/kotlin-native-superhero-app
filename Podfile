@@ -16,6 +16,7 @@ target 'SuperheroApp' do
   pod 'Dip', '~> 6.0'
   pod 'Dip-UI', '~> 2.0'
   pod 'Sourcery'
+  pod 'SwiftLint'
 
   target 'SuperheroAppTests' do
     inherit! :search_paths
