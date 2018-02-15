@@ -1,5 +1,11 @@
 language: swift
 osx_image: xcode9.2
 
+before_install:
+    - gem install cocoapods --version 1.4.0
+
+install:
+    - pod install --repo-update
+
 script:
-    - xcodebuild clean build test -sdk iphonesimulator -workspace SuperheroApp.xcworkspace -scheme SuperheroApp  CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.2'
+    - xcodebuild clean build test -sdk iphonesimulator -workspace SuperheroApp.xcworkspace -scheme SuperheroApp  CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.2' | xcpretty
