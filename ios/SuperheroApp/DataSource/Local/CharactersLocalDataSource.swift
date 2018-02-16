@@ -9,7 +9,7 @@
 import CoreData
 import Common
 
-class CharactersLocalDataSource: CharactersDataSource {
+class CharactersLocalDataSource: NSObject, CommonCharactersDataSource {
 
     private let persistentContainer: NSPersistentContainer
 
@@ -17,7 +17,9 @@ class CharactersLocalDataSource: CharactersDataSource {
         self.persistentContainer = persistentContainer
     }
 
-    func loadCharacters(page: CommonPage, complete: @escaping ([CommonCharacter]) -> Void, fail: @escaping () -> Void) {
+    func loadCharacters(page: CommonPage,
+                        complete: @escaping ([CommonCharacter]) -> CommonStdlibUnit,
+                        fail: @escaping () -> CommonStdlibUnit) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.fetchLimit = Int(page.limit)
         fetchRequest.fetchOffset = Int(page.offset)
@@ -38,15 +40,16 @@ class CharactersLocalDataSource: CharactersDataSource {
                 }
             }
 
-            complete(characters)
+            _ = complete(characters)
 
         } catch {
-            fail()
+            _ = fail()
         }
     }
 
-    func loadCharacter(characterId: Int32, complete: @escaping (CommonCharacter?) -> Void, fail: @escaping () -> Void) {
-
+    func loadCharacter(characterId: Int32,
+                       complete: @escaping (CommonCharacter?) -> CommonStdlibUnit,
+                       fail: @escaping () -> CommonStdlibUnit) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CharacterEntity")
         fetchRequest.predicate = NSPredicate(format: "id = \(characterId)")
 
@@ -58,15 +61,17 @@ class CharactersLocalDataSource: CharactersDataSource {
                 let name = entity.value(forKey: "name") as? String,
                 let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
                 let character = CommonCharacter(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
-                complete(character)
+                _ = complete(character)
             }
 
         } catch {
-            fail()
+            _ = fail()
         }
     }
 
-    func saveCharacters(characters: [CommonCharacter], complete: @escaping () -> Void, fail: @escaping () -> Void) {
+    func saveCharacters(characters: [CommonCharacter],
+                        complete: @escaping () -> CommonStdlibUnit,
+                        fail: @escaping () -> CommonStdlibUnit) {
 
         for character in characters {
             let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity",
@@ -77,9 +82,9 @@ class CharactersLocalDataSource: CharactersDataSource {
         }
         do {
             try self.persistentContainer.viewContext.save()
-            complete()
+            _ = complete()
         } catch {
-            fail()
+            _ = fail()
         }
     }
 }

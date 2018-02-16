@@ -26,9 +26,9 @@ struct GetCharacterResponse: UseCaseResponse {
 
 class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {
 
-    private var charactersDataSource: CharactersDataSource
+    private var charactersDataSource: CommonCharactersDataSource
 
-    init(charactersDataSource: CharactersDataSource) {
+    init(charactersDataSource: CommonCharactersDataSource) {
         self.charactersDataSource = charactersDataSource
     }
 
@@ -37,12 +37,16 @@ class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {
 
             if let success = self.success {
                 let response = GetCharacterResponse(character: character)
-                success(response)
+                _ = success(response)
             }
+
+            return CommonStdlibUnit()
         }, fail: {
             if let error = self.error {
-                error()
+                _ = error()
             }
+
+            return CommonStdlibUnit()
         })
     }
 }

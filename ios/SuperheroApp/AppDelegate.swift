@@ -38,13 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CharacterDetailMvpPresenter
         }
         container.register {
-            GetCharacterUseCase(charactersDataSource: try container.resolve() as CharactersRepository)
+            GetCharacterUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
         }
         container.register {
             CharactersPreseneter(useCaseHandler: $0, getCharactersUseCase: $1) as CharactersMvpPresenter
         }
         container.register {
-            GetCharactersUseCase(charactersDataSource: try container.resolve() as CharactersRepository)
+            GetCharactersUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
         }
         container.register(.singleton) {
             UseCaseHandler(useCaseScheduler: $0) as UseCaseHandler
@@ -54,16 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                                              mainQueue: OperationQueue.main) as UseCaseScheduler
         }
         container.register {
-            CharactersRepository(localDataSource: try container.resolve(tag: DataSourceTag.local) as CharactersDataSource,
-                                 remoteDataSource: try container.resolve(tag: DataSourceTag.remote) as CharactersDataSource)
+            CommonCharactersRepository(localDataSource: try container.resolve(tag: DataSourceTag.local) as CommonCharactersDataSource,
+                                 remoteDataSource: try container.resolve(tag: DataSourceTag.remote) as CommonCharactersDataSource)
         }
         container.register(tag: DataSourceTag.remote) {
             CharactersRemoteDataSource(manager: $0,
                                        publicApiKey: credentials.publicApiKey as String,
-                                       privateApiKey: credentials.privateApiKey) as CharactersDataSource
+                                       privateApiKey: credentials.privateApiKey) as CommonCharactersDataSource
         }
         container.register(tag: DataSourceTag.local) {
-            CharactersLocalDataSource(persistentContainer: $0) as CharactersDataSource
+            CharactersLocalDataSource(persistentContainer: $0) as CommonCharactersDataSource
         }
         container.register { SessionManager() }
         container.register { NSPersistentContainer(name: "CharacterModel") }

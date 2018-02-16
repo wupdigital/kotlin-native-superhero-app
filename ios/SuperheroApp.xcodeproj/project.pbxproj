@@ -20,10 +20,8 @@
 		BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */; };
-		BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */; };
 		BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */; };
 		BF6E88132030DF670056D276 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88122030DF670056D276 /* String+md5.swift */; };
-		BF6E881E2030FF8E0056D276 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E881D2030FF8E0056D276 /* CharactersRepository.swift */; };
 		BF6E8820203102E20056D276 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E881F203102E20056D276 /* UseCase.swift */; };
 		BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8821203108930056D276 /* UseCaseScheduler.swift */; };
 		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
@@ -92,10 +90,8 @@
 		BF6E87CC2030BBFE0056D276 /* SuperheroApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SuperheroApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersLocalDataSource.swift; sourceTree = "<group>"; };
-		BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataSource.swift; sourceTree = "<group>"; };
 		BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRemoteDataSource.swift; sourceTree = "<group>"; };
 		BF6E88122030DF670056D276 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
-		BF6E881D2030FF8E0056D276 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		BF6E881F203102E20056D276 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		BF6E8821203108930056D276 /* UseCaseScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseScheduler.swift; sourceTree = "<group>"; };
 		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
@@ -249,8 +245,6 @@
 			children = (
 				BF8B4EDF20278EF900535D2A /* Remote */,
 				BF8B4EDE20278EF400535D2A /* Local */,
-				BF6E880E2030CEBF0056D276 /* CharactersDataSource.swift */,
-				BF6E881D2030FF8E0056D276 /* CharactersRepository.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -515,7 +509,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "case \"$PLATFORM_NAME\" in\n    iphoneos)\n        TARGET=iphone\n        TASK=compileKonanCommonIphone\n        ;;\n    iphonesimulator)\n        TARGET=iphone_sim\n        TASK=compileKonanCommonIphone_sim\n        ;;\n    *)\n        echo \"Unknown platform: $PLATFORM_NAME\"\n        exit 1\n        ;;\nesac\n\nrm -rf \"$SRCROOT/Build/konan/\"\nmkdir -p \"$SRCROOT/Build/konan/bin/\"\nln -s \"$TARGET\" \"$SRCROOT/Build/konan/bin/xcode\"\n\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\n    ENABLE_DEBUG=true\nelse\n    ENABLE_DEBUG=false\nfi\n\n\"$SRCROOT/../gradlew\" -p \"$SRCROOT\" \"$TASK\" -PenableDebug=$ENABLE_DEBUG";
+			shellScript = "case \"$PLATFORM_NAME\" in\n    iphoneos)\n        TARGET=iphone\n        TASK=compileKonanCommonIphone\n        ;;\n    iphonesimulator)\n        TARGET=iphone_sim\n        TASK=compileKonanCommonIphone_sim\n        ;;\n    *)\n        echo \"Unknown platform: $PLATFORM_NAME\"\n        exit 1\n        ;;\nesac\n\nrm -rf \"$SRCROOT/../common/build/konan/\"\nmkdir -p \"$SRCROOT/../common/build/konan/bin/\"\nln -s \"$TARGET\" \"$SRCROOT/../common/build/konan/bin/xcode\"\n\nif [ \"$CONFIGURATION\" == \"Debug\" ]; then\n    ENABLE_DEBUG=true\nelse\n    ENABLE_DEBUG=false\nfi\n\n\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../common\" \"$TASK\" -PenableDebug=$ENABLE_DEBUG";
 			showEnvVarsInLog = 0;
 		};
 		BF6BC8142034B73C007D6C15 /* Prepare Environment */ = {
@@ -587,7 +581,6 @@
 				BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */,
 				BFB7FE362032208900157F5A /* CharactersContract.swift in Sources */,
 				BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */,
-				BF6E881E2030FF8E0056D276 /* CharactersRepository.swift in Sources */,
 				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF6E88132030DF670056D276 /* String+md5.swift in Sources */,
 				BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */,
@@ -595,7 +588,6 @@
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
 				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
-				BF6E880F2030CEBF0056D276 /* CharactersDataSource.swift in Sources */,
 				BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */,
 				BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */,
 				BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */,

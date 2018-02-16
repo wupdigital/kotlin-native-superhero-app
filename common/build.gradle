@@ -1,5 +1,29 @@
-apply plugin: 'kotlin'
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.6"
+    }
+}
+
+
+apply plugin: 'kotlin-platform-common'
+apply plugin: "konan"
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+konan.targets = ["iphone", "iphone_sim"]
+
+konanArtifacts {
+    framework('Common') {
+        enableMultiplatform true
+        srcDir './src/main/kotlin'
+    }
 }
