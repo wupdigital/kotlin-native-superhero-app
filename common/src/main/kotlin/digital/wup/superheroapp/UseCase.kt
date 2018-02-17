@@ -1,5 +1,9 @@
 package digital.wup.superheroapp
 
+interface UseCaseRequest
+
+interface UseCaseResponse
+
 abstract class UseCase<Rq: UseCaseRequest, Rs: UseCaseResponse> {
 
     lateinit var request: Rq
