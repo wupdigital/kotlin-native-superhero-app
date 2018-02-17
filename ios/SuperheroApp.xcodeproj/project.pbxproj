@@ -24,6 +24,7 @@
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
 		BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF52027A7EF00535D2A /* Foundation.framework */; };
 		BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF72027A81F00535D2A /* UIKit.framework */; };
+		BF9DAF8D203889F100F3E577 /* compileCommonKotlin.sh in Resources */ = {isa = PBXBuildFile; fileRef = BF9DAF8C203889F100F3E577 /* compileCommonKotlin.sh */; };
 		BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE39203227B100157F5A /* CharactersViewController.swift */; };
 		BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */; };
 		BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */; };
@@ -87,6 +88,7 @@
 		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BF8B4EF52027A7EF00535D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8B4EF72027A81F00535D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF9DAF8C203889F100F3E577 /* compileCommonKotlin.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = compileCommonKotlin.sh; sourceTree = "<group>"; };
 		BFB7FE39203227B100157F5A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		4BF3BB302018F96000D29ACD = {
 			isa = PBXGroup;
 			children = (
+				BF9DAF8C203889F100F3E577 /* compileCommonKotlin.sh */,
 				BF6BC81F2034C096007D6C15 /* .swiftlint.yml */,
 				BF6BC81B2034BCCA007D6C15 /* .gitignore */,
 				BF03D3B1202F7D8900F8A16D /* README.md */,
@@ -258,6 +261,22 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		BF9DAF88203889E400F3E577 /* CommonKotlin */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = BF9DAF8B203889E400F3E577 /* Build configuration list for PBXLegacyTarget "CommonKotlin" */;
+			buildPhases = (
+			);
+			buildToolPath = "$(SRCROOT)/compileCommonKotlin";
+			dependencies = (
+			);
+			name = CommonKotlin;
+			passBuildSettingsInEnvironment = 1;
+			productName = CommonKotlin;
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		4BF3BB382018F96000D29ACD /* SuperheroApp */ = {
 			isa = PBXNativeTarget;
@@ -323,6 +342,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4BF3BB382018F96000D29ACD;
 					};
+					BF9DAF88203889E400F3E577 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 4BF3BB342018F96000D29ACD /* Build configuration list for PBXProject "SuperheroApp" */;
@@ -340,6 +363,7 @@
 			targets = (
 				4BF3BB382018F96000D29ACD /* SuperheroApp */,
 				4BF3BB532018F96000D29ACD /* SuperheroAppTests */,
+				BF9DAF88203889E400F3E577 /* CommonKotlin */,
 			);
 		};
 /* End PBXProject section */
@@ -351,6 +375,7 @@
 			files = (
 				4BF3BB4C2018F96000D29ACD /* LaunchScreen.storyboard in Resources */,
 				4BF3BB492018F96000D29ACD /* Assets.xcassets in Resources */,
+				BF9DAF8D203889F100F3E577 /* compileCommonKotlin.sh in Resources */,
 				4BF3BB472018F96000D29ACD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pwd\n${SRCROOT}/Pods/SwiftLint/swiftlint";
+			shellScript = "${SRCROOT}/Pods/SwiftLint/swiftlint";
 		};
 		F8084480264CD2D629880B54 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -768,6 +793,31 @@
 			};
 			name = Release;
 		};
+		BF9DAF89203889E400F3E577 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF9DAF8A203889E400F3E577 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -794,6 +844,15 @@
 			buildConfigurations = (
 				4BF3BB612018F96000D29ACD /* Debug */,
 				4BF3BB622018F96000D29ACD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF9DAF8B203889E400F3E577 /* Build configuration list for PBXLegacyTarget "CommonKotlin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF9DAF89203889E400F3E577 /* Debug */,
+				BF9DAF8A203889E400F3E577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
