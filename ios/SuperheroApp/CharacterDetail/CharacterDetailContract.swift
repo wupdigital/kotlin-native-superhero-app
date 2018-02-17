@@ -8,12 +8,12 @@
 
 import Common
 
-protocol CharacterDetailMvpView: MvpView {
+protocol CharacterDetailMvpView: CommonMvpView {
 
     func showCharacter(character: CommonCharacter)
 }
 
-protocol CharacterDetailMvpPresenter: MvpPresenter {
+protocol CharacterDetailMvpPresenter: CommonMvpPresenter {
 
     func takeView(view: CharacterDetailMvpView)
 

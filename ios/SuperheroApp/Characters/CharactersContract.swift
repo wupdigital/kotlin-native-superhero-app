@@ -8,7 +8,7 @@
 
 import Common
 
-protocol CharactersMvpPresenter: MvpPresenter {
+protocol CharactersMvpPresenter: CommonMvpPresenter {
 
     func takeView(view: CharactersMvpView)
 
@@ -21,7 +21,7 @@ protocol CharactersMvpPresenter: MvpPresenter {
     func loadMoreCharacters()
 }
 
-protocol CharactersMvpView: MvpView {
+protocol CharactersMvpView: CommonMvpView {
 
     func showLoadingIndicator()
 
