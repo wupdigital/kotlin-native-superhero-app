@@ -11,10 +11,10 @@ import Common
 class CharacterDetailPresenter: CharacterDetailMvpPresenter {
 
     private let useCaseHandler: CommonUseCaseHandler
-    private let getCharacterUseCase: GetCharacterUseCase
+    private let getCharacterUseCase: CommonGetCharacterUseCase
     private weak var view: CharacterDetailMvpView?
 
-    init(useCaseHandler: CommonUseCaseHandler, getCharacterUseCase: GetCharacterUseCase) {
+    init(useCaseHandler: CommonUseCaseHandler, getCharacterUseCase: CommonGetCharacterUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharacterUseCase = getCharacterUseCase
     }
@@ -30,13 +30,13 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
     }
 
     func loadCharacter(characterId: Int32) {
-        let request = GetCharacterRequest(characterId: characterId)
+        let request = CommonGetCharacterRequest(characterId: characterId)
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharacterUseCase,
                                            request: request,
                                            success: { (response: CommonUseCaseResponse) in
 
-            if let response = response as? GetCharacterResponse {
+            if let response = response as? CommonGetCharacterResponse {
                 if let character = response.character {
 
                     self.view?.showCharacter(character: character)

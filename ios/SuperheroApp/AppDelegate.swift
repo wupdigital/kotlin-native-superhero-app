@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CharacterDetailMvpPresenter
         }
         container.register {
-            GetCharacterUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
+            CommonGetCharacterUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
         }
         container.register {
             CommonCharactersPresenter(useCaseHandler: $0, getCharactersUseCase: $1) as CommonCharactersMvpPresenter
