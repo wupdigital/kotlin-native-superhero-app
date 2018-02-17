@@ -1,25 +1,25 @@
 buildscript {
     repositories {
-        mavenCentral()
         maven {
-            url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies"
+            url 'https://dl.bintray.com/jetbrains/kotlin-native-dependencies'
         }
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.6"
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_native_version"
     }
 }
 
 
 apply plugin: 'kotlin-platform-common'
-apply plugin: "konan"
+apply plugin: 'konan'
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
 }
 
-konan.targets = ["iphone", "iphone_sim"]
+konan.targets = ['iphone', 'iphone_sim']
 
 konanArtifacts {
     framework('Common') {
