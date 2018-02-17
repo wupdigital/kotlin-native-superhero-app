@@ -10,11 +10,11 @@ import Common
 
 private let defaultLimit = Int32(100)
 
-class CharactersPreseneter: CharactersMvpPresenter {
+class CharactersPreseneter: NSObject, CommonCharactersMvpPresenter {
 
     private let useCaseHandler: CommonUseCaseHandler
     private var getCharactersUseCase: CommonGetCharactersUseCase
-    private weak var view: CharactersMvpView?
+    private weak var view: CommonCharactersMvpView?
     private var currentPage: CommonPage = CommonPage(limit: defaultLimit, offset: 0)
     private var objects: [CommonCharacter] = [CommonCharacter]()
 
@@ -23,7 +23,7 @@ class CharactersPreseneter: CharactersMvpPresenter {
         self.getCharactersUseCase = getCharactersUseCase
     }
 
-    func takeView(view: CharactersMvpView) {
+    func takeView(view: CommonCharactersMvpView) {
         self.view = view
         self.loadCharacters()
     }
@@ -32,8 +32,8 @@ class CharactersPreseneter: CharactersMvpPresenter {
         return self.objects
     }
 
-    func charactersCount() -> Int {
-        return self.objects.count
+    func charactersCount() -> Int32 {
+        return Int32(self.objects.count)
     }
 
     func loadCharacters() {

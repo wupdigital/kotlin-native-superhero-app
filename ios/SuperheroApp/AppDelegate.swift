@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         container.register(storyboardType: CharactersViewController.self, tag: "characters")
             .resolvingProperties { (container, viewController) in
-            viewController.presenter = try container.resolve() as CharactersMvpPresenter
+            viewController.presenter = try container.resolve() as CommonCharactersMvpPresenter
         }
         container.register {
             CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CharacterDetailMvpPresenter
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             GetCharacterUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
         }
         container.register {
-            CharactersPreseneter(useCaseHandler: $0, getCharactersUseCase: $1) as CharactersMvpPresenter
+            CharactersPreseneter(useCaseHandler: $0, getCharactersUseCase: $1) as CommonCharactersMvpPresenter
         }
         container.register {
             CommonGetCharactersUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)

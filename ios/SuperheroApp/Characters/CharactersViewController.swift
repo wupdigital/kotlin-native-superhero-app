@@ -12,7 +12,7 @@ import Dip_UI
 
 class CharactersViewController: UITableViewController {
 
-    var presenter: CharactersMvpPresenter?
+    var presenter: CommonCharactersMvpPresenter?
     var loadIndicator: UIActivityIndicatorView?
     var loadMoreIndicator: UIActivityIndicatorView?
 
@@ -61,7 +61,7 @@ extension CharactersViewController {
         guard self.presenter != nil else {
             return 0
         }
-        return self.presenter!.charactersCount()
+        return Int(self.presenter!.charactersCount())
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,7 +82,7 @@ extension CharactersViewController {
     }
 }
 
-extension CharactersViewController: CharactersMvpView {
+extension CharactersViewController: CommonCharactersMvpView {
     func showLoadingIndicator() {
         self.loadIndicator?.startAnimating()
     }
