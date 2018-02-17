@@ -11,7 +11,7 @@ class GetCharactersRequest(val page: Page) : UseCaseRequest
 
 class GetCharactersResponse(val characters: List<Character>): UseCaseResponse
 
-class GetCharactersUseCase(val charactersDataSource: CharactersDataSource): UseCase<GetCharactersRequest, GetCharactersResponse>() {
+class GetCharactersUseCase(private val charactersDataSource: CharactersDataSource): UseCase<GetCharactersRequest, GetCharactersResponse>() {
 
     override fun executeUseCase(request: GetCharactersRequest) {
         charactersDataSource.loadCharacters(request.page, { characters: List<Character> ->

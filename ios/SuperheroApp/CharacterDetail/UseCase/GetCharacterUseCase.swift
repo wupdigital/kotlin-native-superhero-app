@@ -8,7 +8,7 @@
 
 import Common
 
-class GetCharacterRequest: CommonUseCaseRequest {
+class GetCharacterRequest: NSObject, CommonUseCaseRequest {
     let characterId: Int32
 
     init(characterId: Int32) {
@@ -16,7 +16,7 @@ class GetCharacterRequest: CommonUseCaseRequest {
     }
 }
 
-class GetCharacterResponse: CommonUseCaseResponse {
+class GetCharacterResponse: NSObject, CommonUseCaseResponse {
     let character: CommonCharacter?
 
     init(character: CommonCharacter?) {

@@ -19,8 +19,14 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
         self.getCharacterUseCase = getCharacterUseCase
     }
 
-    func takeView(view: CharacterDetailMvpView) {
-        self.view = view
+    func takeView(view: CommonMvpView) {
+        if let view = view as? CharacterDetailMvpView {
+            self.view = view
+        }
+    }
+
+    func dropView() {
+        self.view = nil
     }
 
     func loadCharacter(characterId: Int32) {

@@ -4,9 +4,7 @@ import digital.wup.superheroapp.characters.domain.usecase.model.Character
 import digital.wup.superheroapp.mvp.MvpPresenter
 import digital.wup.superheroapp.mvp.MvpView
 
-interface CharactersMvpPresenter: MvpPresenter {
-
-    fun takeView(view: CharactersMvpView)
+interface CharactersMvpPresenter: MvpPresenter<CharactersMvpView> {
 
     fun characters(): List<Character>
 

@@ -25,7 +25,6 @@
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
 		BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF52027A7EF00535D2A /* Foundation.framework */; };
 		BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF72027A81F00535D2A /* UIKit.framework */; };
-		BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE37203221E000157F5A /* CharactersPresenter.swift */; };
 		BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE39203227B100157F5A /* CharactersViewController.swift */; };
 		BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */; };
 		BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */; };
@@ -91,7 +90,6 @@
 		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BF8B4EF52027A7EF00535D2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF8B4EF72027A81F00535D2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BFB7FE37203221E000157F5A /* CharactersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenter.swift; sourceTree = "<group>"; };
 		BFB7FE39203227B100157F5A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailContract.swift; sourceTree = "<group>"; };
 		BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				BFB7FE39203227B100157F5A /* CharactersViewController.swift */,
-				BFB7FE37203221E000157F5A /* CharactersPresenter.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
 				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
-				BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */,
 				BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */,
 				BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */,
 				BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */,

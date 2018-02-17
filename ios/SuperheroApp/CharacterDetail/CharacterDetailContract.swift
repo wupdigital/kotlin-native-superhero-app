@@ -15,7 +15,5 @@ protocol CharacterDetailMvpView: CommonMvpView {
 
 protocol CharacterDetailMvpPresenter: CommonMvpPresenter {
 
-    func takeView(view: CharacterDetailMvpView)
-
     func loadCharacter(characterId: Int32)
 }

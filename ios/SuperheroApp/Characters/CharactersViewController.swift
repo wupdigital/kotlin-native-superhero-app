@@ -28,6 +28,11 @@ class CharactersViewController: UITableViewController {
         self.presenter?.takeView(view: self)
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        self.presenter?.dropView()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
 
         if let splitViewController = self.splitViewController {
