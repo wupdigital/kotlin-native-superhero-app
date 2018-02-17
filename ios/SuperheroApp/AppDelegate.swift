@@ -28,14 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
         container.register(storyboardType: CharacterDetailViewController.self, tag: "characterDetail")
             .resolvingProperties { (container, viewController) in
-                viewController.presenter = try container.resolve() as CharacterDetailMvpPresenter
+                viewController.presenter = try container.resolve() as CommonCharacterDetailMvpPresenter
             }
         container.register(storyboardType: CharactersViewController.self, tag: "characters")
             .resolvingProperties { (container, viewController) in
             viewController.presenter = try container.resolve() as CommonCharactersMvpPresenter
         }
         container.register {
-            CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CharacterDetailMvpPresenter
+            CharacterDetailPresenter(useCaseHandler: $0, getCharacterUseCase: $1) as CommonCharacterDetailMvpPresenter
         }
         container.register {
             CommonGetCharacterUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)

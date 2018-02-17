@@ -14,7 +14,7 @@ class UseCaseHandler(val useCaseScheduler: UseCaseScheduler) {
         useCaseScheduler.execute({
             try {
                 useCase.run()
-            } catch (e: Exception) {
+            } catch (e: Error) {
                 print(e)
             }
         })

@@ -8,21 +8,19 @@
 
 import Common
 
-class CharacterDetailPresenter: CharacterDetailMvpPresenter {
+class CharacterDetailPresenter: NSObject, CommonCharacterDetailMvpPresenter {
 
     private let useCaseHandler: CommonUseCaseHandler
     private let getCharacterUseCase: CommonGetCharacterUseCase
-    private weak var view: CharacterDetailMvpView?
+    private weak var view: CommonCharacterDetailMvpView?
 
     init(useCaseHandler: CommonUseCaseHandler, getCharacterUseCase: CommonGetCharacterUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharacterUseCase = getCharacterUseCase
     }
 
-    func takeView(view: CommonMvpView) {
-        if let view = view as? CharacterDetailMvpView {
-            self.view = view
-        }
+    func takeView(view: CommonCharacterDetailMvpView) {
+        self.view = view
     }
 
     func dropView() {
@@ -42,12 +40,12 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
                     self.view?.showCharacter(character: character)
 
                 } else {
-                    // TODO character not found
+                    self.view?.showNoCharacter()
                 }
             }
             return CommonStdlibUnit()
         }, error: {
-            // TODO show error message
+            self.view?.showErrorMessage(message: "Something wrong")
             return CommonStdlibUnit()
         })
     }

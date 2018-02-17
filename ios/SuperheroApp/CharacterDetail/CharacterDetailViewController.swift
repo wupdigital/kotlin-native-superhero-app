@@ -20,7 +20,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterNameLabel: UILabel?
     @IBOutlet weak var thumbnailImageView: UIImageView?
 
-    var presenter: CharacterDetailMvpPresenter?
+    var presenter: CommonCharacterDetailMvpPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class CharacterDetailViewController: UIViewController {
     }
 }
 
-extension CharacterDetailViewController: CharacterDetailMvpView {
+extension CharacterDetailViewController: CommonCharacterDetailMvpView {
 
     func showCharacter(character: CommonCharacter) {
         self.characterNameLabel?.text = character.name
@@ -44,6 +44,14 @@ extension CharacterDetailViewController: CharacterDetailMvpView {
         if let url = URL(string: character.thumbnailUrl) {
             self.thumbnailImageView?.af_setImage(withURL: url)
         }
+    }
+
+    func showNoCharacter() {
+        // TODO show no character ui
+    }
+
+    func showErrorMessage(message: String) {
+        // TODO show error message
     }
 }
 
