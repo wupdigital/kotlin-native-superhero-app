@@ -6,13 +6,15 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Common
+
 class CharacterDetailPresenter: CharacterDetailMvpPresenter {
 
-    private let useCaseHandler: UseCaseHandler
+    private let useCaseHandler: CommonUseCaseHandler
     private let getCharacterUseCase: GetCharacterUseCase
     private weak var view: CharacterDetailMvpView?
 
-    init(useCaseHandler: UseCaseHandler, getCharacterUseCase: GetCharacterUseCase) {
+    init(useCaseHandler: CommonUseCaseHandler, getCharacterUseCase: GetCharacterUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharacterUseCase = getCharacterUseCase
     }
@@ -26,17 +28,21 @@ class CharacterDetailPresenter: CharacterDetailMvpPresenter {
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharacterUseCase,
                                            request: request,
-                                           success: { (response: GetCharacterResponse) in
+                                           success: { (response: CommonUseCaseResponse) in
 
-            if let character = response.character {
+            if let response = response as? GetCharacterResponse {
+                if let character = response.character {
 
-                self.view?.showCharacter(character: character)
+                    self.view?.showCharacter(character: character)
 
-            } else {
-                // TODO character not found
+                } else {
+                    // TODO character not found
+                }
             }
+            return CommonStdlibUnit()
         }, error: {
             // TODO show error message
+            return CommonStdlibUnit()
         })
     }
 }

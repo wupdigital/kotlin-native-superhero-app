@@ -13,19 +13,13 @@
 		4BF3BB592018F96000D29ACD /* SuperheroAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF3BB582018F96000D29ACD /* SuperheroAppTests.m */; };
 		A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19131AA314287FAF159CB6A /* Pods_SuperheroApp.framework */; };
 		A6EC39AA02210F6BFA4D5257 /* Pods_SuperheroAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */; };
-		BF0BE4A12036255F00F2FBDD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; };
-		BF0BE4A2203625B100F2FBDD /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; };
-		BF0BE4A3203625B100F2FBDD /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF0BE4A02036255F00F2FBDD /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF0BE4A92036390500F2FBDD /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BE4A82036390500F2FBDD /* CharacterResponse.swift */; };
 		BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */; };
 		BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */; };
 		BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */; };
 		BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */; };
 		BF6E88132030DF670056D276 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88122030DF670056D276 /* String+md5.swift */; };
-		BF6E8820203102E20056D276 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E881F203102E20056D276 /* UseCase.swift */; };
-		BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8821203108930056D276 /* UseCaseScheduler.swift */; };
 		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
-		BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882520310B520056D276 /* UseCaseHandler.swift */; };
 		BF6E8828203111330056D276 /* Mvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8827203111330056D276 /* Mvp.swift */; };
 		BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */; };
 		BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */; };
@@ -39,6 +33,9 @@
 		BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */; };
 		BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */; };
 		BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */; };
+		BFE5410820375E7E0035D58A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5410720375E7E0035D58A /* Common.framework */; };
+		BFE5410920375E890035D58A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5410720375E7E0035D58A /* Common.framework */; };
+		BFE5410A20375E890035D58A /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFE5410720375E7E0035D58A /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF0BE4A3203625B100F2FBDD /* Common.framework in Embed Frameworks */,
+				BFE5410A20375E890035D58A /* Common.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +77,6 @@
 		B4F5CBFF7709BBD386FC17E2 /* Pods-SuperheroApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroApp/Pods-SuperheroApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BCBCFF907C65363EDD1DA792 /* Pods_SuperheroAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperheroAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF03D3B1202F7D8900F8A16D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BF0BE4A02036255F00F2FBDD /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = Build/konan/bin/iphone_sim/Common.framework; sourceTree = "<group>"; };
 		BF0BE4A5203627DB00F2FBDD /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		BF0BE4A82036390500F2FBDD /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 		BF6BC8152034B89B007D6C15 /* Environment.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = Environment.stencil; sourceTree = "<group>"; };
@@ -92,10 +88,7 @@
 		BF6E880C2030CEAA0056D276 /* CharactersLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersLocalDataSource.swift; sourceTree = "<group>"; };
 		BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRemoteDataSource.swift; sourceTree = "<group>"; };
 		BF6E88122030DF670056D276 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
-		BF6E881F203102E20056D276 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		BF6E8821203108930056D276 /* UseCaseScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseScheduler.swift; sourceTree = "<group>"; };
 		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
-		BF6E882520310B520056D276 /* UseCaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseHandler.swift; sourceTree = "<group>"; };
 		BF6E8827203111330056D276 /* Mvp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mvp.swift; sourceTree = "<group>"; };
 		BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCase.swift; sourceTree = "<group>"; };
 		BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterUseCase.swift; sourceTree = "<group>"; };
@@ -109,6 +102,7 @@
 		BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailContract.swift; sourceTree = "<group>"; };
 		BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		BFE5410720375E7E0035D58A /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../common/build/konan/bin/iphone_sim/Common.framework; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,8 +113,8 @@
 			files = (
 				BF8B4EF82027A81F00535D2A /* UIKit.framework in Frameworks */,
 				BF8B4EF62027A7EF00535D2A /* Foundation.framework in Frameworks */,
-				BF0BE4A12036255F00F2FBDD /* Common.framework in Frameworks */,
-				BF0BE4A2203625B100F2FBDD /* Common.framework in Frameworks */,
+				BFE5410820375E7E0035D58A /* Common.framework in Frameworks */,
+				BFE5410920375E890035D58A /* Common.framework in Frameworks */,
 				BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */,
 				A586CFC580AF89AF061C6F31 /* Pods_SuperheroApp.framework in Frameworks */,
 			);
@@ -170,9 +164,6 @@
 				BF8B4ED32027889D00535D2A /* Characters */,
 				BF6E87CD2030BBFF0056D276 /* AppDelegate.swift */,
 				BF6E8827203111330056D276 /* Mvp.swift */,
-				BF6E881F203102E20056D276 /* UseCase.swift */,
-				BF6E882520310B520056D276 /* UseCaseHandler.swift */,
-				BF6E8821203108930056D276 /* UseCaseScheduler.swift */,
 				BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */,
 				BF6BC8172034BA3F007D6C15 /* Environment.generated.swift */,
 				BF6BC8152034B89B007D6C15 /* Environment.stencil */,
@@ -286,7 +277,7 @@
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF0BE4A02036255F00F2FBDD /* Common.framework */,
+				BFE5410720375E7E0035D58A /* Common.framework */,
 				BF8B4EF72027A81F00535D2A /* UIKit.framework */,
 				BF8B4EF52027A7EF00535D2A /* Foundation.framework */,
 				BF8B4EF32027A7E300535D2A /* CoreData.framework */,
@@ -577,18 +568,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */,
-				BF6E8822203108930056D276 /* UseCaseScheduler.swift in Sources */,
 				BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */,
 				BFB7FE362032208900157F5A /* CharactersContract.swift in Sources */,
 				BF6E880D2030CEAA0056D276 /* CharactersLocalDataSource.swift in Sources */,
 				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF6E88132030DF670056D276 /* String+md5.swift in Sources */,
 				BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */,
-				BF6E8820203102E20056D276 /* UseCase.swift in Sources */,
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
 				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
-				BF6E882620310B520056D276 /* UseCaseHandler.swift in Sources */,
 				BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */,
 				BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */,
 				BF6E8828203111330056D276 /* Mvp.swift in Sources */,
@@ -759,7 +747,7 @@
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Build/konan/bin/iphone_sim",
+					"$(PROJECT_DIR)/../common/build/konan/**",
 				);
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -782,7 +770,7 @@
 				DEVELOPMENT_TEAM = P79WKA4KXJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Build/konan/bin/iphone_sim",
+					"$(PROJECT_DIR)/../common/build/konan/**",
 				);
 				INFOPLIST_FILE = SuperheroApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

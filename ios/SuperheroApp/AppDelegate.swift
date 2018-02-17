@@ -47,11 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             GetCharactersUseCase(charactersDataSource: try container.resolve() as CommonCharactersRepository)
         }
         container.register(.singleton) {
-            UseCaseHandler(useCaseScheduler: $0) as UseCaseHandler
+            CommonUseCaseHandler(useCaseScheduler: $0) as CommonUseCaseHandler
         }
         container.register(.singleton) {
             UseCaseNSOperationQueueScheduler(workerQueue: OperationQueue(),
-                                             mainQueue: OperationQueue.main) as UseCaseScheduler
+                                             mainQueue: OperationQueue.main) as CommonUseCaseScheduler
         }
         container.register {
             CommonCharactersRepository(localDataSource: try container.resolve(tag: DataSourceTag.local) as CommonCharactersDataSource,

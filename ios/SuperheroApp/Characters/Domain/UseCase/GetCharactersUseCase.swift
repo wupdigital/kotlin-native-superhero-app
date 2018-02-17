@@ -6,17 +6,26 @@
 //  Copyright © 2018. W.UP. All rights reserved.
 //
 
+import Foundation
 import Common
 
-struct GetCharactersRequest: UseCaseRequest {
+class GetCharactersRequest: CommonUseCaseRequest {
     var page: CommonPage
+
+    init(page: CommonPage) {
+        self.page = page
+    }
 }
 
-struct GetCharactersResponse: UseCaseResponse {
-    var characters: [CommonCharacter]
+class GetCharactersResponse: CommonUseCaseResponse {
+    let characters: [CommonCharacter]
+
+    init(characters: [CommonCharacter]) {
+        self.characters = characters
+    }
 }
 
-class GetCharactersUseCase: UseCase<GetCharactersRequest, GetCharactersResponse> {
+class GetCharactersUseCase: CommonUseCase {
 
     private let charactersDataSource: CommonCharactersDataSource
 
@@ -24,20 +33,16 @@ class GetCharactersUseCase: UseCase<GetCharactersRequest, GetCharactersResponse>
         self.charactersDataSource = charactersDataSource
     }
 
-    override func executeUseCase(request: GetCharactersRequest) throws {
-        self.charactersDataSource.loadCharacters(page: request.page, complete: { (characters: [CommonCharacter]) in
-            let response = GetCharactersResponse(characters: characters)
-            if let success = self.success {
-                _ = success(response)
-            }
+    override func executeUseCase(request: CommonUseCaseRequest) {
+        if let request = request as? GetCharactersRequest {
 
-            return CommonStdlibUnit()
-        }, fail: {
-            if let error = self.error {
-                _ = error()
-            }
+            self.charactersDataSource.loadCharacters(page: request.page, complete: { (characters: [CommonCharacter]) in
+                let response = GetCharactersResponse(characters: characters)
 
-            return CommonStdlibUnit()
-        })
+                return self.success(response)
+            }, fail: {
+                return self.error()
+            })
+        }
     }
 }

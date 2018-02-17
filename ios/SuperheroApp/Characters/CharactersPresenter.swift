@@ -12,13 +12,13 @@ private let defaultLimit = Int32(100)
 
 class CharactersPreseneter: CharactersMvpPresenter {
 
-    private let useCaseHandler: UseCaseHandler
+    private let useCaseHandler: CommonUseCaseHandler
     private var getCharactersUseCase: GetCharactersUseCase
     private weak var view: CharactersMvpView?
     private var currentPage: CommonPage = CommonPage(limit: defaultLimit, offset: 0)
     private var objects: [CommonCharacter] = [CommonCharacter]()
 
-    init(useCaseHandler: UseCaseHandler, getCharactersUseCase: GetCharactersUseCase) {
+    init(useCaseHandler: CommonUseCaseHandler, getCharactersUseCase: GetCharactersUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharactersUseCase = getCharactersUseCase
     }
@@ -44,19 +44,24 @@ class CharactersPreseneter: CharactersMvpPresenter {
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase,
                                            request: request,
-                                           success: { (response: GetCharactersResponse) in
+                                           success: { (response: CommonUseCaseResponse) in
+
             self.view?.hideLoadingIndicator()
 
-            if response.characters.isEmpty {
-                self.view?.showNoCharacters()
-            } else {
-                self.objects.append(contentsOf: response.characters)
-                self.view?.refreshCharacters()
+            if let response = response as? GetCharactersResponse {
+                if response.characters.isEmpty {
+                    self.view?.showNoCharacters()
+                } else {
+                    self.objects.append(contentsOf: response.characters)
+                    self.view?.refreshCharacters()
+                }
             }
+            return CommonStdlibUnit()
         }, error: {
             self.view?.hideLoadingIndicator()
             // TODO hardcoded message
             self.view?.showLoadingCharactersError(message: "Something wrong!")
+            return CommonStdlibUnit()
         })
     }
 
@@ -68,19 +73,23 @@ class CharactersPreseneter: CharactersMvpPresenter {
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase,
                                            request: request,
-                                           success: { (response: GetCharactersResponse) in
+                                           success: { (response: CommonUseCaseResponse) in
             self.view?.hideMoreLoadingIndicator()
 
-            if response.characters.isEmpty {
-                self.view?.showNoCharacters()
-            } else {
-                self.objects.append(contentsOf: response.characters)
-                self.view?.refreshCharacters()
+            if let response = response as? GetCharactersResponse {
+                if response.characters.isEmpty {
+                    self.view?.showNoCharacters()
+                } else {
+                    self.objects.append(contentsOf: response.characters)
+                    self.view?.refreshCharacters()
+                }
             }
+            return CommonStdlibUnit()
         }, error: {
             // TODO remove hardcoded message
             self.view?.hideMoreLoadingIndicator()
             self.view?.showLoadingCharactersError(message: "Something wrong!")
+            return CommonStdlibUnit()
         })
     }
 }

@@ -13,9 +13,9 @@ class CharactersRepository(
     override fun loadCharacters(page: Page, complete: (List<Character>) -> Unit, fail: () -> Unit) {
         localDataSource.loadCharacters(page, { characters ->
             if (characters.isEmpty()) {
-                remoteDataSource.loadCharacters(page, { characters ->
-                        localDataSource.saveCharacters(characters, {}, {})
-                    complete(characters)
+                remoteDataSource.loadCharacters(page, { chars ->
+                        localDataSource.saveCharacters(chars, {}, {})
+                    complete(chars)
                 }, fail)
             } else {
                 complete(characters)

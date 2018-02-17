@@ -8,7 +8,7 @@
 
 import Common
 
-struct GetCharacterRequest: UseCaseRequest {
+class GetCharacterRequest: CommonUseCaseRequest {
     let characterId: Int32
 
     init(characterId: Int32) {
@@ -16,7 +16,7 @@ struct GetCharacterRequest: UseCaseRequest {
     }
 }
 
-struct GetCharacterResponse: UseCaseResponse {
+class GetCharacterResponse: CommonUseCaseResponse {
     let character: CommonCharacter?
 
     init(character: CommonCharacter?) {
@@ -24,7 +24,7 @@ struct GetCharacterResponse: UseCaseResponse {
     }
 }
 
-class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {
+class GetCharacterUseCase: CommonUseCase {
 
     private var charactersDataSource: CommonCharactersDataSource
 
@@ -32,21 +32,16 @@ class GetCharacterUseCase: UseCase<GetCharacterRequest, GetCharacterResponse> {
         self.charactersDataSource = charactersDataSource
     }
 
-    override func executeUseCase(request: GetCharacterRequest) throws {
-        self.charactersDataSource.loadCharacter(characterId: request.characterId, complete: { (character) in
+    override func executeUseCase(request: CommonUseCaseRequest) {
 
-            if let success = self.success {
+        if let request = request as? GetCharacterRequest {
+
+            self.charactersDataSource.loadCharacter(characterId: request.characterId, complete: { (character) in
                 let response = GetCharacterResponse(character: character)
-                _ = success(response)
-            }
-
-            return CommonStdlibUnit()
-        }, fail: {
-            if let error = self.error {
-                _ = error()
-            }
-
-            return CommonStdlibUnit()
-        })
+                return self.success(response)
+            }, fail: {
+                return self.error()
+            })
+        }
     }
 }
