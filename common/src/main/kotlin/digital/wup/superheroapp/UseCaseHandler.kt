@@ -1,6 +1,6 @@
 package digital.wup.superheroapp
 
-class UseCaseHandler(val useCaseScheduler: UseCaseScheduler) {
+class UseCaseHandler(private val useCaseScheduler: UseCaseScheduler) {
 
     fun <Rq: UseCaseRequest, Rs: UseCaseResponse>executeUseCase(useCase: UseCase<Rq, Rs>, request: Rq, success: (Rs) -> Unit, error: () -> Unit) {
         useCase.request = request
@@ -15,7 +15,7 @@ class UseCaseHandler(val useCaseScheduler: UseCaseScheduler) {
             try {
                 useCase.run()
             } catch (e: Error) {
-                print(e)
+                e.printStackTrace()
             }
         })
     }

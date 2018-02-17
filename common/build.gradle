@@ -11,7 +11,7 @@ buildscript {
 }
 
 
-apply plugin: 'kotlin-platform-common'
+apply plugin: 'kotlin'
 apply plugin: 'konan'
 
 dependencies {
@@ -23,7 +23,6 @@ konan.targets = ['iphone', 'iphone_sim']
 
 konanArtifacts {
     framework('Common') {
-        enableMultiplatform true
         srcDir './src/main/kotlin'
     }
 }
