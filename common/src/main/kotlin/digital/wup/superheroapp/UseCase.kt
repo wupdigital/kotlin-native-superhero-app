@@ -1,6 +1,6 @@
 package digital.wup.superheroapp
 
-open class UseCase<Rq: UseCaseRequest, Rs: UseCaseResponse> {
+abstract class UseCase<Rq: UseCaseRequest, Rs: UseCaseResponse> {
 
     lateinit var request: Rq
     lateinit var success: ((Rs) -> Unit)
@@ -10,5 +10,5 @@ open class UseCase<Rq: UseCaseRequest, Rs: UseCaseResponse> {
         executeUseCase(request)
     }
 
-    open fun executeUseCase(request: Rq) {}
+    abstract fun executeUseCase(request: Rq)
 }

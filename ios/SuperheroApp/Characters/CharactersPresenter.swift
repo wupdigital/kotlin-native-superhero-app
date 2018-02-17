@@ -13,12 +13,12 @@ private let defaultLimit = Int32(100)
 class CharactersPreseneter: CharactersMvpPresenter {
 
     private let useCaseHandler: CommonUseCaseHandler
-    private var getCharactersUseCase: GetCharactersUseCase
+    private var getCharactersUseCase: CommonGetCharactersUseCase
     private weak var view: CharactersMvpView?
     private var currentPage: CommonPage = CommonPage(limit: defaultLimit, offset: 0)
     private var objects: [CommonCharacter] = [CommonCharacter]()
 
-    init(useCaseHandler: CommonUseCaseHandler, getCharactersUseCase: GetCharactersUseCase) {
+    init(useCaseHandler: CommonUseCaseHandler, getCharactersUseCase: CommonGetCharactersUseCase) {
         self.useCaseHandler = useCaseHandler
         self.getCharactersUseCase = getCharactersUseCase
     }
@@ -40,7 +40,7 @@ class CharactersPreseneter: CharactersMvpPresenter {
 
         self.view?.showLoadingIndicator()
 
-        let request = GetCharactersRequest(page: self.currentPage)
+        let request = CommonGetCharactersRequest(page: self.currentPage)
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase,
                                            request: request,
@@ -48,7 +48,7 @@ class CharactersPreseneter: CharactersMvpPresenter {
 
             self.view?.hideLoadingIndicator()
 
-            if let response = response as? GetCharactersResponse {
+            if let response = response as? CommonGetCharactersResponse {
                 if response.characters.isEmpty {
                     self.view?.showNoCharacters()
                 } else {
@@ -69,14 +69,14 @@ class CharactersPreseneter: CharactersMvpPresenter {
         self.view?.showMoreLoadingIndicator()
 
         self.currentPage.offset += defaultLimit
-        let request = GetCharactersRequest(page: self.currentPage)
+        let request = CommonGetCharactersRequest(page: self.currentPage)
 
         self.useCaseHandler.executeUseCase(useCase: self.getCharactersUseCase,
                                            request: request,
                                            success: { (response: CommonUseCaseResponse) in
             self.view?.hideMoreLoadingIndicator()
 
-            if let response = response as? GetCharactersResponse {
+            if let response = response as? CommonGetCharactersResponse {
                 if response.characters.isEmpty {
                     self.view?.showNoCharacters()
                 } else {

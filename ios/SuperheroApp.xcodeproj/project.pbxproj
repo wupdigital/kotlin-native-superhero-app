@@ -21,7 +21,6 @@
 		BF6E88132030DF670056D276 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88122030DF670056D276 /* String+md5.swift */; };
 		BF6E88242031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */; };
 		BF6E8828203111330056D276 /* Mvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8827203111330056D276 /* Mvp.swift */; };
-		BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */; };
 		BF6E882C2031147B0056D276 /* GetCharacterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */; };
 		BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF8B4EF02027A10D00535D2A /* CharacterModel.xcdatamodeld */; };
 		BF8B4EF42027A7E300535D2A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8B4EF32027A7E300535D2A /* CoreData.framework */; };
@@ -90,7 +89,6 @@
 		BF6E88122030DF670056D276 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		BF6E88232031090E0056D276 /* UseCaseNSOperationQueueScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseNSOperationQueueScheduler.swift; sourceTree = "<group>"; };
 		BF6E8827203111330056D276 /* Mvp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mvp.swift; sourceTree = "<group>"; };
-		BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersUseCase.swift; sourceTree = "<group>"; };
 		BF6E882B2031147B0056D276 /* GetCharacterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterUseCase.swift; sourceTree = "<group>"; };
 		BF8B4EF12027A10D00535D2A /* CharacterModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CharacterModel.xcdatamodel; sourceTree = "<group>"; };
 		BF8B4EF32027A7E300535D2A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -204,7 +202,6 @@
 		BF8B4ED32027889D00535D2A /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				BF8B4ED720278D1700535D2A /* Domain */,
 				BFB7FE39203227B100157F5A /* CharactersViewController.swift */,
 				BFB7FE37203221E000157F5A /* CharactersPresenter.swift */,
 				BFB7FE352032208900157F5A /* CharactersContract.swift */,
@@ -221,14 +218,6 @@
 				BFB7FE3B20322D2300157F5A /* CharacterDetailContract.swift */,
 			);
 			path = CharacterDetail;
-			sourceTree = "<group>";
-		};
-		BF8B4ED720278D1700535D2A /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				BF8B4EEC2027950E00535D2A /* UseCase */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		BF8B4EDC20278E9A00535D2A /* DataSource */ = {
@@ -256,14 +245,6 @@
 				BF6E88102030DCAF0056D276 /* CharactersRemoteDataSource.swift */,
 			);
 			path = Remote;
-			sourceTree = "<group>";
-		};
-		BF8B4EEC2027950E00535D2A /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				BF6E8829203111C70056D276 /* GetCharactersUseCase.swift */,
-			);
-			path = UseCase;
 			sourceTree = "<group>";
 		};
 		BFB07A58202CEFFF008D7564 /* Utils */ = {
@@ -578,7 +559,6 @@
 				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
 				BFB7FE38203221E000157F5A /* CharactersPresenter.swift in Sources */,
-				BF6E882A203111C70056D276 /* GetCharactersUseCase.swift in Sources */,
 				BF6E8828203111330056D276 /* Mvp.swift in Sources */,
 				BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */,
 				BFB7FE3C20322D2300157F5A /* CharacterDetailContract.swift in Sources */,
