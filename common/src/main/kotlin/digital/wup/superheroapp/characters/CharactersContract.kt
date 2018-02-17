@@ -1,6 +1,6 @@
 package digital.wup.superheroapp.characters
 
-import digital.wup.superheroapp.characters.domain.usecase.model.Character
+import digital.wup.superheroapp.characters.domain.model.Character
 import digital.wup.superheroapp.mvp.MvpPresenter
 import digital.wup.superheroapp.mvp.MvpView
 

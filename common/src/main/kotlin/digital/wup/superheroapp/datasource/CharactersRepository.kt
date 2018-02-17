@@ -1,7 +1,7 @@
 package digital.wup.superheroapp.datasource
 
-import digital.wup.superheroapp.characters.domain.usecase.model.Character
-import digital.wup.superheroapp.characters.domain.usecase.model.Page
+import digital.wup.superheroapp.characters.domain.model.Character
+import digital.wup.superheroapp.characters.domain.model.Page
 
 class CharactersRepository(
 
