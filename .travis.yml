@@ -1,8 +1,20 @@
 language: swift
 osx_image: xcode9.2
 
+podfile: ./ios/Podfile
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
     - cocoapods
+
+cache:
+    - directories:
+        - $HOME/.gradle/caches/
+        - $HOME/.gradle/wrapper/
+        - $HOME/.android/build-cache
 
 before_install:
     - gem install cocoapods --version 1.4.0
@@ -11,4 +23,4 @@ install:
     - pod repo update
 
 script:
-    - ./gradlew clean build --refresh-dependencies
+    - ./gradlew clean build --refresh-dependencies --console plain
