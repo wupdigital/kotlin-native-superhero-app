@@ -4,6 +4,7 @@ allprojects {
         ext.serialization_version = '0.2'
         ext.kotlin_native_version = '0.6'
         ext.openbakery_version = '0.15.1'
+        ext.ktlint_version = '0.14.0'
 
         repositories {
             maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }

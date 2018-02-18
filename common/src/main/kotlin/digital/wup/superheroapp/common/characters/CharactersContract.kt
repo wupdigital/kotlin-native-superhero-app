@@ -4,7 +4,7 @@ import digital.wup.superheroapp.common.characters.domain.model.Character
 import digital.wup.superheroapp.common.mvp.MvpPresenter
 import digital.wup.superheroapp.common.mvp.MvpView
 
-interface CharactersMvpPresenter: MvpPresenter {
+interface CharactersMvpPresenter : MvpPresenter {
 
     fun takeView(view: CharactersMvpView)
 
@@ -19,7 +19,7 @@ interface CharactersMvpPresenter: MvpPresenter {
     fun loadMoreCharacters()
 }
 
-interface CharactersMvpView: MvpView {
+interface CharactersMvpView : MvpView {
 
     fun showLoadingIndicator()
 

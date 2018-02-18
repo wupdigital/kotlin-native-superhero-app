@@ -4,7 +4,7 @@ interface UseCaseRequest
 
 interface UseCaseResponse
 
-abstract class UseCase<Rq: UseCaseRequest, Rs: UseCaseResponse> {
+abstract class UseCase<Rq : UseCaseRequest, Rs : UseCaseResponse> {
 
     lateinit var request: Rq
     lateinit var success: ((Rs) -> Unit)

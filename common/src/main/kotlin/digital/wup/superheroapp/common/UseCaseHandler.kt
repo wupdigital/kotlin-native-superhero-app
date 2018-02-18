@@ -2,7 +2,7 @@ package digital.wup.superheroapp.common
 
 class UseCaseHandler(private val useCaseScheduler: UseCaseScheduler) {
 
-    fun <Rq: UseCaseRequest, Rs: UseCaseResponse>executeUseCase(useCase: UseCase<Rq, Rs>, request: Rq, success: (Rs) -> Unit, error: () -> Unit) {
+    fun <Rq : UseCaseRequest, Rs : UseCaseResponse> executeUseCase(useCase: UseCase<Rq, Rs>, request: Rq, success: (Rs) -> Unit, error: () -> Unit) {
         useCase.request = request
         useCase.success = { response ->
             notifyResponse(success, response)
@@ -20,7 +20,7 @@ class UseCaseHandler(private val useCaseScheduler: UseCaseScheduler) {
         })
     }
 
-    private fun <Rs: UseCaseResponse>notifyResponse(success: (Rs) -> Unit, response: Rs) {
+    private fun <Rs : UseCaseResponse> notifyResponse(success: (Rs) -> Unit, response: Rs) {
         useCaseScheduler.notifyResponse(success, response)
     }
 

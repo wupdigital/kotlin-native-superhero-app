@@ -8,9 +8,9 @@ import digital.wup.superheroapp.common.datasource.CharactersDataSource
 
 class GetCharacterRequest(val characterId: Int) : UseCaseRequest
 
-class GetCharacterResponse(val character: Character?): UseCaseResponse
+class GetCharacterResponse(val character: Character?) : UseCaseResponse
 
-class GetCharacterUseCase(private val charactersDataSource: CharactersDataSource): UseCase<GetCharacterRequest, GetCharacterResponse>() {
+class GetCharacterUseCase(private val charactersDataSource: CharactersDataSource) : UseCase<GetCharacterRequest, GetCharacterResponse>() {
 
     override fun executeUseCase(request: GetCharacterRequest) {
         charactersDataSource.loadCharacter(request.characterId, {

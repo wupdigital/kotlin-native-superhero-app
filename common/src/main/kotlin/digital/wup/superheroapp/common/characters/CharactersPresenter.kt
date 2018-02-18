@@ -15,9 +15,8 @@ class CharactersPresenter(
 ) : CharactersMvpPresenter {
 
     private var view: CharactersMvpView? = null
-    private var currentPage: Page = Page(DEFAULT_LIMIT,  0)
+    private var currentPage: Page = Page(DEFAULT_LIMIT, 0)
     private var objects: MutableList<Character> = mutableListOf()
-
 
     override fun takeView(view: CharactersMvpView) {
         this.view = view
@@ -28,11 +27,11 @@ class CharactersPresenter(
         view = null
     }
 
-    override fun characters() : List<Character> {
+    override fun characters(): List<Character> {
         return objects
     }
 
-    override fun charactersCount() : Int {
+    override fun charactersCount(): Int {
         return objects.count()
     }
 
@@ -50,7 +49,6 @@ class CharactersPresenter(
                 objects.addAll(response.characters)
                 view?.refreshCharacters()
             }
-
         }, {
             view?.hideLoadingIndicator()
             // TODO hardcoded message
