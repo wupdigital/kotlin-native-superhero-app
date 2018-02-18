@@ -1,8 +1,8 @@
-package digital.wup.superheroapp.characters
+package digital.wup.superheroapp.common.characters
 
-import digital.wup.superheroapp.characters.domain.model.Character
-import digital.wup.superheroapp.mvp.MvpPresenter
-import digital.wup.superheroapp.mvp.MvpView
+import digital.wup.superheroapp.common.characters.domain.model.Character
+import digital.wup.superheroapp.common.mvp.MvpPresenter
+import digital.wup.superheroapp.common.mvp.MvpView
 
 interface CharactersMvpPresenter: MvpPresenter {
 

@@ -1,4 +1,4 @@
-package digital.wup.superheroapp
+package digital.wup.superheroapp.common
 
 class UseCaseHandler(private val useCaseScheduler: UseCaseScheduler) {
 

@@ -1,7 +1,7 @@
-package digital.wup.superheroapp.datasource
+package digital.wup.superheroapp.common.datasource
 
-import digital.wup.superheroapp.characters.domain.model.Page
-import digital.wup.superheroapp.characters.domain.model.Character
+import digital.wup.superheroapp.common.characters.domain.model.Page
+import digital.wup.superheroapp.common.characters.domain.model.Character
 
 interface CharactersDataSource {
     fun loadCharacters(page: Page, complete: (List<Character>) -> Unit, fail: () -> Unit)

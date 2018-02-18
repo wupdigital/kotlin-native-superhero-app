@@ -1,4 +1,4 @@
-package digital.wup.superheroapp.mvp
+package digital.wup.superheroapp.common.mvp
 
 interface MvpView
 

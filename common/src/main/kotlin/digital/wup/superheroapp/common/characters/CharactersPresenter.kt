@@ -1,11 +1,11 @@
-package digital.wup.superheroapp.characters
+package digital.wup.superheroapp.common.characters
 
-import digital.wup.superheroapp.UseCaseHandler
-import digital.wup.superheroapp.characters.domain.usecase.GetCharactersRequest
-import digital.wup.superheroapp.characters.domain.usecase.GetCharactersResponse
-import digital.wup.superheroapp.characters.domain.usecase.GetCharactersUseCase
-import digital.wup.superheroapp.characters.domain.model.Character
-import digital.wup.superheroapp.characters.domain.model.Page
+import digital.wup.superheroapp.common.UseCaseHandler
+import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersRequest
+import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersResponse
+import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersUseCase
+import digital.wup.superheroapp.common.characters.domain.model.Character
+import digital.wup.superheroapp.common.characters.domain.model.Page
 
 const val DEFAULT_LIMIT = 100
 
