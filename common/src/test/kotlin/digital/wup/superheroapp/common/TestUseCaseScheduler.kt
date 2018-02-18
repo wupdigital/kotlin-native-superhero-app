@@ -3,7 +3,7 @@ package digital.wup.superheroapp.common
 /**
  * @author Balazs Varga
  */
-class TestUseCaseScheduler: UseCaseScheduler {
+class TestUseCaseScheduler : UseCaseScheduler {
 
     override fun execute(runnable: () -> Unit) {
         runnable()
