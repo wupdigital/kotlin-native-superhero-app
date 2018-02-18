@@ -19,7 +19,7 @@ class CharacterDetailPresenter: NSObject, CommonCharacterDetailMvpPresenter {
         self.getCharacterUseCase = getCharacterUseCase
     }
 
-    func takeView(view: CommonCharacterDetailMvpView) {
+    func takeView(view_ view: CommonCharacterDetailMvpView) {
         self.view = view
     }
 

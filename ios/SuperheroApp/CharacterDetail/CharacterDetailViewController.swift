@@ -25,7 +25,7 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.presenter?.takeView(view: self)
+        self.presenter?.takeView(view_: self)
         self.loadContent()
     }
 

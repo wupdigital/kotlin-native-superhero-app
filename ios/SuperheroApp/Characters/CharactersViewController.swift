@@ -25,7 +25,7 @@ class CharactersViewController: UITableViewController {
         self.tableView.backgroundView = self.loadIndicator
         self.tableView.tableFooterView = self.loadMoreIndicator
 
-        self.presenter?.takeView(view_: self)
+        self.presenter?.takeView(view: self)
     }
 
     override func didReceiveMemoryWarning() {
