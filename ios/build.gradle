@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven {
+            url 'http://repository.openbakery.org/'
+        }
+    }
+
+    dependencies {
+        classpath "org.openbakery:xcode-plugin:$openbakery_version"
+    }
+}
+
+apply plugin: 'org.openbakery.xcode-plugin'
+
+xcodebuild {
+    scheme = 'SuperheroApp'
+    target = 'SuperheroApp'
+    destination {
+        platform='iOS Simulator'
+        name='iPhone 6'
+        os='11.2'
+    }
+}
