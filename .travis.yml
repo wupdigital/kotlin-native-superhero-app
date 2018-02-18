@@ -16,11 +16,8 @@ cache:
         - $HOME/.gradle/wrapper/
         - $HOME/.android/build-cache
 
-before_install:
-    - gem install cocoapods --version 1.4.0
-
 install:
-    - pod repo update
+    - gem install cocoapods --version 1.4.0
 
 script:
     - ./gradlew clean build --refresh-dependencies --console plain
