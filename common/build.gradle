@@ -19,10 +19,14 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
 }
 
-konan.targets = ['iphone', 'iphone_sim']
+konan.targets = ['iphone', 'iphone_sim', 'android_arm32' ,'android_arm64']
 
 konanArtifacts {
     framework('Common') {
+        srcDir './src/main/kotlin'
+    }
+
+    dynamic('common_android') {
         srcDir './src/main/kotlin'
     }
 }
