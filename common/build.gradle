@@ -21,7 +21,10 @@ configurations {
 dependencies {
     ktlint "com.github.shyiko:ktlint:$ktlint_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+    testImplementation "junit:junit:$junit_version"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
+    testImplementation "org.mockito:mockito-core:$mockito_core_version"
+    testImplementation "com.nhaarman:mockito-kotlin:$mockito_kotlin_version"
 }
 
 konan.targets = ['iphone', 'iphone_sim', 'android_arm32' ,'android_arm64']
