@@ -27,14 +27,12 @@ dependencies {
     testImplementation "com.nhaarman:mockito-kotlin:$mockito_kotlin_version"
 }
 
-konan.targets = ['iphone', 'iphone_sim', 'android_arm32' ,'android_arm64']
-
 konanArtifacts {
-    framework('Common') {
+    framework('Common', targets: ['iphone', 'iphone_sim']) {
         srcDir './src/main/kotlin'
     }
 
-    dynamic('common_android') {
+    dynamic('common_android', targets: ['android_arm32' ,'android_arm64']) {
         srcDir './src/main/kotlin'
     }
 }

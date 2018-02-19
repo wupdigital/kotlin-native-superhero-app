@@ -42,22 +42,41 @@
                                     <constraint firstAttribute="width" secondItem="4GQ-Bk-R40" secondAttribute="height" multiplier="1:1" id="qFG-BU-GuD"/>
                                 </constraints>
                             </imageView>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="447" width="335" height="21"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw" customClass="PaddedLabel" customModule="SuperheroApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="439" width="375" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zhj-QN-pGi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContentInset">
+                                        <rect key="value" x="10" y="10" width="10" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ays-yZ-fZf">
+                                <rect key="frame" x="10" y="489" width="355" height="168"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="trailing" secondItem="VUw-jc-0yf" secondAttribute="trailing" id="0d6-00-kIZ"/>
+                            <constraint firstItem="ays-yZ-fZf" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="10" id="Luj-Q8-WN7"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="ays-yZ-fZf" secondAttribute="trailing" constant="10" id="TU7-SF-gLY"/>
+                            <constraint firstItem="ays-yZ-fZf" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="10" id="Yuw-Ym-gBl"/>
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="amF-8P-Ziy"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="brZ-7j-8A2"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="ays-yZ-fZf" secondAttribute="bottom" constant="10" id="azJ-PN-1L3"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="brZ-7j-8A2"/>
                             <constraint firstItem="4GQ-Bk-R40" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="iDH-C9-KVZ"/>
-                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" id="o50-Xq-aGq"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="4GQ-Bk-R40" secondAttribute="bottom" constant="8" symbolic="YES" id="yPb-co-EUE"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" id="o50-Xq-aGq"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="4GQ-Bk-R40" secondAttribute="bottom" id="yPb-co-EUE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
@@ -68,6 +87,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="characterNameLabel" destination="0XM-y9-sOw" id="JnW-2r-Sub"/>
+                        <outlet property="descriptionLabel" destination="ays-yZ-fZf" id="yDb-Nu-V6g"/>
                         <outlet property="thumbnailImageView" destination="4GQ-Bk-R40" id="xey-YP-5jZ"/>
                     </connections>
                 </viewController>

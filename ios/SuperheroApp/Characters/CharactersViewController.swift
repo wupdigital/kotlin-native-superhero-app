@@ -88,6 +88,7 @@ extension CharactersViewController {
 }
 
 extension CharactersViewController: CommonCharactersMvpView {
+
     func showLoadingIndicator() {
         self.loadIndicator?.startAnimating()
     }
@@ -108,12 +109,14 @@ extension CharactersViewController: CommonCharactersMvpView {
         self.tableView.reloadData()
     }
 
-    func showLoadingCharactersError(message: String) {
-        // TODO show error
+    func showNoCharacters() {
+        let alert = UIAlertController(title: "Info", message: "Characters not found", preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func showNoCharacters() {
-        // TODO show no characters ui
+    func showLoadingCharactersError(message: String) {
+        let alert = UIAlertController(title: "Info", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

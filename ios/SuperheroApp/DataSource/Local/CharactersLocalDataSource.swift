@@ -34,8 +34,13 @@ class CharactersLocalDataSource: NSObject, CommonCharactersDataSource {
 
                 if let characterId = entity.value(forKey: "id") as? Int32,
                     let name = entity.value(forKey: "name") as? String,
+                    let description = entity.value(forKey: "desc") as? String,
                     let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
-                    let character = CommonCharacter(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+
+                    let character = CommonCharacter(characterId: characterId,
+                                                    name: name,
+                                                    desc: description,
+                                                    thumbnailUrl: thumbnailUrl)
                     characters.append(character)
                 }
             }
@@ -59,8 +64,13 @@ class CharactersLocalDataSource: NSObject, CommonCharactersDataSource {
             if let entity = result.first,
                 let characterId = entity.value(forKey: "id") as? Int32,
                 let name = entity.value(forKey: "name") as? String,
+                let description = entity.value(forKey: "desc") as? String,
                 let thumbnailUrl = entity.value(forKey: "thumbnailUrl") as? String {
-                let character = CommonCharacter(characterId: characterId, name: name, thumbnailUrl: thumbnailUrl)
+
+                let character = CommonCharacter(characterId: characterId,
+                                                name: name,
+                                                desc: description,
+                                                thumbnailUrl: thumbnailUrl)
                 _ = complete(character)
             }
 
@@ -74,17 +84,26 @@ class CharactersLocalDataSource: NSObject, CommonCharactersDataSource {
                         fail: @escaping () -> CommonStdlibUnit) {
 
         for character in characters {
-            let entity = NSEntityDescription .insertNewObject(forEntityName: "CharacterEntity",
+
+            let entity = NSEntityDescription.insertNewObject(forEntityName: "CharacterEntity",
                                                               into: self.persistentContainer.viewContext)
+
             entity.setValue(character.characterId, forKey: "id")
             entity.setValue(character.name, forKey: "name")
+            entity.setValue(character.desc, forKey: "desc")
             entity.setValue(character.thumbnailUrl, forKey: "thumbnailUrl")
         }
-        do {
-            try self.persistentContainer.viewContext.save()
+
+        if self.persistentContainer.viewContext.hasChanges {
+
+            do {
+                try self.persistentContainer.viewContext.save()
+                _ = complete()
+            } catch {
+                _ = fail()
+            }
+        } else {
             _ = complete()
-        } catch {
-            _ = fail()
         }
     }
 }
