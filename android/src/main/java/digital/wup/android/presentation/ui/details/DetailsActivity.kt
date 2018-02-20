@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
 import dagger.android.AndroidInjection
+import digital.wup.android.R
 import digital.wup.android.presentation.Navigation
 import digital.wup.superheroapp.common.characters.domain.model.Character
 
@@ -48,7 +49,7 @@ open class DetailsActivity : AppCompatActivity(), DetailsContract.DetailsView {
     override fun showCharacter(characters: Character) {
         nameTextView!!.text = characters.name
 
-        picasso.load(characters.thumbnailUrl).into(thumbnailImageView)
+        picasso.load(characters.thumbnailUrl + ".jpg").into(thumbnailImageView)
     }
 
     override fun showLoadingCharacterError() {

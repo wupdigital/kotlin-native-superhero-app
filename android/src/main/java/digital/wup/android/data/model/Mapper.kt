@@ -4,7 +4,7 @@ import digital.wup.android.data.local.CharacterDto
 import digital.wup.superheroapp.common.characters.domain.model.Character
 
 fun CharacterNet.toCharacter(): Character {
-    return Character(this.id.toInt(), this.name, this.thumbnail!!.path)
+    return Character(this.id.toInt(), this.name, "", this.thumbnail!!.path)
 }
 
 fun Character.toCharacterNet(): CharacterNet {
@@ -16,5 +16,5 @@ fun Character.toCharacterDto(): CharacterDto {
 }
 
 fun CharacterDto.toCharacterDto(): Character {
-    return Character(this.characterId.toInt(), this.name, this.path)
+    return Character(this.characterId.toInt(), this.name, "", this.path)
 }

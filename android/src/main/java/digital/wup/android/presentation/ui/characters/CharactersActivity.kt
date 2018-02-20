@@ -1,11 +1,14 @@
 package digital.wup.android.presentation.ui.characters
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import dagger.android.AndroidInjection
 import digital.wup.android.R
+import digital.wup.android.presentation.Navigation
+import digital.wup.android.presentation.ui.details.DetailsActivity
 import digital.wup.superheroapp.common.characters.domain.model.Character
 import javax.inject.Inject
 
@@ -57,6 +60,8 @@ class CharactersActivity : AppCompatActivity(), CharactersContract.CharactersVie
     }
 
     override fun navigateToDetails(bundle: Bundle) {
-
+        val navigate = Intent(this, DetailsActivity::class.java)
+        navigate.putExtra(Navigation.EXTRA, bundle)
+        startActivity(navigate)
     }
 }

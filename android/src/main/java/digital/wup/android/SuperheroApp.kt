@@ -11,6 +11,8 @@ import javax.inject.Inject
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import digital.wup.android.data.local.MyObjectBox
+import digital.wup.android.module.DaggerSuperheroComponent
 import digital.wup.superhero.module.SuperheroModule
 import io.objectbox.BoxStore
 import timber.log.Timber

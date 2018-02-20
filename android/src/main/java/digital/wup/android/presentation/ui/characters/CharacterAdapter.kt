@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import digital.wup.android.R
+import digital.wup.android.presentation.Navigation
 import digital.wup.superheroapp.common.characters.domain.model.Character
 
 class CharacterAdapter(private val charactersDataSet: Array<Character>, private val charactersView: CharactersContract.CharactersView) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
@@ -20,9 +21,9 @@ class CharacterAdapter(private val charactersDataSet: Array<Character>, private 
         holder.textView.text = charactersDataSet[holder.adapterPosition].name
         holder.textView.setOnClickListener {
             val bundle = Bundle()
-            //bundle.putString(Navigation.CHARACTER_ID, charactersDataSet[holder.adapterPosition].id.toString())
+            bundle.putString(Navigation.CHARACTER_ID, charactersDataSet[holder.adapterPosition].characterId.toString())
 
-            //charactersView.navigateToDetails(bundle)
+            charactersView.navigateToDetails(bundle)
         }
     }
 

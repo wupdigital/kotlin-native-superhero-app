@@ -11,6 +11,8 @@ import digital.wup.android.data.CharactersRemoteDataSource
 import digital.wup.android.data.network.NetworkInterceptor
 import digital.wup.android.presentation.ui.characters.CharacatersPresenterImpl
 import digital.wup.android.presentation.ui.characters.CharactersContract
+import digital.wup.android.presentation.ui.details.DetailsPresenterImpl
+import digital.wup.superhero.presentation.ui.details.DetailsContract
 import digital.wup.superheroapp.common.UseCaseHandler
 import digital.wup.superheroapp.common.UseCaseScheduler
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersUseCase
@@ -93,6 +95,12 @@ class SuperheroModule(private val application: Application) {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return loggingInterceptor
+    }
+
+    @Singleton
+    @Provides
+    fun provideDetailsPresenter(useCase: GetCharacterUseCase, useCaseHandler: UseCaseHandler): DetailsContract.DetailsPresenter {
+        return DetailsPresenterImpl(useCase, useCaseHandler)
     }
 
     @Singleton
