@@ -12,11 +12,13 @@ import Common
 struct CharacterResponse: Decodable {
     let characterId: Int32
     let name: String
+    let desc: String
     let thumbnailUrl: String
 
     private enum CodingKeys: String, CodingKey {
         case characterId = "id"
         case name
+        case desc = "description"
         case thumbnail
     }
 
@@ -31,6 +33,7 @@ extension CharacterResponse {
          let values = try decoder.container(keyedBy: CodingKeys.self)
          self.characterId = try values.decode(Int32.self, forKey: .characterId)
          self.name = try values.decode(String.self, forKey: .name)
+         self.desc = try values.decode(String.self, forKey: .desc)
 
          let thumbnail = try values.nestedContainer(keyedBy: ThumbnailKeys.self, forKey: .thumbnail)
          let path = try thumbnail.decode(String.self, forKey: .path).replacingOccurrences(of: "http", with: "https")
@@ -43,6 +46,7 @@ extension CharacterResponse {
     func toCharacter() -> CommonCharacter {
         let character = CommonCharacter(characterId: self.characterId,
                                         name: self.name,
+                                        desc: self.desc,
                                         thumbnailUrl: self.thumbnailUrl)
         return character
     }

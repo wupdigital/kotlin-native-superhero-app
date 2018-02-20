@@ -17,7 +17,9 @@ class CharacterDetailViewController: UIViewController {
             self.loadContent()
         }
     }
+
     @IBOutlet weak var characterNameLabel: UILabel?
+    @IBOutlet weak var descriptionLabel: UITextView?
     @IBOutlet weak var thumbnailImageView: UIImageView?
 
     var presenter: CommonCharacterDetailMvpPresenter?
@@ -40,18 +42,20 @@ extension CharacterDetailViewController: CommonCharacterDetailMvpView {
 
     func showCharacter(character: CommonCharacter) {
         self.characterNameLabel?.text = character.name
-
+        self.descriptionLabel?.text = character.desc
         if let url = URL(string: character.thumbnailUrl) {
             self.thumbnailImageView?.af_setImage(withURL: url)
         }
     }
 
     func showNoCharacter() {
-        // TODO show no character ui
+        let alert = UIAlertController(title: "Info", message: "Character not found", preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
     }
 
     func showErrorMessage(message: String) {
-        // TODO show error message
+        let alert = UIAlertController(title: "Info", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

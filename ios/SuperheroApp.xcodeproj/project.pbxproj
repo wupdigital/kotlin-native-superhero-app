@@ -30,6 +30,7 @@
 		BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE39203227B100157F5A /* CharactersViewController.swift */; };
 		BFB7FE3E20322E5700157F5A /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */; };
 		BFB7FE40203230CC00157F5A /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */; };
+		BFE006F6203B6AD7001E54DA /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE006F5203B6AD7001E54DA /* PaddedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		BFB7FE39203227B100157F5A /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		BFB7FE3D20322E5700157F5A /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
 		BFB7FE3F203230CC00157F5A /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		BFE006F5203B6AD7001E54DA /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		DD0AE907199022185B78E530 /* Pods-SuperheroAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperheroAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperheroAppTests/Pods-SuperheroAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 		4BF3BB3B2018F96000D29ACD /* SuperheroApp */ = {
 			isa = PBXGroup;
 			children = (
+				BFE006F4203B6AB4001E54DA /* Ui */,
 				BFB07A58202CEFFF008D7564 /* Utils */,
 				BF8B4EDC20278E9A00535D2A /* DataSource */,
 				BF8B4ED4202788E600535D2A /* CharacterDetail */,
@@ -231,6 +234,14 @@
 				BF6E88122030DF670056D276 /* String+md5.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BFE006F4203B6AB4001E54DA /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				BFE006F5203B6AD7001E54DA /* PaddedLabel.swift */,
+			);
+			path = Ui;
 			sourceTree = "<group>";
 		};
 		E2F349F481FF8C7B8CBDAEE4 /* Frameworks */ = {
@@ -554,6 +565,7 @@
 				BF6E87CE2030BBFF0056D276 /* AppDelegate.swift in Sources */,
 				BF6E88132030DF670056D276 /* String+md5.swift in Sources */,
 				BFB7FE3A203227B100157F5A /* CharactersViewController.swift in Sources */,
+				BFE006F6203B6AD7001E54DA /* PaddedLabel.swift in Sources */,
 				BF6E88112030DCAF0056D276 /* CharactersRemoteDataSource.swift in Sources */,
 				BF6BC8182034BA3F007D6C15 /* Environment.generated.swift in Sources */,
 				BF8B4EF22027A10D00535D2A /* CharacterModel.xcdatamodeld in Sources */,
