@@ -11,15 +11,14 @@ allprojects {
         ext.objectboxVersion = '1.4.1'
 
         repositories {
-            maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
-            maven { url "https://kotlin.bintray.com/kotlinx" }
             google()
             jcenter()
             mavenCentral()
+            maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
+            maven { url "https://kotlin.bintray.com/kotlinx" }
             maven { url "http://objectbox.net/beta-repo/" }
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.0.1'
             classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
             classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
@@ -30,9 +29,9 @@ allprojects {
     version = '0.0.1-SNAPSHOT'
 
     repositories {
-        maven { url "http://objectbox.net/beta-repo/" }
         google()
         jcenter()
         mavenCentral()
+        maven { url "http://objectbox.net/beta-repo/" }
     }
 }

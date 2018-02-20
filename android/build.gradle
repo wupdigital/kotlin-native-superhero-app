@@ -1,4 +1,15 @@
-apply plugin: 'com.android.library'
+buildscript {
+    repositories {
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
