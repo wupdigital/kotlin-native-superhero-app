@@ -31,6 +31,9 @@ class CharactersActivity : AppCompatActivity(), CharactersMvpView {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = CharacterAdapter(onClick = { characterId ->
+            navigateToDetails(characterId)
+        })
 
         presenter.takeView(this)
     }
@@ -57,9 +60,7 @@ class CharactersActivity : AppCompatActivity(), CharactersMvpView {
     }
 
     override fun showCharacters(characters: List<Character>) {
-        recyclerView.adapter = CharacterAdapter(characters, onClick = { characterId ->
-            navigateToDetails(characterId)
-        })
+        (recyclerView.adapter as CharacterAdapter).addAll(characters)
     }
 
     override fun showLoadingCharactersError(message: String) {

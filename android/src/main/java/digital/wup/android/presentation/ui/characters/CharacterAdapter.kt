@@ -8,7 +8,9 @@ import android.widget.TextView
 import digital.wup.android.R
 import digital.wup.superheroapp.common.characters.domain.model.Character
 
-class CharacterAdapter(private val charactersDataSet: List<Character>, private val onClick: (String) -> Unit) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter(private val onClick: (String) -> Unit) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+
+    private var charactersDataSet: MutableList<Character> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.character_item, parent, false) as TextView
@@ -25,6 +27,11 @@ class CharacterAdapter(private val charactersDataSet: List<Character>, private v
 
     override fun getItemCount(): Int {
         return charactersDataSet.size
+    }
+
+    fun addAll(characters: List<Character>) {
+        charactersDataSet.addAll(characters)
+        notifyDataSetChanged()
     }
 
     class ViewHolder(var textView: TextView) : RecyclerView.ViewHolder(textView)

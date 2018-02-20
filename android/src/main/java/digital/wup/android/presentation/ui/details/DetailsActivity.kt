@@ -10,53 +10,43 @@ import digital.wup.android.R
 import digital.wup.android.presentation.Navigation
 import digital.wup.superheroapp.common.characters.domain.model.Character
 
-import digital.wup.superhero.presentation.ui.details.DetailsContract
+import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpPresenter
+import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpView
+import kotlinx.android.synthetic.main.activity_details.*
 import javax.inject.Inject
 
-open class DetailsActivity : AppCompatActivity(), DetailsContract.DetailsView {
+open class DetailsActivity : AppCompatActivity(), CharacterDetailMvpView {
 
     @Inject
-    internal lateinit var presenter: DetailsContract.DetailsPresenter
+    internal lateinit var presenter: CharacterDetailMvpPresenter
     @Inject
     internal lateinit var picasso: Picasso
-
-    private var nameTextView: TextView? = null
-    private var thumbnailImageView: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        nameTextView = findViewById(R.id.name)
-        thumbnailImageView = findViewById(R.id.thumbnail)
-
         val intent = intent
         val bundle = intent.getBundleExtra(Navigation.EXTRA)
 
         presenter.takeView(this)
-        presenter.loadCharacter(bundle.getString(Navigation.CHARACTER_ID))
+        val characterId = bundle.getString(Navigation.CHARACTER_ID)
+        presenter.loadCharacter(characterId.toInt())
     }
 
-    override fun showLoadingIndicator() {
 
-    }
+    override fun showCharacter(character: Character) {
+        this.name.text = character.name
 
-    override fun hideLoadingIndicator() {
-
-    }
-
-    override fun showCharacter(characters: Character) {
-        nameTextView!!.text = characters.name
-
-        picasso.load(characters.thumbnailUrl + ".jpg").into(thumbnailImageView)
-    }
-
-    override fun showLoadingCharacterError() {
-
+        picasso.load(character.thumbnailUrl + ".jpg").into(this.thumbnail)
     }
 
     override fun showNoCharacter() {
+
+    }
+
+    override fun showErrorMessage(message: String) {
 
     }
 }

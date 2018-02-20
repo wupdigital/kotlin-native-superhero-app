@@ -1,34 +1,37 @@
 package digital.wup.android.presentation.ui.details
 
 
-import digital.wup.superhero.presentation.ui.details.DetailsContract
 import digital.wup.superheroapp.common.UseCaseHandler
+import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpPresenter
+import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpView
 import digital.wup.superheroapp.common.charaterdetail.domain.usecase.GetCharacterRequest
 import digital.wup.superheroapp.common.charaterdetail.domain.usecase.GetCharacterResponse
 import digital.wup.superheroapp.common.charaterdetail.domain.usecase.GetCharacterUseCase
 
-class DetailsPresenterImpl(private val useCase: GetCharacterUseCase, private val handler: UseCaseHandler) : DetailsContract.DetailsPresenter {
-    private var view: DetailsContract.DetailsView? = null
+class DetailsPresenterImpl(private val useCase: GetCharacterUseCase, private val handler: UseCaseHandler) : CharacterDetailMvpPresenter{
+    private var view: CharacterDetailMvpView? = null
 
-    override fun takeView(view: DetailsContract.DetailsView) {
+    override fun takeView(view: CharacterDetailMvpView) {
         this.view = view
     }
 
-    override fun loadCharacter(id: String) {
-        val request = GetCharacterRequest(id.toInt())
+    override fun dropView() {
+        this.view = null
+    }
+
+    override fun loadCharacter(characterId: Int) {
+        val request = GetCharacterRequest(characterId)
 
         handler.executeUseCase(useCase, request, {
-            onSuccess(it)
+
+            it.character?.let {
+                view?.showCharacter(it)
+            } ?: run {
+                view?.showNoCharacter()
+            }
+
         }, {
-            onError()
+            view?.showErrorMessage("Something wrong!")
         })
-    }
-
-    private fun onSuccess(response: GetCharacterResponse) {
-        view!!.showCharacter(response.character!!)
-    }
-
-    private fun onError() {
-        view!!.showLoadingCharacterError()
     }
 }

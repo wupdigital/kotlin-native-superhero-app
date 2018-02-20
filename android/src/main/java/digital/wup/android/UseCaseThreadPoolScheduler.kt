@@ -13,7 +13,7 @@ import digital.wup.superheroapp.common.UseCaseScheduler
 class UseCaseThreadPoolScheduler : UseCaseScheduler {
     private val mHandler = Handler(Looper.getMainLooper())
 
-    internal var mThreadPoolExecutor: ThreadPoolExecutor
+    private var mThreadPoolExecutor: ThreadPoolExecutor
 
     init {
         mThreadPoolExecutor = ThreadPoolExecutor(POOL_SIZE, MAX_POOL_SIZE, TIMEOUT.toLong(),
