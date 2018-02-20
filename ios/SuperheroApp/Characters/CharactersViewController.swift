@@ -15,6 +15,7 @@ class CharactersViewController: UITableViewController {
     var presenter: CommonCharactersMvpPresenter?
     var loadIndicator: UIActivityIndicatorView?
     var loadMoreIndicator: UIActivityIndicatorView?
+    var dataSource: [CommonCharacter] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class CharactersViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow
-            let character = self.presenter!.characters()[(indexPath?.row)!] as CommonCharacter
+            let character = self.dataSource[(indexPath?.row)!] as CommonCharacter
 
             if let navigationController = segue.destination as? UINavigationController,
                 let controller = navigationController.topViewController as? CharacterDetailViewController {
@@ -63,23 +64,20 @@ extension CharactersViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard self.presenter != nil else {
-            return 0
-        }
-        return Int(self.presenter!.charactersCount())
+        return self.dataSource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = self.presenter?.characters()[indexPath.row]
+        let character = self.dataSource[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = character?.name
+        cell.textLabel?.text = character.name
         return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 
-        let lastItemReached = indexPath.row == (self.presenter?.charactersCount())! - 1
+        let lastItemReached = indexPath.row == self.dataSource.count - 1
 
         if lastItemReached {
             self.presenter?.loadMoreCharacters()
@@ -105,7 +103,8 @@ extension CharactersViewController: CommonCharactersMvpView {
         self.loadMoreIndicator?.stopAnimating()
     }
 
-    func refreshCharacters() {
+    func showCharacters(characters: [CommonCharacter]) {
+        self.dataSource.append(contentsOf: characters)
         self.tableView.reloadData()
     }
 

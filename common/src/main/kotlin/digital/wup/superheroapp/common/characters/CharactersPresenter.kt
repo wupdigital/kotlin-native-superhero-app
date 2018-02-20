@@ -16,7 +16,6 @@ class CharactersPresenter(
 
     private var view: CharactersMvpView? = null
     private var currentPage: Page = Page(DEFAULT_LIMIT, 0)
-    private var objects: MutableList<Character> = mutableListOf()
 
     override fun takeView(view: CharactersMvpView) {
         this.view = view
@@ -25,14 +24,6 @@ class CharactersPresenter(
 
     override fun dropView() {
         view = null
-    }
-
-    override fun characters(): List<Character> {
-        return objects
-    }
-
-    override fun charactersCount(): Int {
-        return objects.count()
     }
 
     override fun loadCharacters() {
@@ -46,8 +37,7 @@ class CharactersPresenter(
             if (response.characters.isEmpty()) {
                 view?.showNoCharacters()
             } else {
-                objects.addAll(response.characters)
-                view?.refreshCharacters()
+                view?.showCharacters(response.characters)
             }
         }, {
             view?.hideLoadingIndicator()
@@ -68,8 +58,7 @@ class CharactersPresenter(
                 if (response.characters.isEmpty()) {
                     view?.showNoCharacters()
                 } else {
-                    objects.addAll(response.characters)
-                    view?.refreshCharacters()
+                    view?.showCharacters(response.characters)
                 }
         }, {
             // TODO remove hardcoded message

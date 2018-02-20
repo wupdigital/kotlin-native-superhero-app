@@ -5,17 +5,22 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.TextView
 import dagger.android.AndroidInjection
 import digital.wup.android.R
 import digital.wup.android.presentation.Navigation
 import digital.wup.android.presentation.ui.details.DetailsActivity
+import digital.wup.superheroapp.common.characters.CharactersMvpPresenter
+import digital.wup.superheroapp.common.characters.CharactersMvpView
 import digital.wup.superheroapp.common.characters.domain.model.Character
 import javax.inject.Inject
 
-class CharactersActivity : AppCompatActivity(), CharactersContract.CharactersView {
+class CharactersActivity : AppCompatActivity(), CharactersMvpView {
 
     @Inject
-    internal lateinit var presenter: CharactersContract.CharactersPresenter
+    internal lateinit var presenter: CharactersMvpPresenter
 
     private lateinit var recyclerView: RecyclerView
 
@@ -28,7 +33,11 @@ class CharactersActivity : AppCompatActivity(), CharactersContract.CharactersVie
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         presenter.takeView(this)
-        presenter.loadCharacters()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.dropView()
     }
 
     override fun showLoadingIndicator() {
@@ -47,11 +56,13 @@ class CharactersActivity : AppCompatActivity(), CharactersContract.CharactersVie
 
     }
 
-    override fun showCharacters(characters: Array<Character>) {
-        recyclerView.adapter = CharacterAdapter(characters, this)
+    override fun showCharacters(characters: List<Character>) {
+        recyclerView.adapter = CharacterAdapter(characters, onClick = { characterId ->
+            navigateToDetails(characterId)
+        })
     }
 
-    override fun showLoadingCharactersError() {
+    override fun showLoadingCharactersError(message: String) {
 
     }
 
@@ -59,9 +70,12 @@ class CharactersActivity : AppCompatActivity(), CharactersContract.CharactersVie
 
     }
 
-    override fun navigateToDetails(bundle: Bundle) {
+    private fun navigateToDetails(characterId: String) {
+        val args = Bundle()
+        args.putString(Navigation.CHARACTER_ID, characterId)
+
         val navigate = Intent(this, DetailsActivity::class.java)
-        navigate.putExtra(Navigation.EXTRA, bundle)
+        navigate.putExtra(Navigation.EXTRA, args)
         startActivity(navigate)
     }
 }

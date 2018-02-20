@@ -9,12 +9,12 @@ import digital.wup.android.UseCaseThreadPoolScheduler
 import digital.wup.android.data.CharactersLocalDataSource
 import digital.wup.android.data.CharactersRemoteDataSource
 import digital.wup.android.data.network.NetworkInterceptor
-import digital.wup.android.presentation.ui.characters.CharacatersPresenterImpl
-import digital.wup.android.presentation.ui.characters.CharactersContract
 import digital.wup.android.presentation.ui.details.DetailsPresenterImpl
 import digital.wup.superhero.presentation.ui.details.DetailsContract
 import digital.wup.superheroapp.common.UseCaseHandler
 import digital.wup.superheroapp.common.UseCaseScheduler
+import digital.wup.superheroapp.common.characters.CharactersMvpPresenter
+import digital.wup.superheroapp.common.characters.CharactersPresenter
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersUseCase
 import digital.wup.superheroapp.common.charaterdetail.domain.usecase.GetCharacterUseCase
 import digital.wup.superheroapp.common.datasource.CharactersDataSource
@@ -70,8 +70,8 @@ class SuperheroModule(private val application: Application) {
 
     @Singleton
     @Provides
-    fun provideCharactersPresenter(useCase: GetCharactersUseCase, useCaseHandler: UseCaseHandler): CharactersContract.CharactersPresenter {
-        return CharacatersPresenterImpl(useCase, useCaseHandler)
+    fun provideCharactersPresenter(useCaseHandler: UseCaseHandler, useCase: GetCharactersUseCase): CharactersMvpPresenter {
+        return CharactersPresenter(useCaseHandler, useCase)
     }
 
     @Singleton

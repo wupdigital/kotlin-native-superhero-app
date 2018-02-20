@@ -10,10 +10,6 @@ interface CharactersMvpPresenter : MvpPresenter {
 
     fun dropView()
 
-    fun characters(): List<Character>
-
-    fun charactersCount(): Int
-
     fun loadCharacters()
 
     fun loadMoreCharacters()
@@ -29,7 +25,7 @@ interface CharactersMvpView : MvpView {
 
     fun hideMoreLoadingIndicator()
 
-    fun refreshCharacters()
+    fun showCharacters(characters: List<Character>)
 
     fun showLoadingCharactersError(message: String)
 
