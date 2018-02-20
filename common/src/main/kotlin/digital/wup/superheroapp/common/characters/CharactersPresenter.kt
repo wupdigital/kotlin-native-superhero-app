@@ -4,7 +4,6 @@ import digital.wup.superheroapp.common.UseCaseHandler
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersRequest
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersResponse
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersUseCase
-import digital.wup.superheroapp.common.characters.domain.model.Character
 import digital.wup.superheroapp.common.characters.domain.model.Page
 
 const val DEFAULT_LIMIT = 100

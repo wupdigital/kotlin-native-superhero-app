@@ -2,8 +2,6 @@ package digital.wup.android.presentation.ui.details
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.ImageView
-import android.widget.TextView
 import com.squareup.picasso.Picasso
 import dagger.android.AndroidInjection
 import digital.wup.android.R
@@ -35,7 +33,6 @@ open class DetailsActivity : AppCompatActivity(), CharacterDetailMvpView {
         presenter.loadCharacter(characterId.toInt())
     }
 
-
     override fun showCharacter(character: Character) {
         this.name.text = character.name
 
@@ -43,10 +40,8 @@ open class DetailsActivity : AppCompatActivity(), CharacterDetailMvpView {
     }
 
     override fun showNoCharacter() {
-
     }
 
     override fun showErrorMessage(message: String) {
-
     }
 }

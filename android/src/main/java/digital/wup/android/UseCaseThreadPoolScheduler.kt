@@ -1,6 +1,5 @@
 package digital.wup.android
 
-
 import android.os.Handler
 import android.os.Looper
 

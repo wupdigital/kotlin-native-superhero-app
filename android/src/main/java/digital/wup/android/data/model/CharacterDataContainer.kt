@@ -1,6 +1,5 @@
 package digital.wup.android.data.model
 
-
 import com.google.gson.annotations.SerializedName
 import java.util.*
 

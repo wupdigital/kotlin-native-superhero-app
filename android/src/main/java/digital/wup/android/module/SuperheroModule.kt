@@ -16,7 +16,6 @@ import digital.wup.superheroapp.common.characters.CharactersMvpPresenter
 import digital.wup.superheroapp.common.characters.CharactersPresenter
 import digital.wup.superheroapp.common.characters.domain.usecase.GetCharactersUseCase
 import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpPresenter
-import digital.wup.superheroapp.common.charaterdetail.CharacterDetailMvpView
 import digital.wup.superheroapp.common.charaterdetail.domain.usecase.GetCharacterUseCase
 import digital.wup.superheroapp.common.datasource.CharactersDataSource
 import digital.wup.superheroapp.common.datasource.CharactersRepository

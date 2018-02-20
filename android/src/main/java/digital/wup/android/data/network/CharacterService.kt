@@ -1,6 +1,5 @@
 package digital.wup.android.data.network
 
-
 import digital.wup.android.data.model.CharacterDataWrapper
 import retrofit2.Call
 import retrofit2.http.GET

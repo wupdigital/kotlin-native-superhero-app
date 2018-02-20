@@ -1,6 +1,5 @@
 package digital.wup.android.data.network
 
-
 import digital.wup.android.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response

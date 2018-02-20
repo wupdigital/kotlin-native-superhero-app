@@ -1,6 +1,5 @@
 package digital.wup.android.data
 
-
 import digital.wup.android.data.model.CharacterDataWrapper
 import digital.wup.android.data.model.CharacterNet
 import digital.wup.android.data.model.toCharacter

@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.TextView
 import dagger.android.AndroidInjection
 import digital.wup.android.R
 import digital.wup.android.presentation.Navigation
@@ -44,19 +41,15 @@ class CharactersActivity : AppCompatActivity(), CharactersMvpView {
     }
 
     override fun showLoadingIndicator() {
-
     }
 
     override fun hideLoadingIndicator() {
-
     }
 
     override fun showMoreLoadingIndicator() {
-
     }
 
     override fun hideMoreLoadingIndicator() {
-
     }
 
     override fun showCharacters(characters: List<Character>) {
@@ -64,11 +57,9 @@ class CharactersActivity : AppCompatActivity(), CharactersMvpView {
     }
 
     override fun showLoadingCharactersError(message: String) {
-
     }
 
     override fun showNoCharacters() {
-
     }
 
     private fun navigateToDetails(characterId: String) {

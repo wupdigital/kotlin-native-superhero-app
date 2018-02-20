@@ -1,6 +1,5 @@
 package digital.wup.android
 
-
 import android.app.Activity
 import android.app.Application
 import android.content.Context

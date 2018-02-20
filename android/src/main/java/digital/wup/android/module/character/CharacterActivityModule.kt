@@ -9,7 +9,6 @@ import dagger.android.AndroidInjector
 import dagger.multibindings.IntoMap
 import digital.wup.android.presentation.ui.characters.CharactersActivity
 
-
 @Module(subcomponents = arrayOf(CharacterActivitySubcomponent::class))
 abstract class CharacterActivityModule {
     @Binds
