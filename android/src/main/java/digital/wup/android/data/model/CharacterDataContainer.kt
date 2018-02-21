@@ -1,7 +1,6 @@
 package digital.wup.android.data.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class CharacterDataContainer(
         @SerializedName("offset")
@@ -25,7 +24,7 @@ data class CharacterDataContainer(
         if (limit != other.limit) return false
         if (total != other.total) return false
         if (count != other.count) return false
-        if (!Arrays.equals(results, other.results)) return false
+        if (!results.contentEquals(other.results)) return false
 
         return true
     }
@@ -35,7 +34,7 @@ data class CharacterDataContainer(
         result = 31 * result + limit
         result = 31 * result + total
         result = 31 * result + count
-        result = 31 * result + Arrays.hashCode(results)
+        result = 31 * result + results.contentDeepHashCode()
         return result
     }
 }
